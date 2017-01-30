@@ -1,4 +1,4 @@
-baseurl = "https://ahogen.github.io"
+baseurl = "https://ahogen.github.io/"
 title = "Alexander Hogen"
 copyright = "&copy; 2017 Alexander Hogen"
 theme = "academic"
