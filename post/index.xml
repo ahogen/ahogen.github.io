@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Alexander Hogen</title>
+    <link>https://ahogen.github.io/post/index.xml</link>
+    <description>Recent content in Posts on Alexander Hogen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Alexander Hogen</copyright>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>First post!</title>
+      <link>https://ahogen.github.io/post/first-post/</link>
+      <pubDate>Sun, 29 Jan 2017 16:30:00 +0000</pubDate>
+      
+      <guid>https://ahogen.github.io/post/first-post/</guid>
+      <description>&lt;p&gt;Hey there! Thanks for dropping by!&lt;/p&gt;
+
+&lt;p&gt;As you might be able to see, there&amp;rsquo;s not a lot going on over here yet, but I hope there will be soon! This is something I intend to be working on more in the future. It will be a one-stop shop where I will show of some projects I&amp;rsquo;m working on and make a couple blog posts about either those projects or random little engineering-ish things I&amp;rsquo;m up to.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s see how this goes!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
