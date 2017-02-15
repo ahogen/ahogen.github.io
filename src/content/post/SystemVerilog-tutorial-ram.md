@@ -1,14 +1,18 @@
 +++
-date = "2017-02-17T16:30:00"
-draft = false
-image = "banners/default.png"
-hide_banner_in_list = true
-tags = ["blog", "tutorial", "fpga", "system-verilog"]
+date = "2017-02-15T00:17:19-08:00"
 title = "SystemVerilog RAM Module"
-math = true
+tags = ["blog", "tutorial", "fpga", "system-verilog"]
+highlight = true
+math = false
 summary = """
 A brief tutorial on writing a SytemVerilog-compatible RAM module.
 """
+
+[header]
+  caption = ""
+  image = "banners/default.png"
+  preview = false
+
 +++
 
 A RAM module consists of a few different elements.
@@ -18,11 +22,16 @@ A RAM module consists of a few different elements.
 - Address input port to indicate which element we want to read/write
 - Direction controls
 
+I'll go through and explain each of these elements and we'll incrementally build a synthesizable RAM module.
+
+{{% alert note %}}
 A quick note before I get going: A lot of the SystemVerilog syntax I reference is pulled directly out of [*SystemVerilog for Design*](#sv-for-design) by Sutherland and friends. PLEASE go get this book if you intend to work with SystemVerilog at all. It's a fantastic reference. See footnote [[1]](#sv-for-design) for bibliographical information.
+{{% /alert %}}
 
-## Ports ##
+# Ports #
+----
 
-Deciding what ports you're going to provide at the module interface means you have to decide how you want your RAM to work. First off, do you want synchronous or asynchronous RAM? This obviously determines whether or not you need a clock input. We know we need an address input. Data input and output ports could be written as two separate ports, one in and one out, but this isn't common because it means you have more bus wires going through your design, which is unnecessary. 
+Deciding what ports you're going to provide at the module interface means you have to decide how you want your RAM to work. First off, do you want synchronous or asynchronous RAM? This determines whether or not you need a clock input. We know we need an address input. Data input and output ports could be written as two separate ports, one in and one out, but this isn't common because it means you have more bus wires going through your design, which is unnecessary. Then of course you need a way to deal with switching between read and write operations...
 
 A common way to interface with RAM is with the following ports:
 
@@ -32,9 +41,11 @@ A common way to interface with RAM is with the following ports:
 - DAT -- tristate input/output port
 - ADDR -- address
 
-And then we would write our module interface one of two ways. Here's the first one.
+And then we would write our module ports one of two ways. The first declares only the names of the wires in the port list and then defines the port direction and width inside the module. The second defines direction, width, and name all in the module port list parenthesis. Here's the first one.
 
 ```verilog
+// Older Verilog-1995 port declaration style
+
 module ram(
 	cs,
 	we,
@@ -46,8 +57,8 @@ module ram(
 	input cs;
 	input we;
 	input oe;
-	inout [X:0]data;
-	input [Y:0]addr;
+	inout [X:0] data;
+	input [Y:0] addr;
 	
 	// ... //
 	
@@ -57,6 +68,8 @@ endmodule
 And here's the second one.
 
 ```verilog
+// Newer Verilog-2001 port declaration style
+
 module ram(
 	input cs,
 	input we,
@@ -72,11 +85,14 @@ endmodule
 
 I normally prefer the second option because it keeps the port names and sizes in the same place, so I only have to look in one location to find out everything. Also if I decided to change a port name, I don't have to change it twice. It doesn't matter which one you choose. They both work the same.
 
-*However*, for this tutorial, we are going to use the **first method**, because of reasons you're about to see...
+*However*, for this tutorial, we are going to use the **first** (older) method, because of reasons you're about to see...
 
-## Parameterization ##
+# Parameterization #
+---
 
-If you didn't know, parameters are kind of something like a global `const` variable in C languages, used to define constant values used throughout your code. Parameters have to be declared *inside* of a SV module. A `parameter` can be redefined but a `localparam` cannot. See section 3.10 of [[1]](#sv-for-design). Treat them like you would a normal Verilog constant, such as 4'b000, except use the name instead of the number.
+The idea here is to make our RAM module reusable. We can copy and paste this code, change only two numbers, and have a RAM module of a completely different size with very minimal effort. In C/C++ we might use global const variables for this purpose. In SystemVerilog, we're going to use something called a parameter.
+
+If you didn't know, parameters are kind of like a global `const` variable in C languages. Parameters have to be declared *inside* of a SV module. A `parameter` can be redefined but a `localparam` cannot. See section 3.10 of [[1]](#sv-for-design). Treat them like you would a normal Verilog constant, such as `4'b0000`, except use the name instead of the number.
 
 This is how you would create a parameter or localparam.
 
@@ -113,7 +129,7 @@ endmodule
 
 And now we've got parameters set up for a RAM module that has 1024 elements which are 8 bits wide. Well, kind of. All we need now is... everything else.
 
-## Memory Array ##
+# Memory Array #
 ----
 
 Memory elements are easy to construct in SystemVerilog (SV) by using an array. There are two kinds of arrays we can create in SV. The difference between the two is in how they are physically created/stored in the target device. We can choose to use either *packed* arrays or *unpacked* arrays. Previous versions of Verilog support 1-dimentional packed arrays which were called vectors. SystemVerilog now allows for multi-dimensional vectors and referrs to them as packed arrays, because the bits are stored as contiguous bits (section 5.3.2 in [[1]](#sv-for-design)).
@@ -145,7 +161,7 @@ Great. Now we have a storage array to save and read information to/from. However
 As people who code, we tend to be inherently lazy, to some extend. I mean, we are in fact programming electrical logic to do things for us. So what if we wanted to change the size of our RAM module. Gee, wouldn't it be nice to copy and paste our code and only have to change a parameter or two? Hmm...
 
 
-## References ##
+# References #
 ----
 
 <a name="sv-for-design">
