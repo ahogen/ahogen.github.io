@@ -8,7 +8,7 @@
   <meta name="theme" content="hugo-academic">
   <meta name="generator" content="Hugo 0.18.1" />
   <meta name="author" content="Alexander Hogen">
-  <meta name="description" content="B.S. Computer Engineering">
+  <meta name="description" content="Firmware Engineer">
 
   
   
@@ -18,7 +18,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/highlight.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/ir-black.min.css">
     
   
   <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -132,10 +132,12 @@
   </div>
 </nav>
 
-<div class="article-container">
 
-  <article class="article article-project" itemscope itemtype="http://schema.org/Article">
-    
+<article class="article article-project" itemscope itemtype="http://schema.org/Article">
+
+  
+
+  <div class="article-container">
 
     <div class="pub-title">
       <h1 itemprop="name">FFT IP Core Generator</h1>
@@ -222,6 +224,86 @@
 
 <p>The FFT core uses a custom-built multiplier. Specifically, a SystemVerilog implementation of the HPM-based Baugh-Wooley multiplier, as researched by H. Eriksson, P. Larsson-Edefors, M. Sheeran, M. Sjalander, D. Johansson, and M. Scholin. Refer to their paper <a href="http://www.sjalander.com/research/pdf/sjalander-iscas2006.pdf" target="_blank"><em>Multiplier Reduction Tree with Logarithmic Logic Depth and Regular Connectivity</em></a> for more information. I have contacted Mr. Sjalander and received permission to impliment their multiplier design.</p>
 
+<h3 id="status">Status</h3>
+
+<table>
+<thead>
+<tr>
+<th>Component Name</th>
+<th>C++ Code Written</th>
+<th>C++ Code Tested</th>
+<th>SV Synthesizes</th>
+<th>SV ModelSim Simulation Test</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>ROM</td>
+<td><img src="/img/chk.png" alt="picture" /></td>
+<td><img src="/img/chk.png" alt="picture" /></td>
+<td><img src="/img/chk.png" alt="picture" /></td>
+<td><img src="/img/chk.png" alt="picture" /></td>
+</tr>
+
+<tr>
+<td>Twiddle ROM</td>
+<td><img src="/img/chk.png" alt="picture" /></td>
+<td><img src="/img/chk.png" alt="picture" /></td>
+<td><img src="/img/chk.png" alt="picture" /></td>
+<td><img src="/img/chk.png" alt="picture" /></td>
+</tr>
+
+<tr>
+<td>Multiplier</td>
+<td><img src="/img/chk.png" alt="picture" /></td>
+<td><img src="/img/chk.png" alt="picture" /></td>
+<td><img src="/img/chk.png" alt="picture" /></td>
+<td><img src="/img/chk.png" alt="picture" /></td>
+</tr>
+
+<tr>
+<td>RAM</td>
+<td><img src="/img/chk.png" alt="picture" /></td>
+<td><img src="/img/chk.png" alt="picture" /></td>
+<td><img src="/img/spinner.gif" alt="picture" /></td>
+<td><img src="/img/x.png" alt="picture" /></td>
+</tr>
+
+<tr>
+<td>2-port RAM</td>
+<td><img src="/img/x.png" alt="picture" /></td>
+<td><img src="/img/x.png" alt="picture" /></td>
+<td><img src="/img/x.png" alt="picture" /></td>
+<td><img src="/img/x.png" alt="picture" /></td>
+</tr>
+
+<tr>
+<td>Butterfly Unit (BFU)</td>
+<td><img src="/img/x.png" alt="picture" /></td>
+<td><img src="/img/x.png" alt="picture" /></td>
+<td><img src="/img/x.png" alt="picture" /></td>
+<td><img src="/img/x.png" alt="picture" /></td>
+</tr>
+
+<tr>
+<td>Top-level module</td>
+<td><img src="/img/x.png" alt="picture" /></td>
+<td><img src="/img/x.png" alt="picture" /></td>
+<td><img src="/img/x.png" alt="picture" /></td>
+<td><img src="/img/x.png" alt="picture" /></td>
+</tr>
+
+<tr>
+<td>(op) Kogge-Stone Adder</td>
+<td><img src="/img/x.png" alt="picture" /></td>
+<td><img src="/img/x.png" alt="picture" /></td>
+<td><img src="/img/x.png" alt="picture" /></td>
+<td><img src="/img/x.png" alt="picture" /></td>
+</tr>
+</tbody>
+</table>
+
 <h3 id="more-information">More Information</h3>
 
 <p>At the moment, I am developing this project on Bitbucket. Right now, the repository is hidden/private, but when I make it public, you will be able to access it at the following URL.</p>
@@ -246,9 +328,9 @@
 </div>
 
     </div>
-  </article>
 
-</div>
+  </div>
+</article>
 
 <div class="container">
   <nav>
@@ -318,6 +400,14 @@
       
       <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/verilog.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/cpp.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/c.min.js"></script>
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/systemverilog.min.js"></script>
       
 
       

@@ -27,6 +27,6 @@ weight = 1
 
 # Biography
 
-(I'm a terrible bio writer, so I'll add something here later)
+Alexander Hogen is a Firmware Engineer and has been working with digital audio applications, both personally and professionally, since 2017. He obtained a B.S. in Computer Engineering Technology from Oregon Institute of Technology in 2016. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
+He was the hardware designer for a group-based junior project, where the team built a long distance laser projector ([more info here](https://bitbucket.org/jplaserprojector/the-a.l.p.s.-project)) and was the sole creator of his senior project, an FPGA-based real-time audio light display platform ([more info here](https://bitbucket.org/ahogen/hardware-audio-spectrum-visualizer)). His hobby interests include guitars and digital music composition, FPGA development board design, and some minor CPU architecture design. Alex has been tinkering with an FFT IP core generator for FPGAs, but is unsure if he’ll actually finish it any time soon.

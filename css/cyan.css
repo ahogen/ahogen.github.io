@@ -21,6 +21,13 @@ a:hover {
     color: rgb(0,80,90);
 }
 
+html {
+  font-family: 'Georgia', serif;
+  font-size: 16px;
+  color: rgba(0,0,0,0.8);
+  line-height: 1.65;
+}
+
 /* Articles */
 
 .article-title a {
