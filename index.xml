@@ -13,7 +13,7 @@
     <item>
       <title>Value of Custom Hardware in Education</title>
       <link>https://ahogen.github.io/publication/custom-hardware-in-education/</link>
-      <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 28 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ahogen.github.io/publication/custom-hardware-in-education/</guid>
       <description></description>
@@ -72,6 +72,86 @@
 &lt;p&gt;With the guidance of &lt;a href=&#34;https://www.researchgate.net/publication/235995761_The_Fast_Fourier_Transform_in_Hardware_A_Tutorial_Based_on_an_FPGA_Implementation&#34; target=&#34;_blank&#34;&gt;George Slade&amp;rsquo;s paper&lt;/a&gt;, along with some other internet resources, I have been working on an object-oriented, &lt;strong&gt;C++&lt;/strong&gt; library to configure and generate &lt;strong&gt;SystemVerilog&lt;/strong&gt; compatible modules for use in &lt;em&gt;any vendor&amp;rsquo;s&lt;/em&gt; FPGA.&lt;/p&gt;
 
 &lt;p&gt;The FFT core uses a custom-built multiplier. Specifically, a SystemVerilog implementation of the HPM-based Baugh-Wooley multiplier, as researched by H. Eriksson, P. Larsson-Edefors, M. Sheeran, M. Sjalander, D. Johansson, and M. Scholin. Refer to their paper &lt;a href=&#34;http://www.sjalander.com/research/pdf/sjalander-iscas2006.pdf&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;Multiplier Reduction Tree with Logarithmic Logic Depth and Regular Connectivity&lt;/em&gt;&lt;/a&gt; for more information. I have contacted Mr. Sjalander and received permission to impliment their multiplier design.&lt;/p&gt;
+
+&lt;h3 id=&#34;status&#34;&gt;Status&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Component Name&lt;/th&gt;
+&lt;th&gt;C++ Code Written&lt;/th&gt;
+&lt;th&gt;C++ Code Tested&lt;/th&gt;
+&lt;th&gt;SV Synthesizes&lt;/th&gt;
+&lt;th&gt;SV ModelSim Simulation Test&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ROM&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Twiddle ROM&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Multiplier&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;RAM&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/spinner.gif&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;2-port RAM&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Butterfly Unit (BFU)&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Top-level module&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;(op) Kogge-Stone Adder&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 &lt;h3 id=&#34;more-information&#34;&gt;More Information&lt;/h3&gt;
 

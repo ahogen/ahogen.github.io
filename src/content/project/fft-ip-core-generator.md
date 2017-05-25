@@ -57,6 +57,19 @@ With the guidance of [George Slade's paper](https://www.researchgate.net/publica
 
 The FFT core uses a custom-built multiplier. Specifically, a SystemVerilog implementation of the HPM-based Baugh-Wooley multiplier, as researched by H. Eriksson, P. Larsson-Edefors, M. Sheeran, M. Sjalander, D. Johansson, and M. Scholin. Refer to their paper [*Multiplier Reduction Tree with Logarithmic Logic Depth and Regular Connectivity*](http://www.sjalander.com/research/pdf/sjalander-iscas2006.pdf) for more information. I have contacted Mr. Sjalander and received permission to impliment their multiplier design.
 
+### Status ###
+
+| Component Name         | C++ Code Written | C++ Code Tested | SV Synthesizes | SV ModelSim Simulation Test |
+|------------------------|------------------|-----------------|----------------|-----------------------------|
+| ROM                    |![picture](/img/chk.png)|![picture](/img/chk.png)|![picture](/img/chk.png)| ![picture](/img/chk.png) |
+| Twiddle ROM            |![picture](/img/chk.png)|![picture](/img/chk.png)|![picture](/img/chk.png)|![picture](/img/chk.png)|
+| Multiplier             |![picture](/img/chk.png)|![picture](/img/chk.png)|![picture](/img/chk.png)|![picture](/img/chk.png)|
+| RAM                    |![picture](/img/chk.png)|![picture](/img/chk.png)|![picture](/img/spinner.gif) |![picture](/img/x.png)|
+| 2-port RAM             |![picture](/img/x.png)|![picture](/img/x.png)|![picture](/img/x.png)|![picture](/img/x.png)|
+| Butterfly Unit (BFU)   |![picture](/img/x.png)|![picture](/img/x.png)|![picture](/img/x.png)|![picture](/img/x.png)|
+| Top-level module       |![picture](/img/x.png)|![picture](/img/x.png)|![picture](/img/x.png)|![picture](/img/x.png)|
+| (op) Kogge-Stone Adder |![picture](/img/x.png)|![picture](/img/x.png)|![picture](/img/x.png)|![picture](/img/x.png)|
+
 ### More Information ###
 
 At the moment, I am developing this project on Bitbucket. Right now, the repository is hidden/private, but when I make it public, you will be able to access it at the following URL.

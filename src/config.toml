@@ -20,14 +20,14 @@ defaultContentLanguageInSubdir = false
 
 [params]
   name = "Alexander Hogen"
-  role = "B.S. Computer Engineering"
-  organization = "Oregon Institute of Technology"
-  organization_url = "https://www.oit.edu"
+  role = "Firmware Engineer"
+  organization = "Audix Microphones"
+  organization_url = "http://www.audixusa.com"
   avatar = "avatar.jpg"
   email = "ahogen@outlook.com"
   #address = ""
   #office_hours = ""
-  phone = "541 280 8657"
+  phone = "541-241-8791"
   #skype = ""
   #telegram = ""
 
@@ -76,8 +76,8 @@ defaultContentLanguageInSubdir = false
   #   For more info on the highlighting options, see:
   #   https://gcushen.github.io/hugo-academic-demo/post/writing-markdown-latex/#highlighting-options
   highlight = true
-  highlight_languages = []
-  # highlight_style = "github"
+  highlight_languages = ["verilog", "cpp", "c", "systemverilog"]
+  highlight_style = "ir-black"
   # highlight_version = "9.9.0"
 
   # Enable native social sharing buttons?
