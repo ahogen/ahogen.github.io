@@ -63,5 +63,5 @@ git add -A .
 git config --global user.name "$GIT_NAME"
 git config --global user.email "$GIT_EMAIL"
 
-git commit --allow-empty -m "Built from commit $REV"
+git commit --allow-empty -m "Travis CI built from commit $REV"
 git push $REPO $TARGET_BRANCH

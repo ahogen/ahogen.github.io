@@ -6,7 +6,7 @@ go:
 env:
     global:
         - SSH_KEY="travis_id_rsa"
-        - GIT_NAME="Travis Build Bot"
+        - GIT_NAME="Alex Hogen"
         - GIT_EMAIL="code.ahogen@outlook.com"
         - SOURCE_DIR="public"
         - DEPLOY_BRANCH="src"
@@ -24,5 +24,5 @@ script:
     - hugo
 
 after_success:
-    - echo "ahogen.github.io" > ./public/CNAME
+#    - echo "ahogen.github.io" > ./public/CNAME
     - ./scripts/deploy.sh
