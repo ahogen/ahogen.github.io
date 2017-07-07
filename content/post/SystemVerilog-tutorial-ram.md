@@ -10,7 +10,7 @@ A brief tutorial on writing a SytemVerilog-compatible RAM module.
 """
 
 [header]
-  caption = ""
+  caption = "Image credit: [**Material Snowcaps**](http://7bna.net/images/material-wallpaper/material-wallpaper-22.jpg)"
   image = "banners/default.png"
   preview = false
 

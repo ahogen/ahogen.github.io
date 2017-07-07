@@ -1,5 +1,5 @@
 baseurl = "https://ahogen.github.io/"
-title = "Alexander Hogen"
+title = "Alex Hogen"
 copyright = "&copy; 2017 Alexander Hogen"
 theme = "academic"
 enableEmoji = true
@@ -21,8 +21,8 @@ defaultContentLanguageInSubdir = false
 [params]
   name = "Alexander Hogen"
   role = "Firmware Engineer"
-  organization = "Audix Microphones"
-  organization_url = "http://www.audixusa.com"
+  #organization = "Audix Microphones"
+  #organization_url = "http://www.audixusa.com"
   avatar = "avatar.jpg"
   email = "ahogen@outlook.com"
   #address = ""
@@ -76,9 +76,9 @@ defaultContentLanguageInSubdir = false
   #   For more info on the highlighting options, see:
   #   https://gcushen.github.io/hugo-academic-demo/post/writing-markdown-latex/#highlighting-options
   highlight = true
-  highlight_languages = ["verilog", "cpp", "c", "systemverilog"]
-  highlight_style = "ir-black"
-  # highlight_version = "9.9.0"
+  highlight_languages = ["verilog", "cpp", "c", "systemverilog", "python"]
+  highlight_style = "default"
+  highlight_version = "9.9.0"
 
   # Enable native social sharing buttons?
   sharing = true
@@ -121,37 +121,31 @@ defaultContentLanguageInSubdir = false
   #   google-scholar, arxiv, orcid, researchgate, mendeley
   #
   #   Full list: https://jpswalsh.github.io/academicons/
-
+  
   [[params.social]]
-    icon = "envelope"
+    icon = "github"
     icon_pack = "fa"
-    link = "mailto:ahogen@outlook.com"
-
+    link = "https://github.com/ahogen"
+	
   [[params.social]]
-    icon = "google-plus"
+    icon = "gitlab"
     icon_pack = "fa"
-    link = "//plus.google.com/+alexh_42"
+    link = "https://gitlab.com/ahogen/"
+	
+  [[params.social]]
+    icon = "bitbucket"
+    icon_pack = "fa"
+    link = "https://bitbucket.com/ahogen"
 	
   [[params.social]]
     icon = "twitter"
     icon_pack = "fa"
-    link = "//twitter.com/alex_hogen"
+    link = "https://twitter.com/alex_hogen"
 	
   [[params.social]]
     icon = "youtube"
     icon_pack = "fa"
-    link = "//www.youtube.com/channel/UCWQNkUMyqOF9PRtt_xqkIpw"
-
-  [[params.social]]
-    icon = "researchgate"
-    icon_pack = "ai"
-    link = "https://www.researchgate.net/profile/Alexander_Hogen"
-
-  [[params.social]]
-    icon = "github"
-    icon_pack = "fa"
-    link = "//github.com/ahogen"
-
+    link = "https://www.youtube.com/channel/UCWQNkUMyqOF9PRtt_xqkIpw"
 
 # Navigation Links
 #   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
@@ -164,24 +158,24 @@ defaultContentLanguageInSubdir = false
   weight = 1
 
 [[menu.main]]
-  name = "Publications"
-  url = "#publications"
-  weight = 2
-
-[[menu.main]]
   name = "Posts"
   url = "#posts"
-  weight = 3
+  weight = 2
 
 [[menu.main]]
   name = "Projects"
   url = "#projects"
+  weight = 3
+  
+[[menu.main]]
+  name = "Publications"
+  url = "#publications"
   weight = 4
 
 [[menu.main]]
   name = "Contact"
   url = "#contact"
-  weight = 6
+  weight = 5
 
 # Taxonomies.
 [taxonomies]

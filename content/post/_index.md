@@ -1,6 +1,11 @@
 +++
 title = "Posts"
-date = "2017-01-01T00:00:00Z"
+date = "2017-07-06T00:00:00Z"
 math = false
 highlight = false
+
+[header]
+  caption = "Image credit: [**Material Snowcaps**](http://7bna.net/images/material-wallpaper/material-wallpaper-22.jpg)"
+  image = "banners/default.png"
+  preview = false
 +++

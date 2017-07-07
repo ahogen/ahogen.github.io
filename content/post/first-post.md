@@ -9,6 +9,11 @@ math = true
 summary = """
 A "welcoming" blog post to my newly-created website. 
 """
+[header]
+image = "banners/default.png"
+#caption = "Image credit: [**Academic**](https://github.com/gcushen/hugo-academic/)"
+preview = false
+
 +++
 
 Hey there! Thanks for dropping by!
