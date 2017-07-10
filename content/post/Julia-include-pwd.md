@@ -10,7 +10,7 @@ You too can include modules from your present working directory
 """
 [header]
 image = "banners/default.png"
-#caption = "Image credit: [**Academic**](https://github.com/gcushen/hugo-academic/)"
+caption = "Image credit: [**elite001mm (Deviant Art)**](http://fav.me/d9qa7qz)"
 preview = false
 +++
 

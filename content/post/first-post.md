@@ -11,9 +11,8 @@ A "welcoming" blog post to my newly-created website.
 """
 [header]
 image = "banners/default.png"
-#caption = "Image credit: [**Academic**](https://github.com/gcushen/hugo-academic/)"
+caption = "Image credit: [**elite001mm (Deviant Art)**](http://fav.me/d9qa7qz)"
 preview = false
-
 +++
 
 Hey there! Thanks for dropping by!
