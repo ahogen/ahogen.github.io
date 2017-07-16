@@ -1,5 +1,6 @@
 +++
 highlight = true
+draft = true
 math = false
 date = "2017-07-09T21:50:31-07:00"
 title = "Privacy Policy"

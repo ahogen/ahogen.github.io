@@ -1,6 +1,6 @@
 +++
 date = "2017-01-29T16:30:00"
-draft = false
+draft = true
 image = "banners/default.png"
 hide_banner_in_list = true
 tags = ["blog", "life"]
