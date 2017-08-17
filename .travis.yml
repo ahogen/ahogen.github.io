@@ -16,6 +16,7 @@ before_install:
 
 before_script:
     - git clone --branch v2 https://github.com/go-yaml/yaml $GOPATH/src/gopkg.in/yaml.v2
+    - cd $GOPATH/src
     - go get github.com/kardianos/govendor
     - govendor get github.com/gohugoio/hugo
 
