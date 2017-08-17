@@ -1,6 +1,6 @@
 +++
-draft = true
-date = "2017-07-06T00:13:20-00:00"
+draft = false
+date = "2017-07-06"
 title = "Include PWD in Julia Script"
 tags = ["blog", "tutorial", "julia-lang"]
 highlight = true
@@ -36,4 +36,3 @@ Have a look at the Julia documentation for the elements in the above command.
 - [pwd()](https://docs.julialang.org/en/stable/stdlib/file/#Base.Filesystem.pwd)
 
 Pop that onto the top of your script (or your `juliarc.jl` file) and you'll be on your way! All `using <module name here>` statements should work just fine, provided your modules are set up correctly. Don't forget to `export`!
-
