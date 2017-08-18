@@ -18,7 +18,7 @@ before_script:
     - git clone --branch v2 https://github.com/go-yaml/yaml $GOPATH/src/gopkg.in/yaml.v2
     #- go get github.com/kardianos/govendor
     #- govendor get github.com/gohugoio/hugo
-    - go get -u -v github.com/gohugo/hugo
+    - go get -u -v github.com/gohugoio/hugo
 
 script:
 #    - git clone <custom theme repo url> ./themes/<custom theme name>
