@@ -6,7 +6,7 @@ tags = ["blog", "tutorial", "android"]
 highlight = true
 math = false
 summary = """
-A brief tutorial on writing a SytemVerilog-compatible RAM module.
+Get Android Market (Google Play App Store) on your older Android device!
 """
 
 [header]
@@ -22,19 +22,16 @@ This tutorial originally appeared on my (Alex's) blog on Northwest Tech Experien
 
 # Background
 
-So this Christmas, I put the [Coby Kyros MID7012 tablet](https://www.amazon.com/gp/product/B005HUH88K) (which only runs Android 2.3.3) on my wish list. I was surprised when I actually received it! By that time, I had decided I didn’t really need it. I am returning it, but I thought I would share some things I learned through the experience. This mainly concerns installing the Android Market on the Coby Kyros.
+This Christmas I put the [Coby Kyros MID7012 tablet](https://www.amazon.com/gp/product/B005HUH88K) (which only runs Android 2.3.3) on my wish list. I was surprised when I actually received it! By that time, I had decided I didn’t really need it.
 
+The [Kyros 7012](https://www.amazon.com/gp/product/B005HUH88K) and others don’t have the [Android Market](https://en.wikipedia.org/wiki/Google_Play#History) installed out of the box. It would seem like all you’d need to do is install a few .apk files and you’d be good, right? Well all but two articles I read online were not like that at all. Most required you to [root](https://en.wikipedia.org/wiki/Rooting_(Android)) the device. Although rooting itself can be undone, certain things done with rooting privileges cannot. Not to mention the fact that “rooting” the tablet most likely voids the warranty on the device. So, in short, it doesn’t seem like “doing it right the first time” is very popular with people installing the Android Market. That is why I wanted to throw in my two cents about this so that more people can do this right and not mess up their devices.
 
-Okay, just to give you a little background info, the [Kyros 7012](https://www.amazon.com/gp/product/B005HUH88K) and others don’t have the Android Market installed out of the box. It would seem like all you’d need to do is install a few .apk files and you’d be good right? Well all but 2 articles I read online were not like that at all. Most required you to root the device. Although rooting itself can be undone, certain things done with rooting privileges cannot. Not to mention the fact that “rooting” the tablet most likely voids the warranty on the device. So, in short, it doesn’t seem like “doing it right the first time” is very popular with people installing the Android Market. That is why I wanted to throw in my two cents about this so that more people can do this right and not mess up their devices.
-
-After a good amount of research, I found a method that actually worked for me. It is based off of a YouTube tutorial. If you go on YouTube, it’s the first one that pops up if you search “install android market on coby” I believe. Here’s the actual URL: http://www.youtube.com/watch?v=6BrWSC2uiAg
+After some research, I found a method that worked for me. It is based off a YouTube tutorial. If you go on YouTube, it’s the first one that pops up if you search “install android market on coby” I believe. Here’s the actual URL: http://www.youtube.com/watch?v=6BrWSC2uiAg
 
 ## Release of Liability
 
 **NOTE:** I, ALEXANDER HOGEN, AND ANY OTHER INDIVIDUAL OR COMPANY ASSOCIATED WITH MYSELF SHALL NOT BE HELD RESPONSIBLE FOR ANY DAMAGE, LOSS OF DATA, LOSS OF FUNCTIONALITY OR
 ANY OTHER OUTCOME AS A RESULT OF FOLLOWING THIS TUTORIAL. THE USER RECOGNIZES THAT THERE ARE CERTAIN INHERENT RISKS ASSOCIATED WITH PERFORMING THE OPERATIONS DESCRIBED IN THIS TUTORIAL AND THE USER ASSUMES FULL RESPONSIBILITY FOR ANY UNDESIRABLE OUTCOME DURING OR AFTER PERFORMING THE STEPS DESCRIBED ON THIS WEBSITE. 
-
-
 
 I put that notification up in case someone messes up their device by following this tutorial, although I *seriously* doubt they will. These steps aren't hard and there is no rooting or "jail-breaking" involved. Okay, here we go.
 
