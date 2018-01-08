@@ -13,8 +13,9 @@ import sys
 import gzip
 import argparse
 from htmlmin import minify as minhtml
-import csscompressor as mincss
-from slimit import minify as minjs
+from csscompressor import compress as mincss
+#from slimit import minify as minjs
+from jsmin import jsmin as minjs
 
 def cmdline_args():
     # Make parser object
@@ -49,24 +50,41 @@ def minify_and_compress_each(path):
             fname, fext = os.path.splitext(f)
             fext = fext.lower()
 
-            if fext == '.html':
+            s = ''
+            was_minified = False
+            should_zip = False
+
+            if fext in '.html .css .js .xml .svg':
+                should_zip = True
                 fpath = os.path.join(root, f)
                 s = read_file_to_string(fpath)
+
+            if fext == '.html' or fext == '.xml':
                 s = minhtml(s)
-                os.remove(fpath)
-                write_string_to_file(fpath, s)
-
+                was_minified = True
                 print("HTMLmin:", fpath)
-            # elif fext == '.css':
-            #     print(f)
-            # if fext == '.js':
-            #     fpath = os.path.join(root, f)
-            #     s = read_file_to_string(fpath)
-            #     s = minjs(s)
-            #     os.remove(fpath)
-            #     write_string_to_file(fpath, s)
+            elif fext == '.css':
+                s = mincss(s)
+                was_minified = True
+                print("CSScompressor:", fpath)
+            elif fext == '.js':
+                #continue
+                s = minjs(s)
+                was_minified = True
+                print("JSmin:", f)
 
-            #     print("SlimIt:", f)
+            # Compress (if needed) before writing back
+            if was_minified or should_zip:
+                os.remove(fpath)
+
+                if should_zip:
+                    s = s.encode(encoding='utf_8')
+                    with gzip.open(fpath + '.gz', 'w') as gzf:
+                        gzf.write(s)
+                else:
+                    # Simply overwrite the original file with the
+                    # minified verison.
+                    write_string_to_file(fpath, s)
 
 def read_file_to_string(file_path):
     str = ''

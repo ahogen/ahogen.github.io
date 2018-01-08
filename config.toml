@@ -1,6 +1,6 @@
 baseurl = "https://ahogen.github.io/"
 title = "Alex Hogen"
-copyright = "&copy; 2017 Alexander Hogen"
+copyright = "&copy; 2018 Alexander Hogen"
 theme = "academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
