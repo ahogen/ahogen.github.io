@@ -55,7 +55,7 @@ def minify_and_compress_each(path):
             should_zip = False
 
             if fext in '.html .css .js .xml .svg':
-                should_zip = True
+                should_zip = False # Github pages already compresses. Don't do it here.
                 fpath = os.path.join(root, f)
                 s = read_file_to_string(fpath)
 
@@ -83,7 +83,7 @@ def minify_and_compress_each(path):
                         gzf.write(s)
                 else:
                     # Simply overwrite the original file with the
-                    # minified verison.
+                    # minified version.
                     write_string_to_file(fpath, s)
 
 def read_file_to_string(file_path):
