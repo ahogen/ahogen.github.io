@@ -2,7 +2,7 @@
 
 title = "Value of Custom Hardware in Education"
 date = "2017-06-28"
-url_pdf = "https://www.asee.org/public/conferences/78/papers/17653/view"
+url_pdf = "https://peer.asee.org/28144"
 
 url_dataset = ""
 url_project = ""
@@ -20,7 +20,7 @@ publication_types = ["1"]
 highlight = true
 selected = true
 publication = "In *2017 ASEE Annual Conference & Exposition*, ASEE."
-publication_short = ""
+publication_short = "In this paper, we review commercial based offerings versus our custom hardware from both the pedagogical and value perspectives."
 authors = ["Alexander Hogen, Prof. Kevin Pintong"]
 +++
 

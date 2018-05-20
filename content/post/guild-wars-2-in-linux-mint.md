@@ -5,7 +5,7 @@ summary = """
 Only N steps away from visiting Tyria on an open-source OS!
 """
 
-draft = false
+draft = true
 date = "2017-07-06"
 lastmod = "2018-03-13"
 
@@ -72,3 +72,9 @@ sudo apt-get install --install-recommends winehq-stable
 - Run installer with Wine
 - [Optional] After installed and GW2 starts downloading packages, close.
 - [Optional] Copy existing install, with `GW2.dat` file (normally 35GB+)
+
+For slightly better performance, turn off debugging messages with 
+
+```
+export WINEDEBUG=-all; export LOGFILE=/dev/null;
+```
