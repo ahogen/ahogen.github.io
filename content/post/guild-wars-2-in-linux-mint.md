@@ -1,13 +1,13 @@
 +++
-title = "Install Guild Wars 2 in Linux Mint"
+title = "Install Guild Wars 2 on Linux Mint"
 
 summary = """
-Only N steps away from visiting Tyria on an open-source OS!
+Only a few steps away from visiting [Tyria](https://wiki.guildwars2.com/wiki/Tyria_(world)) on an open-source OS!
 """
 
-draft = true
-date = "2017-07-06"
-lastmod = "2018-03-13"
+draft = false
+date = "2018-04-30"
+lastmod = "2018-05-12"
 
 tags = ["blog", "tutorial", "julia-lang"]
 highlight = true
@@ -38,15 +38,15 @@ card, you may want to set up those 3rd party drivers before attempting this.
 # Step 1: Get and install Wine
 
 **IMPORTANT:** Remove any previous Wine install, including any package
-of which the old Wine is a dependancy. Since I was starting with a clean Mint
-install, I did not have anything to uninstall.
+of which the old Wine is a dependency. Since I was starting with a clean Mint
+install, I did not have anything to un-install.
 
 Once Wine has been fully removed from your system, run these commands.
 
-I use the official Wine install instructions, avaliable here: [https://wiki.winehq.org/Ubuntu](https://wiki.winehq.org/Ubuntu)
-but I have also duplicated then below for convenience.
+I used the official Wine install instructions, available here: [https://wiki.winehq.org/Ubuntu](https://wiki.winehq.org/Ubuntu)
+but I have also duplicated them below for convenience.
 
-```
+```bash
 # If your system is 64-bit, like mine, enable 32-bit architecture
 sudo dpkg --add-architecture i386
 
@@ -67,14 +67,57 @@ sudo apt-get install --install-recommends winehq-stable
 
 # Step 2: Get and install Guild Wars 2
 
-- Download Windows 64-bit installer
+- [Download the Guild Wars 2 Windows installer](https://account.arena.net/welcome) ("Gw2Setup(-64).exe") from the ArenaNet website. If you don't have an account yet, you'll want to [create one](https://account.arena.net/register?alt=gw2) there on the website as well.
+- Run installer with Wine (e.g. `wine64 "~/Downloads/Gw2Setup-64.exe"`)
+- Follow the installer's instructions.
 
-- Run installer with Wine
-- [Optional] After installed and GW2 starts downloading packages, close.
-- [Optional] Copy existing install, with `GW2.dat` file (normally 35GB+)
 
-For slightly better performance, turn off debugging messages with 
+{{< figure src="/img/post/gw2-client-downloading-dat-file.jpg" title="GW2 client downloading data file(s)" >}}
 
+If you've already downloaded and installed GW2 on another machine, you can **save
+time** by using that large (~35GB) data file from the old install, in the new
+installation. Otherwise, the client will download this file for you.
+
+- After the game is installed and starts downloading packages (shown above), **close it**.
+- From the old/existing install **find the `Gw2.dat` file** (again, normally about 35GB). You'll find this in the GW2 install directory, such as "C:/Program Files/Guild Wars 2/".
+- **Copy** that file into the new install directory, right next to the "Gw2-64.exe" file. If there is an existing `Gw2.dat` file which is rather small, copy over (replace) it with our larger one. It was the file being downloaded before we closed the application.
+- Now **launch GW2** (e.g. `wine64 "/home/username/bin/Guild Wars 2/Gw2-64.exe"`). After a few moments, and possibly downloading any updates, it should open to the login screen!
+
+
+This is all I had to do to get started. However, you can improve performance
+a little bit by turning off debugging messages in wine. I made a launch 
+script to do this for me.
+
+```bash
+#!/bin/bash
+
+# https://us.download.nvidia.com/XFree86/Linux-x86/319.32/README/openglenvvariables.html
+#export LD_PRELOAD="libpthread.so.0 libGL.so.1";
+#export __GL_THREADED_OPTIMIZATIONS=1;
+
+# Disable all Wine debug output, both to the terminal and to any log files
+# https://wiki.winehq.org/Debug_Channels
+export WINEDEBUG=-all;
+export LOGFILE=/dev/null;
+
+# GW2 Client cmdline args are documented here:
+# https://wiki.guildwars2.com/wiki/Command_line_arguments
+# "-dx9single" is common for Wine
+# I find "-mapLoadInfo" to be kind of nice as well.
+wine64 "/home/username/bin/Guild Wars 2/Gw2-64.exe" -dx9single -mapLoadInfo
 ```
-export WINEDEBUG=-all; export LOGFILE=/dev/null;
-```
+
+From here, it's up to you to try out settings that may or may not improve
+performance on your system. I don't have a gaming setup at all. Heck, the
+embedded graphics in my CPU uses shared RAM even. Even so, I get a solid
+30 FPS. This is about 10 FPS less than running GW2 on Windows on the same
+machine. I find the game very playable nonetheless.
+
+You may find lots of helpful info on the Guild Wars 2 Wiki pages.
+
+- https://wiki.guildwars2.com/wiki/Guild_Wars_2_on_Wine
+
+I hope this was useful! Feel free to let me know in the comments if I missed
+something.
+
+Cheers!
