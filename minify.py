@@ -88,12 +88,12 @@ def minify_and_compress_each(path):
 
 def read_file_to_string(file_path):
     str = ''
-    with open(file_path, mode='r') as f:
+    with open(file_path, mode='r', encoding="utf8") as f:
         str = f.read()
     return(str)
 
 def write_string_to_file(file_path, str):
-    with open(file_path, mode='w') as f:
+    with open(file_path, mode='w', encoding="utf8") as f:
         f.write(str)
 
 if __name__ == '__main__':
