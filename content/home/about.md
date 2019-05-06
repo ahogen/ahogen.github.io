@@ -10,16 +10,18 @@ weight = 1
 # List your academic interests.
 [interests]
   interests = [
-    "Audio Analysis",
-    "Embedded Networking",
-    "[Audio Video Bridging (AVB)](http://avnu.org/faqs/) and [AES67](http://www.aes.org/publications/standards/search.cfm?docID=96)",
+    "Blinking LEDs",
+    "Chatting with MCU peripherals",
+    "Embedded networking",
+    "Learning new technologies and platforms",
+    "Sunsets 🌅",
     "[Coffee ☕](https://visual.ly/community/infographic/food/38-ways-make-perfect-coffee)"
   ]
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "B.S. Computer Engineering"
-  institution = "[Oregon Institute of Technology](https://www.oit.edu)"
+  course = "Bachelor of Science in Computer Engineering"
+  institution = "Oregon Institute of Technology"
   year = 2016
 +++
 

@@ -41,8 +41,8 @@ filter_default = 0
   tag = ".cpp"
 
 [[filter]]
-  name = "FPGA"
-  tag = ".fpga"
+  name = "Arduino"
+  tag = ".arduino"
   
 [[filter]]
   name = "IP Core"

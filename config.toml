@@ -10,7 +10,7 @@ title = "Alex Hogen"
 
 # Your copyright notice - appears in site footer.
 # To display a copyright symbol, type `&copy;`.
-copyright = "&copy; 2018 Alexander Hogen"
+copyright = "&copy; 2019 Alexander Hogen"
 
 theme = "academic"
 enableEmoji = true
@@ -51,7 +51,7 @@ defaultContentLanguageInSubdir = false
 
   # Your details.
   name = "Alexander Hogen"
-  role = "Firmware Engineer"
+  role = "Embedded Firmware Engineer"
 
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
