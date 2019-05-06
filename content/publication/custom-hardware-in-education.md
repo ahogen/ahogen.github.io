@@ -21,6 +21,6 @@ highlight = true
 selected = true
 publication = "In *2017 ASEE Annual Conference & Exposition*, ASEE."
 publication_short = "In this paper, we review commercial based offerings versus our custom hardware from both the pedagogical and value perspectives."
-authors = ["Alexander Hogen, Prof. Kevin Pintong"]
+authors = ["Prof. Kevin Pintong, Alexander Hogen"]
 +++
 

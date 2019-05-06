@@ -13,9 +13,9 @@ weight = 1
     "Blinking LEDs",
     "Chatting with MCU peripherals",
     "Embedded networking",
-    "Learning new technologies and platforms",
-    "Sunsets 🌅",
-    "[Coffee ☕](https://visual.ly/community/infographic/food/38-ways-make-perfect-coffee)"
+    "Producing and consuming music",
+    "Sunsets",
+    "[Coffee](https://visual.ly/community/infographic/food/38-ways-make-perfect-coffee)"
   ]
 
 # List your qualifications (such as academic degrees).
