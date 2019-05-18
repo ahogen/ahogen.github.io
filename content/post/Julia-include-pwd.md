@@ -1,5 +1,5 @@
 +++
-draft = false
+draft = true
 date = "2017-07-06"
 title = "Include PWD in Julia Script"
 tags = ["blog", "tutorial", "julia-lang"]

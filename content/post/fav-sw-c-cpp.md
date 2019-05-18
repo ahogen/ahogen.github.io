@@ -1,5 +1,5 @@
 +++
-draft = false
+draft = true
 date = "2017-08-18"
 title = "Favorite Software: C/C++ Tools"
 tags = ["blog", "fav-sw"]

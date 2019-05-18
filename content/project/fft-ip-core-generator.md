@@ -16,7 +16,7 @@ image = ""
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["ip-core", "cpp", "dsp", "fpga", "system-verilog"]
+tags = ["ip-core", "cpp", "dsp", "system-verilog"]
 
 # Optional external URL for project (replaces project detail page).
 external_link = ""
@@ -28,18 +28,24 @@ math = false
 
 ![FFT IP Core banner image](/img/banners/fft-ip-core.png)
 
-This project's goal is to make integrating a fast Fourier transform (FFT) processing core into your project incredibly simple. If you are reading this, then you are most likely well aware of the many uses for an FFT in an FPGA. 
+This project's goal is to make integrating a fast Fourier transform (FFT)
+processing core into your project incredibly simple. If you are reading this,
+then you are well aware of the many uses for an FFT in an FPGA. 
 
 ### Background ###
 
-I was going to use an FFT core for my senior project, but I had a difficult time integrating a proprietary FFT core. The User Guide for the core did not give me enough detail for me to build a proper interface. Even if I could have gotten it working, I didn't (and still don't) have the money to purchase a license for the core, so it would be severly limited in its functionality.
+I was going to use an FFT core for my senior project, but I had a difficult time
+integrating a proprietary FFT core. The User Guide for the core did not give me
+enough detail for me to build a proper interface. Even if I could have gotten it
+working, I didn't (and still don't) have the money to purchase a license for the
+core, so it would be severely limited in its functionality.
 
 My senior project research taught me a lot about FFT processing in a hardware platform, which got me thinking about how I could build my own core. However, I didn't want to just make a single core for my own specific application, I wanted the functionality of generating an FFT processor of any length and bit-width. And that is how this FFT generator was born.
 
 ### Features ###
 
 * Automatically calculates twiddle factors
-* Uses a high-performance implimentation of a Baugh-Wooley multiplier
+* Uses a high-performance implementation of a Baugh-Wooley multiplier
     * Relatively new HPM reduction tree architecture [^A]
 	* Good compromise between power usage and speed
 	* Faster than conventional Baugh-Wooley multiplier [^B]
@@ -72,8 +78,10 @@ The FFT core uses a custom-built multiplier. Specifically, a SystemVerilog imple
 
 ### More Information ###
 
-At the moment, I am developing this project on Bitbucket. Right now, the repository is hidden/private, but when I make it public, you will be able to access it at the following URL.
+The project is developed in a GIT repository. Right now, the repository is
+hidden/private, but when I make it public, you will be able to access it at the
+following URL.
 
-* [https://bitbucket.org/ahogen/systemverilog-fft-generator](https://bitbucket.org/ahogen/systemverilog-fft-generator)
+* [https://gitlab.com/ahogen/PLD-FFT-Gen](https://gitlab.com/ahogen/PLD-FFT-Gen)
 
 ------

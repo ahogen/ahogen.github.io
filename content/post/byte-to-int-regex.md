@@ -1,5 +1,5 @@
 +++
-draft = false
+draft = true
 date = "2017-07-06"
 title = "Convert Text Bytes to Ints"
 tags = ["blog", "tutorial", "regex"]
@@ -14,9 +14,9 @@ caption = "Image credit: [**elite001mm (Deviant Art)**](http://fav.me/d9qa7qz)"
 preview = false
 +++
 
-This is another post mainly directed at myself. This is a 
+This is another post written as a reminder for myself. The below
 [regular expression (regex)](https://en.wikipedia.org/wiki/Regular_expression)
-to convert a space-separated list of bytes like `0x01 0x02 0x03 0x04` into a 
+converts a space-separated list of hex bytes, like `0x01 0x02 0x03 0x04` into a 
 32-bit hex word, like `0x01020304`.
 
 Copy and paste the below snippets into a text editor supporting regex, such as 
