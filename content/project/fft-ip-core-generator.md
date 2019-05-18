@@ -40,7 +40,11 @@ enough detail for me to build a proper interface. Even if I could have gotten it
 working, I didn't (and still don't) have the money to purchase a license for the
 core, so it would be severely limited in its functionality.
 
-My senior project research taught me a lot about FFT processing in a hardware platform, which got me thinking about how I could build my own core. However, I didn't want to just make a single core for my own specific application, I wanted the functionality of generating an FFT processor of any length and bit-width. And that is how this FFT generator was born.
+My senior project research taught me a lot about FFT processing in a hardware 
+platform, which got me thinking about how I could build my own core. However, I
+didn't want to just make a single core for my own specific application, I wanted
+the functionality of generating an FFT processor of any length and bit-width.
+And that is how this FFT generator was born.
 
 ### Features ###
 
