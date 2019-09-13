@@ -1,31 +1,30 @@
-+++
-title = "Notes on Building HPM Baugh-Wooley Multiplier Generator"
-date = 2019-05-01
-draft = false
+---
+title: "Notes on Building HPM Baugh-Wooley Multiplier Generator"
+date: 2019-05-01
+draft: false
 
 # Tags and categories
-# For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags = ["blog"]
-categories = []
+# For example, use `tags: []` for no tags, or the form `tags: ["A Tag", "Another Tag"]` for one or more tags.
+tags: ["blog"]
+categories: []
 
 # Featured image
-# Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
+# Place your image in the `static/img/` folder and reference its filename below, e.g. `image: "example.jpg"`.
 # Use `caption` to display an image caption.
-#   Markdown linking is allowed, e.g. `caption = "[Image credit](http://example.org)"`.
+#   Markdown linking is allowed, e.g. `caption: "[Image credit](http://example.org)"`.
 # Set `preview` to `false` to disable the thumbnail in listings.
-[header]
-image = "projects/mult.jpg"
-caption = ""
-preview = true
-
-+++
+header:
+  image: "projects/mult.jpg"
+  caption: ""
+  preview: true
+---
 
 This blog post may not make complete sense if read by itself. These are my notes
 written while I was reading the HPM Baugh-Wooley Multiplier research papers and
 figuring out how I would generate a multiplier in C++ code. So to make sense of
 this, get a copy of the first paper in the list: "Multiplier Reduction Tree..."
 
-Check out the [FFT Generator project](/project/fft-ip-core-generator/) where 
+Check out the [FFT Generator project](/project/fft-ip-core-generator/) where
 this multiplier is intended to be used.
 
 The papers:
@@ -81,8 +80,8 @@ half-adder and one full adder.
 * Determine how many levels of adders will be created
 * Set `current_adder_level` to the total number of levels to be created
 * Find tallest column. Call it `Cm`
-* Set `col_left = Cm + 1`
-* Set `col_right = Cm`
+* Set `col_left: Cm + 1`
+* Set `col_right: Cm`
 * Create two half-adders (**HAs**)
 	* Inputs for first HA are in column `col_right` rows 0 and 1
 	* Inputs for second HA are in column `col_left` rows 0 and 1
@@ -111,7 +110,7 @@ partial-product (PP) array.
 	* ```Flatten()```
 	* Insert sum of HA at bottom of ```col_right```
 	* Insert carry of HA at bottom of ```col_right + 1```
-	* Set ```col_current = col_right```
+	* Set ```col_current: col_right```
 	* While ```(col_current <= col_left)```
 		* Create FA with inputs at row 0 and 1 of ```col_current```
 		* Remove the points at row 0 and 1 of ```col_current```

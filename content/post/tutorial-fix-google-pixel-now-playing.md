@@ -8,16 +8,6 @@ draft = false
 tags = ["blog", "tutorial"]
 categories = []
 
-# Featured image
-# Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
-# Use `caption` to display an image caption.
-#   Markdown linking is allowed, e.g. `caption = "[Image credit](http://example.org)"`.
-# Set `preview` to `false` to disable the thumbnail in listings.
-[header]
-image = ""
-caption = ""
-preview = true
-
 +++
 
 # My fix for Google Pixel Now Playing
@@ -32,13 +22,13 @@ It's been reported that "Rap god" by Eminim is known to be detected by Now Playi
 
 - Navigate to Now Playing history, either by tapping the shortcut on your home screen or by going to `Settings > Sounds > Now Playing > Now Playing history` (If the history option is even available. It was missing for me when this problem occurred.)
 
-- Start playing the test song on another device. 
+- Start playing the test song on another device.
 
-- Wait for up to 1 minute to see if Now Playing detects the song. 
+- Wait for up to 1 minute to see if Now Playing detects the song.
 
 - If the song does not appear in your Now Playing history or on the home screen after a minute, it's likely broken.
 
-# Reset Now Playing 
+# Reset Now Playing
 
 Essentially what I did is clear all app data, uninstall, and then reinstall the applications that looked like they were related to Now Playing.
 
@@ -65,13 +55,13 @@ Essentially what I did is clear all app data, uninstall, and then reinstall the 
     - Tap `Turn on in settings`
     - This should take you to Now Playing in settings where you could enable notifications on the lock screen.
 
-At this point, it started working for me. 
+At this point, it started working for me.
 
 ### Some miscallaneous notes
 
 - It seems Pixel Tips is also accessable by going to `Settings > Tips & Support > Go to Tips`
 
-- After re-enabling and updating the Pixel Ambient Services app, you might be able to simply open the Settings app and at the top of the screen there might be a box with a suggestion to turn on Now Playing. 
+- After re-enabling and updating the Pixel Ambient Services app, you might be able to simply open the Settings app and at the top of the screen there might be a box with a suggestion to turn on Now Playing.
 
 
 I hope this helps!

@@ -11,9 +11,6 @@ summary = "A highly configurable FFT IP Core generator."
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "projects/icon-fft-ip-core-generator.jpg"
 
-# Optional image to display on project detail page (relative to `static/img/` folder).
-image = ""
-
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
 tags = ["ip-core", "cpp", "dsp", "system-verilog"]
@@ -30,7 +27,7 @@ math = false
 
 This project's goal is to make integrating a fast Fourier transform (FFT)
 processing core into your project incredibly simple. If you are reading this,
-then you are well aware of the many uses for an FFT in an FPGA. 
+then you are well aware of the many uses for an FFT in an FPGA.
 
 ### Background ###
 
@@ -40,7 +37,7 @@ enough detail for me to build a proper interface. Even if I could have gotten it
 working, I didn't (and still don't) have the money to purchase a license for the
 core, so it would be severely limited in its functionality.
 
-My senior project research taught me a lot about FFT processing in a hardware 
+My senior project research taught me a lot about FFT processing in a hardware
 platform, which got me thinking about how I could build my own core. However, I
 didn't want to just make a single core for my own specific application, I wanted
 the functionality of generating an FFT processor of any length and bit-width.
