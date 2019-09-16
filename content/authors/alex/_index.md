@@ -10,50 +10,59 @@ authors:
 superuser: true
 
 # Role/position
-role: Embedded Software Engineer
+role: ""
 
 # Organizations/Affiliations
 organizations:
-- name: Oregon Institute of Technology
+- name:
   url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: My interests include music, embedded networking, and automated testing.
 
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+- Digital music
+- Embedded networking
+- Automated testing
+- '[Coffee](https://visual.ly/community/infographic/food/38-ways-make-perfect-coffee)'
 
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
+  - course: B.S. Computer Engineering Technology
+    institution: Oregon Institute of Technology
     year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "#contact" for contact widget.
 social:
-- icon: envelope
-  icon_pack: fas
-  link: '#contact'  # For a direct email link, use "mailto:test@example.org".
-- icon: twitter
+#- icon: envelope
+#  icon_pack: fas
+#  link: '#contact'  # For a direct email link, use "mailto:test@example.org".
+- icon: keybase
   icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
-- icon: google-scholar
-  icon_pack: ai
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://keybase.io/ahogen
+- icon: gitlab
+  icon_pack: fab
+  link: https://gitlab.com/ahogen
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/ahogen
+- icon: bitbucket
+  icon_pack: fab
+  link: https://bitbucket.com/ahogen
+# I know, it's the wrong logo. But I like SO's logo better than SE.
+- icon: stack-overflow
+  icon_pack: fab
+  link: https://stackexchange.com/users/4473042/ahogen?tab=accounts
+- icon: google-scholar
+  icon_pack: ai
+  link: https://scholar.google.com/citations?user=sYtNsl4AAAAJ
+- icon: linkedin
+  icon_pack: fab
+  link: https://www.linkedin.com/in/alexander-hogen/
+
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -65,11 +74,20 @@ email: ""
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
-user_groups:
-- Researchers
-- Visitors
+user_groups: []
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+I write bare-metal code for microcontrollers. I also tinker with Linux and
+FPGAs. On this site I share some of my personal projects and technical
+discovery.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+Expect to find stuff about microcontrollers like
+[ARM Cortex-M0/M4/M7](https://developer.arm.com/ip-products/processors/cortex-m),
+[PIC32](https://en.wikipedia.org/wiki/PIC_microcontrollers), or
+[AVR ATtiny](https://www.microchip.com/design-centers/8-bit/avr-mcus/device-selection/attiny3217).
+
+*Disclamer: This is a personal website. Any information or opinions expressed
+here are my own. They do not reflect the opinions of any organization(s) I am
+associated with. Any information or advice is for informational purposes only
+and should be treated as such. Consult with an authorized engineering and/or
+legal professional before using this information.*
