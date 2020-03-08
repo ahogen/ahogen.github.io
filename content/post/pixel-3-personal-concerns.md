@@ -7,9 +7,9 @@ Ramblings on why I dislike the looks of the upcoming Pixel 3.
 
 draft = false
 date = "2018-08-13"
-lastmod = "2018-08-13"
-
 tags = ["blog", "android"]
+authors = ["alex"]
+
 highlight = true
 math = false
 

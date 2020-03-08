@@ -1,6 +1,10 @@
 +++
 title = "Publications"
-date = "2017-01-01T00:00:00Z"
 math = false
 highlight = false
+
+[header]
+  caption = "Image credit: [**Material Design Snowcap** by elite001mm](https://www.deviantart.com/elite001mm)"
+  image = "banners/default.png"
+  preview = false
 +++

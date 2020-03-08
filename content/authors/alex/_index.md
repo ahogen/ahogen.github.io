@@ -7,10 +7,10 @@ authors:
 - alex
 
 # Is this the primary user of the site?
-superuser: true
+superuser: false
 
 # Role/position
-role: ""
+role: "Embedded Firmware Engineer"
 
 # Organizations/Affiliations
 organizations:
@@ -40,9 +40,6 @@ social:
 #- icon: envelope
 #  icon_pack: fas
 #  link: '#contact'  # For a direct email link, use "mailto:test@example.org".
-- icon: keybase
-  icon_pack: fab
-  link: https://keybase.io/ahogen
 - icon: gitlab
   icon_pack: fab
   link: https://gitlab.com/ahogen

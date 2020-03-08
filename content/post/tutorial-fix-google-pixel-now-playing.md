@@ -2,11 +2,8 @@
 title = "Fixing \"Now Playing\" feature on Google Pixel 3"
 date = 2018-12-01
 draft = false
-
-# Tags and categories
-# For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
 tags = ["blog", "tutorial"]
-categories = []
+authors = ["alex"]
 
 +++
 

@@ -18,7 +18,7 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
-  title = "Software Engineer"
+  title = "Software Engineer II"
   company = "Engineering Design Team, Inc."
   company_url = "https://edt.com"
   location = "Oregon"
@@ -34,7 +34,9 @@ date_format = "Jan 2006"
   date_start = "2017-03-13"
   date_end = "2019-08-09"
   description = """
-- Wrote firmware for [ARM](https://arm.com), [RL78](https://www.renesas.com/eu/en/products/microcontrollers-microprocessors/rl78.html), and [XMOS](https://www.xmos.com/) architectures
+- Wrote firmware for [ARM](https://arm.com), 
+  [RL78](https://www.renesas.com/eu/en/products/microcontrollers-microprocessors/rl78.html),
+  and [XMOS](https://www.xmos.com/) architectures
 
 - Wrote embedded networking applications with 
   [FreeRTOS](https://www.freertos.org/FreeRTOS-Plus/FreeRTOS_Plus_TCP/index.html) 
@@ -52,11 +54,11 @@ date_format = "Jan 2006"
 - Built programming and testing station for product manufacturing
 
 - Tested AVB libraries with UNH-IOL’s [Avnu](https://avnu.org/) pre-certification
-  tool 
-  [“vIOLett”](https://www.iol.unh.edu/solutions/test-tools/violett) and
+  tool [“vIOLett”](https://www.iol.unh.edu/solutions/test-tools/violett) and
   fixed faulty code
 
-- Debugged issues with [Segger J-Trace](https://www.segger.com/products/debug-probes/j-trace/), 
+- Debugged issues with 
+  [Segger J-Trace](https://www.segger.com/products/debug-probes/j-trace/), 
   oscilloscopes, and logic analyzers
 
 - Contributed to schematic and PCB layout reviews
@@ -64,16 +66,29 @@ date_format = "Jan 2006"
 - Wrote test benches for Verilog modules
 
 - Wrote documentation for both engineering and marketing teams
-  
   """
 
 [[experience]]
-  title = "Research Assistant"
+  title = "CST 231 Research Assistant"
   company = "Oregon Institute of Technology"
   company_url = "https://oit.edu"
   location = "Oregon"
-  date_start = "2015-04-01"
-  date_end = "2015-06-01"
-  description = " "
+  date_start = "2015-04-06"
+  date_end = "2015-05-31"
+  description = "Worked under assistant professor Kevin Pintong to assemble, test, and document the third revision of the OwlBoard FPGA platform for use in CST 231 classes."
+
+[[experience]]
+  title = "Engineering Intern"
+  company = "EnergyNeering Solutions Inc."
+  company_url = "https://energyneeringsolutions.com/"
+  location = "Oregon"
+  date_start = "2011-04-01"
+  date_end = "2011-08-01"
+  description = """
+- Built Flo-Wing® Meters
+- Coded an inventory tracking spreadsheet in Excel using Visual Basic
+- Constructed landfill facility layouts in SketchUp
+- Facility noise study in AutoCAD
+"""
 
 +++

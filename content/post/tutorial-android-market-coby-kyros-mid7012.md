@@ -3,6 +3,8 @@ draft = false
 date = "2012-01-06"
 title = "Install Android Market on Coby Kyros MID7012 (or most other tablets running Android 2.3.3)"
 tags = ["blog", "tutorial", "android"]
+authors = ["alex"]
+
 highlight = true
 math = false
 summary = """
@@ -17,7 +19,10 @@ Get Android Market (Google Play App Store) on your older Android device!
 +++
 
 {{% alert note %}}
-This tutorial originally appeared on my (Alex's) blog on Northwest Tech Experience (nwteche.com). That website has been removed. I have moved some of the content I wrote, including this page, to this website of mine. I may have edited the original content for clarity.
+This [tutorial originally appeared](https://web.archive.org/web/20170201091154/http://nwteche.com/alex_blog/install-android-market-on-coby-kyros-mid7012-or-most-other-tablets-running-android-2-3-3/) 
+back in 2012 on my (Alex's) blog on Northwest Tech Experience (nwteche.com). 
+That website has been removed and I migrated some of my content to this new site.
+I may have edited the original content for clarity.
 {{% /alert %}}
 
 # Background

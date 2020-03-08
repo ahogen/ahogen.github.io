@@ -2,8 +2,10 @@
 date = "2017-01-29T16:30:00"
 draft = true
 image = "banners/default.png"
+authors = ["alex"]
+
 hide_banner_in_list = true
-tags = ["blog", "tutorial", "fpga", "system-verilog"]
+tags = ["blog", "tutorial", "microcontroller"]
 title = "Build and test Arduino Code with Travis-CI"
 math = true
 summary = """

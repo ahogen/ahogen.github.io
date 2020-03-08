@@ -7,9 +7,9 @@ Writing a specifications section of a technical datasheet? This could help!
 
 draft = false
 date = "2019-03-07"
-lastmod = "2019-03-07"
-
 tags = ["blog", "latex"]
+authors = ["alex"]
+
 highlight = true
 math = false
 
@@ -19,7 +19,7 @@ caption = "Image credit: [**elite001mm (Deviant Art)**](http://fav.me/d9qa7qz)"
 preview = false
 +++
 
-- [Jump to the code](#latex-code)
+- [LaTeX Code](#latex-code)
 
 Many datasheets I've seen tend to use a two-column layout. I'm no professional
 typesetter and I haven't looked into why this is (is it easier for our eyes to

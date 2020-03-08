@@ -3,6 +3,8 @@ draft = true
 date = "2017-02-15T00:17:19-08:00"
 title = "SystemVerilog RAM Module"
 tags = ["blog", "tutorial", "fpga", "system-verilog"]
+authors = ["alex"]
+
 highlight = true
 math = false
 summary = """
@@ -10,7 +12,7 @@ A brief tutorial on writing a SytemVerilog-compatible RAM module.
 """
 
 [header]
-  caption = "Image credit: [**Material Snowcaps**](http://7bna.net/images/material-wallpaper/material-wallpaper-22.jpg)"
+  caption = "Image credit: [**Material Design Snowcap** by elite001mm (Deviant Art)](https://www.deviantart.com/elite001mm)"
   image = "banners/default.png"
   preview = false
 

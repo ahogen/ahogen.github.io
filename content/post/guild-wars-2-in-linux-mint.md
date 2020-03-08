@@ -7,11 +7,12 @@ Only a few steps away from visiting [Tyria](https://wiki.guildwars2.com/wiki/Tyr
 
 draft = false
 date = "2018-04-30"
-lastmod = "2018-05-12"
+tags = ["blog", "tutorial"]
+authors = ["alex"]
 
-tags = ["blog", "tutorial", "julia-lang"]
 highlight = true
 math = false
+toc = true
 
 [header]
 image = "https://d3b4yo2b5lbfy.cloudfront.net/wp-content/uploads/2016/11/502022016-04_SpringQ2Update_HomeBanner.jpg"
@@ -21,8 +22,6 @@ preview = true
 
 Looking to play an awesome open-world [MMO](https://en.wikipedia.org/wiki/Massively_multiplayer_online_game) on your 
 open-source machine? Well you most certianly can play Guild Wars 2 on Linux!
-
-{{% toc %}}
 
 Here are my system specs. Note that I did not have to install or configure
 any special graphics drivers. If you have an Nvidea or AMD/Radeon graphics

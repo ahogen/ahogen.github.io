@@ -3,6 +3,8 @@ draft = true
 date = "2017-08-17"
 title = "Favorite Software: Windows"
 tags = ["blog", "fav-sw"]
+authors = ["alex"]
+
 highlight = true
 math = false
 summary = """
@@ -10,7 +12,7 @@ Useful engineering-ish tools I use in Windows (7).
 """
 
 [header]
-  caption = "Image credit: [**Material Snowcaps**](http://7bna.net/images/material-wallpaper/material-wallpaper-22.jpg)"
+  caption = "Image credit: [**Material Design Snowcap** by elite001mm (Deviant Art)](https://www.deviantart.com/elite001mm)"
   image = "banners/default.png"
   preview = false
 

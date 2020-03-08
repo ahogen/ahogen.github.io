@@ -3,6 +3,8 @@ draft = true
 date = "2017-07-06"
 title = "Include PWD in Julia Script"
 tags = ["blog", "tutorial", "julia-lang"]
+authors = ["alex"]
+
 highlight = true
 math = false
 summary = """
@@ -10,7 +12,7 @@ You too can include modules from your present working directory
 """
 [header]
 image = "banners/default.png"
-caption = "Image credit: [**elite001mm (Deviant Art)**](http://fav.me/d9qa7qz)"
+caption = "Image credit: [**Material Design Snowcap** by elite001mm (Deviant Art)](https://www.deviantart.com/elite001mm)"
 preview = false
 +++
 

@@ -2,7 +2,9 @@
 draft = false
 date = "2013-09-22"
 title = "PICAXE Microcontroller with Parallax Serial LCD Display"
-tags = ["blog", "tutorial", "uc-picaxe"]
+tags = ["blog", "tutorial", "microcontroller", "uc-picaxe"]
+authors = ["alex"]
+
 highlight = true
 math = false
 summary = """
@@ -10,7 +12,7 @@ Use the Parallax LCD display with a PICAXE microcontroller.
 """
 
 [header]
-  caption = "Image credit: [**Material Snowcaps**](http://7bna.net/images/material-wallpaper/material-wallpaper-22.jpg)"
+  caption = "Image credit: [**Material Design Snowcap** by elite001mm (Deviant Art)](https://www.deviantart.com/elite001mm)"
   image = "banners/default.png"
   preview = false
 

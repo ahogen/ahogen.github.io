@@ -2,7 +2,7 @@
 draft = false
 date = "2017-12-30"
 title = "Launch PuTTY in UART mode on Linux (Ubuntu)"
-tags = ["blog", "tutorial"]
+tags = ["linux"]
 highlight = true
 math = false
 summary = """
@@ -10,7 +10,7 @@ Launch PuTTY in UART mode from command line on Linux.
 """
 
 [header]
-  caption = "Image credit: [**Material Snowcaps**](http://7bna.net/images/material-wallpaper/material-wallpaper-22.jpg)"
+  caption = "Image credit: [**Material Snowcaps** by elite001mm](https://www.deviantart.com/elite001mm)"
   image = "banners/default.png"
   preview = false
 

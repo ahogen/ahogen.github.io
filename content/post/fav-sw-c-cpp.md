@@ -3,6 +3,8 @@ draft = true
 date = "2017-08-18"
 title = "Favorite Software: C/C++ Tools"
 tags = ["blog", "fav-sw"]
+authors = ["alex"]
+
 highlight = true
 math = false
 summary = """
@@ -10,7 +12,7 @@ Useful tools I use when developing or debugging C/C++ code.
 """
 
 [header]
-  caption = "Image credit: [**Material Snowcaps**](http://7bna.net/images/material-wallpaper/material-wallpaper-22.jpg)"
+  caption = "Image credit: [**Material Snowcaps** by elite001mm](https://www.deviantart.com/elite001mm)"
   image = "banners/default.png"
   preview = false
 
