@@ -14,7 +14,7 @@ Get Android Market (Google Play App Store) on your older Android device!
 [header]
   caption = "Image: Coby Kyros Tablet"
   image = "banners/android-coby-kyros-tablet.jpg"
-  preview = false
+  preview = true
 
 +++
 
