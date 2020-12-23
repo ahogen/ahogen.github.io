@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>arduino | Alex Hogen</title>
+    <link>https://ahogen.github.io/tags/arduino/</link>
+      <atom:link href="https://ahogen.github.io/tags/arduino/index.xml" rel="self" type="application/rss+xml" />
+    <description>arduino</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 Alexander Hogen</copyright><lastBuildDate>Sat, 31 Dec 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://ahogen.github.io/images/icon_hu41297bf952fcc5965d442cd00908f20d_1356_512x512_fill_lanczos_center_2.png</url>
+      <title>arduino</title>
+      <link>https://ahogen.github.io/tags/arduino/</link>
+    </image>
+    
+    <item>
+      <title>MegaMoto Lib</title>
+      <link>https://ahogen.github.io/project/megamotolib/</link>
+      <pubDate>Sat, 31 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/project/megamotolib/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Greenhouse Automation</title>
+      <link>https://ahogen.github.io/project/greenhouse-control/</link>
+      <pubDate>Sun, 16 Dec 2012 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/project/greenhouse-control/</guid>
+      <description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#datasheets&#34;&gt;Datasheets&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#images&#34;&gt;Images&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    This article originally appeared back in 2012 on my (Alex&amp;rsquo;s) blog on Northwest
+Tech Experience (nwteche.com). That website has been removed and I migrated some
+of my content to this new site. I may have edited the original content for clarity.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;In a college class this last year, a group of us were assigned to design a
+system that would collect and graph environmental data from our campus
+greenhouse. We would take this data, graph it, and display those graphs on a
+&lt;a href=&#34;https://sites.google.com/site/coccgreenhousedatacollection/home&#34;&gt;public website&lt;/a&gt;.
+We’d also use current data to control the greenhouse (i.e. watering, heating,
+cooling…). Hopefully this information helps you if you are wanting to start your
+own DIY project and automate your greenhouse.&lt;/p&gt;
+&lt;p&gt;We decided to use an &lt;a href=&#34;https://store.arduino.cc/usa/arduino-uno-rev3&#34;&gt;Arduino UNO&lt;/a&gt;,
+a &lt;a href=&#34;http://www.picaxe.com/Hardware/PICAXE-Chips/PICAXE-14M2-microcontroller/&#34;&gt;PICAXE-14M2&lt;/a&gt;,
+and a desktop computer running Windows Vista. The Arduino functioned as the main
+interface and brain. We dedicated the PICAXE to simply reading sensors and
+sending that data in a continuous stream to the Arduino via a serial
+communication protocol.&lt;/p&gt;
+&lt;p&gt;The Arduino would format and send data to be logged to the PC, which runs
+&lt;a href=&#34;https://www.megunolink.com/&#34;&gt;MegunoLink&lt;/a&gt;. The Arduino would also decide, based
+on environmental conditions, if the heater/cooler/water should be turned on.
+Future groups working on the project would have to decided whether the Arduino
+would do this by sending a command to a dedicated microcontroller (reverse of
+what we did with the PICAXE being dedicated to sensors) or by directly
+controlling equipment in the greenhouse.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/IT-Layout-11-16-2012.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;So, in essence, for this project, we figured out how to set up data logging and
+automation of the greenhouse environment using cheap materials and open source
+equipment. We didn&amp;rsquo;t have the time to build the complete working system, so our
+final documentation was targeted at the next group that would use our research
+to realize the project.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;./IT-Budget.pdf&#34;&gt;IT Budget/Component Pricing.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;I&amp;rsquo;m sharing this here in case some DIY hobbyist could find the original
+information useful.&lt;/p&gt;
+&lt;p&gt;Now in 2020, it might make more sense to use a Raspberry Pi as the brains, and
+replace the PICAXE with an Arduino for I/O interfacing. The parts may be a
+little more expensive, but the connectivity and control options seem a lot more flexible.&lt;/p&gt;
+&lt;p&gt;Programming a greenhouse controller in Python running on a network-connected
+Pi seems like a lot of fun. And, if you can spend a little more money, the
+Arduino shields for relays and sensors would simplify the wiring process!&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;datasheets&#34;&gt;Datasheets&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;CO2 Sensor: &lt;a href=&#34;https://ahogen.github.io/datasheets/Spec-Sheet-GE-Telaire-T6004-CDS-1.pdf&#34;&gt;GE Telaire T6004 CDS-1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Hall Effect Sensor: &lt;a href=&#34;https://ahogen.github.io/datasheets/Melexis-Datasheet-MLX90217.pdf&#34;&gt;Melexis MLX90217&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Humidity Sensor: &lt;a href=&#34;https://ahogen.github.io/datasheets/Humirel-Datasheet-HS1101.pdf&#34;&gt;Humirel HS1101&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Humidity Sensor: &lt;a href=&#34;https://ahogen.github.io/datasheets/Parallax-Data-Sheet-HS1101-v1.0.pdf&#34;&gt;Parallax HS1101&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Photoresistor: &lt;a href=&#34;https://ahogen.github.io/datasheets/Photoresitor-Perkinelmer_Actives-and-Passives_9800015.pdf&#34;&gt;PerkinElmer 9800015&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Temperature Sensor: &lt;a href=&#34;https://ahogen.github.io/datasheets/Data-Sheet-Texas-Instruments-LM34.pdf&#34;&gt;TI LM34&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;images&#34;&gt;Images&lt;/h2&gt;
+
+
+
+
+
+
+
+
+  
+  
+
+
+&lt;div class=&#34;gallery&#34;&gt;
+
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/Air-Humidity-Picture.jpg&#34; data-caption=&#34;Air humidity sensor&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/Air-Humidity-Picture_huc481276552365ce4ad34e266c5e05428_36195_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/CO2-Sensor.jpg&#34; data-caption=&#34;CO2 gas sensor&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/CO2-Sensor_huc481276552365ce4ad34e266c5e05428_92266_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/IT-Layout-11-16-2012.jpg&#34; data-caption=&#34;Greenhouse automation system diagram&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/IT-Layout-11-16-2012_hua617d4aadfdfeadac2761dc1101b6443_50217_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/PICAXE-14-Proto-Board.jpg&#34; data-caption=&#34;PICAXE 14 proto board&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/PICAXE-14-Proto-Board_hu30c0ea1f24acc5dd5d0ea200f5b9ba0f_46558_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/Photoresistor.jpg&#34; data-caption=&#34;Photoresistor (light brightness sensor)&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/Photoresistor_huc481276552365ce4ad34e266c5e05428_19275_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/Soil-Moisture-2.jpg&#34; data-caption=&#34;Home made soil moisture sensor. See &amp;lt;a href=&amp;#34;http://gardenbot.org/howTo/soilMoisture/&amp;#34;&amp;gt;http://gardenbot.org/howTo/soilMoisture/&amp;lt;/a&amp;gt;&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/Soil-Moisture-2_hu409c1a58b8f87fc392aad1c63d131eb2_387942_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/Soil-Moisture-4.jpg&#34; data-caption=&#34;Home made soil moisture sensor. See &amp;lt;a href=&amp;#34;http://gardenbot.org/howTo/soilMoisture/&amp;#34;&amp;gt;http://gardenbot.org/howTo/soilMoisture/&amp;lt;/a&amp;gt;&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/Soil-Moisture-4_hua14ca4d8671450d1db82ee9724d60a05_786737_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/Soil-Moisture.jpg&#34; data-caption=&#34;Home made soil moisture sensor.&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/Soil-Moisture_hu95fd0450d0eb7138762798590831ab46_912766_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/arduino-uno.jpg&#34; data-caption=&#34;Arduino UNO&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/arduino-uno_hueac6279110b4466daa003e894095d380_107688_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/complete-sensor-4.jpg&#34; data-caption=&#34;A home made wind speed detector (Anemometer), using a hall effect sensor. See &amp;lt;a href=&amp;#34;http://www.hackersbench.com/Projects/anemometer/&amp;#34;&amp;gt;http://www.hackersbench.com/Projects/anemometer/&amp;lt;/a&amp;gt;&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/complete-sensor-4_huf5049808143429d16c20e2a3b12621d5_31385_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/lm35.jpg&#34; data-caption=&#34;Temperature sensor&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/lm35_hu1adc86708709d70cb21db11a59811457_16832_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+
+  
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tutorial | Alex Hogen</title>
+    <link>https://ahogen.github.io/tags/tutorial/</link>
+      <atom:link href="https://ahogen.github.io/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <description>tutorial</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 Alexander Hogen</copyright><lastBuildDate>Thu, 13 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://ahogen.github.io/images/icon_hu41297bf952fcc5965d442cd00908f20d_1356_512x512_fill_lanczos_center_2.png</url>
+      <title>tutorial</title>
+      <link>https://ahogen.github.io/tags/tutorial/</link>
+    </image>
+    
+    <item>
+      <title>Remotely Debug ARM Cortex with Segger Tools</title>
+      <link>https://ahogen.github.io/post/remote-debug-arm-cortex-with-segger/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/post/remote-debug-arm-cortex-with-segger/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;JLink v682b&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Connect your JLink debugger to the target microcontroller.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Connect your JLink debugger to the server computer, via USB.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Open port 19020/tcp on you server&amp;rsquo;s firewall.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Start &lt;code&gt;JLinkRemoteServer&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Open Ozone&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Choose chip model and core type&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Choose connection settings. In this example, I&amp;rsquo;m connecting to the server
+I just set up, so I&amp;rsquo;m going to use that server&amp;rsquo;s IP address.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Select your compiled binary.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use as normal!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;segger-swo-viewer-with-remote-debugger&#34;&gt;SEGGER SWO Viewer with Remote Debugger&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;JLinkSWOViewer.exe -ip 192.168.1.123 -device MIMXRT1021DAG5A -swofreq 921600
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Fixing &#34;Now Playing&#34; feature on Google Pixel 3</title>
+      <link>https://ahogen.github.io/post/tutorial-fix-google-pixel-now-playing/</link>
+      <pubDate>Sat, 01 Dec 2018 00:00:00 -0800</pubDate>
+      <guid>https://ahogen.github.io/post/tutorial-fix-google-pixel-now-playing/</guid>
+      <description>&lt;h1 id=&#34;my-fix-for-google-pixel-now-playing&#34;&gt;My fix for Google Pixel Now Playing&lt;/h1&gt;
+&lt;p&gt;A few weeks ago, I noticed the Now Playing feature of my new Google Pixel 3 phone stopped working. The shortcut/icon was still on my home screen, however it hadn&amp;rsquo;t detected any songs recently.&lt;/p&gt;
+&lt;h1 id=&#34;testing-if-now-playing-is-broken&#34;&gt;Testing if Now Playing is broken&lt;/h1&gt;
+&lt;p&gt;I wanted to quickly verify that the reason Now Playing history looked old was in fact because Now Playing had stopped working. It is possible for the phone to be muffled by a pocket or out of range and not detect songs. So i eliminated this possibility by running a quick test.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s been reported that &amp;ldquo;Rap god&amp;rdquo; by Eminim is known to be detected by Now Playing. So I&amp;rsquo;ll use that.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Navigate to Now Playing history, either by tapping the shortcut on your home screen or by going to &lt;code&gt;Settings &amp;gt; Sounds &amp;gt; Now Playing &amp;gt; Now Playing history&lt;/code&gt; (If the history option is even available. It was missing for me when this problem occurred.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Start playing the test song on another device.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Wait for up to 1 minute to see if Now Playing detects the song.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the song does not appear in your Now Playing history or on the home screen after a minute, it&amp;rsquo;s likely broken.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;reset-now-playing&#34;&gt;Reset Now Playing&lt;/h1&gt;
+&lt;p&gt;Essentially what I did is clear all app data, uninstall, and then reinstall the applications that looked like they were related to Now Playing.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Navigate to &lt;code&gt;Settings &amp;gt; Apps &amp;amp; Notifications &amp;gt; See all N apps&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Tap &lt;code&gt;Action Services &amp;gt; Storage&lt;/code&gt; and then tap the &lt;code&gt;Clear storage&lt;/code&gt; button&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Go back to the apps list and find the &amp;ldquo;Pixel Ambient Services&amp;rdquo; app. Tap &lt;code&gt;Storage&lt;/code&gt; and tap the &lt;code&gt;Clear storage&lt;/code&gt; button here as well.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now that both apps&amp;rsquo; data has been cleared, I went ahead and uninstalled them. This step may not be necessary but I did it anyway.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Find the &amp;ldquo;Actions Services&amp;rdquo; and &amp;ldquo;Pixel Ambient Services&amp;rdquo; apps in the apps list again&lt;/li&gt;
+&lt;li&gt;Tap &lt;code&gt;Force stop&lt;/code&gt; and tap &lt;code&gt;OK&lt;/code&gt; at the prompt&lt;/li&gt;
+&lt;li&gt;Next tap &lt;code&gt;Disable&lt;/code&gt; and accept the two prompts. This reverts any updates and replaces it with the original app your phone came with out of the box. Now tap &lt;code&gt;Enable&lt;/code&gt; to turn the app back on.&lt;/li&gt;
+&lt;li&gt;Do the above steps for both apps.&lt;/li&gt;
+&lt;li&gt;Now open Google Play Store app. Tap the hamburger menu on the top left, tap &lt;code&gt;My apps and games&lt;/code&gt; and tap the &lt;code&gt;Updates&lt;/code&gt; tab. You may need to hit the refresh button to see updates for the two apps we reverted back to factory versions.&lt;/li&gt;
+&lt;li&gt;Tap the &lt;code&gt;Update All&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now we&amp;rsquo;ll get Now Playing re-enabled. To do this, we have to open the Pixel tips/tutorial app that you encoutered when you powered up your phone for the first time. Confusingly, to open &amp;ldquo;Pixel Tips&amp;rdquo; do this&amp;hellip;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Find &amp;ldquo;Actions Services&amp;rdquo; app in the &amp;ldquo;Installed&amp;rdquo; tab of Google Play Store.&lt;/li&gt;
+&lt;li&gt;Tap &lt;code&gt;Open&lt;/code&gt;. Notice the title of the app we just opened says &amp;ldquo;Pixel Tips&amp;rdquo;, not &amp;ldquo;Actions Services&amp;rdquo;. Very annoying&amp;hellip; Oh well&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Tap &lt;code&gt;Maximize Google&lt;/code&gt; near the bottom of the screen&lt;/li&gt;
+&lt;li&gt;Tap the right arrow a few times to get over to the &amp;ldquo;Now Playing&amp;rdquo; screen.&lt;/li&gt;
+&lt;li&gt;Tap &lt;code&gt;Turn on in settings&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;This should take you to Now Playing in settings where you could enable notifications on the lock screen.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;At this point, it started working for me.&lt;/p&gt;
+&lt;h3 id=&#34;some-miscallaneous-notes&#34;&gt;Some miscallaneous notes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;It seems Pixel Tips is also accessable by going to &lt;code&gt;Settings &amp;gt; Tips &amp;amp; Support &amp;gt; Go to Tips&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After re-enabling and updating the Pixel Ambient Services app, you might be able to simply open the Settings app and at the top of the screen there might be a box with a suggestion to turn on Now Playing.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I hope this helps!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Install Guild Wars 2 on Linux Mint</title>
+      <link>https://ahogen.github.io/post/guild-wars-2-in-linux-mint/</link>
+      <pubDate>Mon, 30 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/post/guild-wars-2-in-linux-mint/</guid>
+      <description>&lt;p&gt;Looking to play an awesome open-world &lt;a href=&#34;https://en.wikipedia.org/wiki/Massively_multiplayer_online_game&#34;&gt;MMO&lt;/a&gt; on your
+open-source machine? Well you most certianly can play Guild Wars 2 on Linux!&lt;/p&gt;
+&lt;p&gt;Here are my system specs. Note that I did not have to install or configure
+any special graphics drivers. If you have an Nvidea or AMD/Radeon graphics
+card, you may want to set up those 3rd party drivers before attempting this.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;-&lt;/th&gt;
+&lt;th&gt;-&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;OS&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.linuxmint.com/rel_sylvia_cinnamon.php&#34;&gt;Linux Mint 18.3 &amp;ldquo;Sylvia&amp;rdquo;&lt;/a&gt; (based on &lt;a href=&#34;https://wiki.ubuntu.com/XenialXerus/ReleaseNotes&#34;&gt;Ubuntu 16.04&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Processor:&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://ark.intel.com/products/80807/Intel-Core-i7-4790K-Processor-8M-Cache-up-to-4_40-GHz&#34;&gt;Intel i7-4790K&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Graphics:&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;(internal) Intel HD Graphics 4600&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;step-1-get-and-install-wine&#34;&gt;Step 1: Get and install Wine&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;IMPORTANT:&lt;/strong&gt; Remove any previous Wine install, including any package
+of which the old Wine is a dependency. Since I was starting with a clean Mint
+install, I did not have anything to un-install.&lt;/p&gt;
+&lt;p&gt;Once Wine has been fully removed from your system, run these commands.&lt;/p&gt;
+&lt;p&gt;I used the official Wine install instructions, available here: &lt;a href=&#34;https://wiki.winehq.org/Ubuntu&#34;&gt;https://wiki.winehq.org/Ubuntu&lt;/a&gt;
+but I have also duplicated them below for convenience.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# If your system is 64-bit, like mine, enable 32-bit architecture
+sudo dpkg --add-architecture i386
+
+# Add Wine repository key
+wget -nc https://dl.winehq.org/wine-builds/Release.key
+sudo apt-key add Release.key
+
+# Add Wine repository
+# On Linux Mint 18.x, use this line. It is different for Mint 17.x.
+sudo apt-add-repository &#39;deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main&#39;
+
+# Update your packages list
+sudo apt-get update
+
+# Install Stable branch of Wine
+sudo apt-get install --install-recommends winehq-stable
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;step-2-get-and-install-guild-wars-2&#34;&gt;Step 2: Get and install Guild Wars 2&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://account.arena.net/welcome&#34;&gt;Download the Guild Wars 2 Windows installer&lt;/a&gt; (&amp;ldquo;Gw2Setup(-64).exe&amp;rdquo;) from the ArenaNet website. If you don&amp;rsquo;t have an account yet, you&amp;rsquo;ll want to &lt;a href=&#34;https://account.arena.net/register?alt=gw2&#34;&gt;create one&lt;/a&gt; there on the website as well.&lt;/li&gt;
+&lt;li&gt;Run installer with Wine (e.g. &lt;code&gt;wine64 &amp;quot;~/Downloads/Gw2Setup-64.exe&amp;quot;&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Follow the installer&amp;rsquo;s instructions.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://ahogen.github.io/img/post/gw2-client-downloading-dat-file.jpg&#34; data-caption=&#34;GW2 client downloading data file(s)&#34;&gt;
+&lt;img data-src=&#34;https://ahogen.github.io/img/post/gw2-client-downloading-dat-file.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    GW2 client downloading data file(s)
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;If you&amp;rsquo;ve already downloaded and installed GW2 on another machine, you can &lt;strong&gt;save
+time&lt;/strong&gt; by using that large (~35GB) data file from the old install, in the new
+installation. Otherwise, the client will download this file for you.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;After the game is installed and starts downloading packages (shown above), &lt;strong&gt;close it&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;From the old/existing install &lt;strong&gt;find the &lt;code&gt;Gw2.dat&lt;/code&gt; file&lt;/strong&gt; (again, normally about 35GB). You&amp;rsquo;ll find this in the GW2 install directory, such as &amp;ldquo;C:/Program Files/Guild Wars 2/&amp;quot;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Copy&lt;/strong&gt; that file into the new install directory, right next to the &amp;ldquo;Gw2-64.exe&amp;rdquo; file. If there is an existing &lt;code&gt;Gw2.dat&lt;/code&gt; file which is rather small, copy over (replace) it with our larger one. It was the file being downloaded before we closed the application.&lt;/li&gt;
+&lt;li&gt;Now &lt;strong&gt;launch GW2&lt;/strong&gt; (e.g. &lt;code&gt;wine64 &amp;quot;/home/username/bin/Guild Wars 2/Gw2-64.exe&amp;quot;&lt;/code&gt;). After a few moments, and possibly downloading any updates, it should open to the login screen!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is all I had to do to get started. However, you can improve performance
+a little bit by turning off debugging messages in wine. I made a launch
+script to do this for me.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
+
+# https://us.download.nvidia.com/XFree86/Linux-x86/319.32/README/openglenvvariables.html
+#export LD_PRELOAD=&amp;quot;libpthread.so.0 libGL.so.1&amp;quot;;
+#export __GL_THREADED_OPTIMIZATIONS=1;
+
+# Disable all Wine debug output, both to the terminal and to any log files
+# https://wiki.winehq.org/Debug_Channels
+export WINEDEBUG=-all;
+export LOGFILE=/dev/null;
+
+# GW2 Client cmdline args are documented here:
+# https://wiki.guildwars2.com/wiki/Command_line_arguments
+# &amp;quot;-dx9single&amp;quot; is common for Wine
+# I find &amp;quot;-mapLoadInfo&amp;quot; to be kind of nice as well.
+wine64 &amp;quot;/home/username/bin/Guild Wars 2/Gw2-64.exe&amp;quot; -dx9single -mapLoadInfo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;From here, it&amp;rsquo;s up to you to try out settings that may or may not improve
+performance on your system. I don&amp;rsquo;t have a gaming setup at all. Heck, the
+embedded graphics in my CPU uses shared RAM even. Even so, I get a solid
+30 FPS. This is about 10 FPS less than running GW2 on Windows on the same
+machine. I find the game very playable nonetheless.&lt;/p&gt;
+&lt;p&gt;You may find lots of helpful info on the Guild Wars 2 Wiki pages.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://wiki.guildwars2.com/wiki/Guild_Wars_2_on_Wine&#34;&gt;https://wiki.guildwars2.com/wiki/Guild_Wars_2_on_Wine&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I hope this was useful! Feel free to let me know in the comments if I missed
+something.&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PICAXE Microcontroller with Parallax Serial LCD Display</title>
+      <link>https://ahogen.github.io/post/tutorial-picaxe-parallax-lcd-display/</link>
+      <pubDate>Sun, 22 Sep 2013 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/post/tutorial-picaxe-parallax-lcd-display/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    This tutorial originally appeared on my (Alex&amp;rsquo;s) blog on Northwest Tech Experience (nwteche.com). That website has been removed. I have moved some of the content I wrote, including this page, to this website of mine. I may have edited the original content for clarity.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Do you want to add an LCD display to your &lt;a href=&#34;http://www.picaxe.com/&#34;&gt;PICAXE&lt;/a&gt; project? Do you have a limited number of output pins on your microcontroller? The &lt;a href=&#34;https://www.parallax.com/product/27977&#34;&gt;&lt;strong&gt;Parallax 2x16 Serial LCD&lt;/strong&gt; (Backlit)&lt;/a&gt; display is a great solution!&lt;/p&gt;
+&lt;p&gt;The Parallax 2×16 serial LCD display has only 3 pins. Only one of those pins connects to the microcontroller. The other two are for power connections.&lt;/p&gt;
+&lt;p&gt;It turns out, Parallax has made it very easy to communicate with the LCD display with simple serial commands. You can test your display by using or modifying the &lt;a href=&#34;http://www.picaxe.com/&#34;&gt;PICAXE&lt;/a&gt; program I have written below.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;To use the LCD display at the &lt;a href=&#34;http://www.picaxe.com/&#34;&gt;PICAXE&lt;/a&gt;’s default 4 MHz, the LCD will need to be set for a 2400 baud rate and the program will change from:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-basic&#34;&gt;setfreq m16
+symbol tx = c.4
+symbol baud = T9600_16
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;…to…&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-basic&#34;&gt;setfreq m4
+symbol tx = c.4
+symbol baud = T2400_
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The code below will test the serial communication, the display back-lighting (if applicable), and the on-board speaker/sound controls.&lt;/p&gt;
+&lt;p&gt;I hope this proves useful to somebody!&lt;/p&gt;
+&lt;h3 id=&#34;resources&#34;&gt;Resources:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.parallax.com/sites/default/files/downloads/27979-Parallax-Serial-LCDs-Product-Guide-v3.1.pdf&#34;&gt;Parallax Serial LCD Display PDF manual&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-basic&#34;&gt;&#39; ------------
+&#39;|  LCD Test  |
+&#39; ------------
+
+&#39;by Alexander Hogen
+
+&#39;Started: 9-16-2013
+&#39;Finished: 9-16-2013
+
+&#39;See &amp;quot;Command Set&amp;quot; in this PDF for
+&#39;more information.
+&#39;http://www.parallax.com/sites/default/files/downloads/27979-Parallax-Serial-LCDs-Product-Guide-v3.1.pdf
+
+setfreq m16
+
+&#39;9600 baud only works in 16MHz or higher
+
+&#39;Multiply desired millisecond (ms) timing
+&#39;by 4 to get desired result.
+&#39;i.e. &amp;quot;Pause 5&amp;quot; becomes &amp;quot;Pause 20&amp;quot;
+
+symbol tx = c.4
+symbol baud = T9600_16
+
+pause 400
+
+main:
+serout tx, baud,(22) &#39;Turn display on
+pause 40
+gosub clearLCD
+serout tx, baud,(17) &#39;Turn backlight on
+
+serout tx, baud,(&amp;quot;Hello&amp;quot;)
+
+pause 4000
+
+gosub clearLCD
+serout tx, baud,(&amp;quot;LCD works great!&amp;quot;)
+
+gosub beeps
+
+end
+
+clearLCD:
+
+serout tx, baud, (12)
+pause 40
+return
+
+beeps:
+
+serout tx, baud,(216) &#39;Select the 4th scale (A=440Hz)
+pause 40
+serout tx, baud,(210) &#39;Set note length to 1/16 note
+pause 40
+
+serout tx, baud,(220,221,222,223,224,225,226,227)
+pause 4000
+
+return
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Install Android Market on Coby Kyros MID7012 (or most other tablets running Android 2.3.3)</title>
+      <link>https://ahogen.github.io/post/tutorial-android-market-coby-kyros-mid7012/</link>
+      <pubDate>Fri, 06 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/post/tutorial-android-market-coby-kyros-mid7012/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    This &lt;a href=&#34;https://web.archive.org/web/20170201091154/http://nwteche.com/alex_blog/install-android-market-on-coby-kyros-mid7012-or-most-other-tablets-running-android-2-3-3/&#34;&gt;tutorial originally appeared&lt;/a&gt;
+back in 2012 on my (Alex&amp;rsquo;s) blog on Northwest Tech Experience (nwteche.com).
+That website has been removed and I migrated some of my content to this new site.
+I may have edited the original content for clarity.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;
+&lt;p&gt;This Christmas I put the &lt;a href=&#34;https://www.amazon.com/gp/product/B005HUH88K&#34;&gt;Coby Kyros MID7012 tablet&lt;/a&gt; (which only runs Android 2.3.3) on my wish list. I was surprised when I actually received it! By that time, I had decided I didn’t really need it.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://www.amazon.com/gp/product/B005HUH88K&#34;&gt;Kyros 7012&lt;/a&gt; and others don’t have the &lt;a href=&#34;https://en.wikipedia.org/wiki/Google_Play#History&#34;&gt;Android Market&lt;/a&gt; installed out of the box. It would seem like all you’d need to do is install a few .apk files and you’d be good, right? Well all but two articles I read online were not like that at all. Most required you to &lt;a href=&#34;https://en.wikipedia.org/wiki/Rooting_(Android)&#34;&gt;root&lt;/a&gt; the device. Although rooting itself can be undone, certain things done with rooting privileges cannot. Not to mention the fact that “rooting” the tablet most likely voids the warranty on the device. So, in short, it doesn’t seem like “doing it right the first time” is very popular with people installing the Android Market. That is why I wanted to throw in my two cents about this so that more people can do this right and not mess up their devices.&lt;/p&gt;
+&lt;p&gt;After some research, I found a method that worked for me. It is based off a YouTube tutorial. If you go on YouTube, it’s the first one that pops up if you search “install android market on coby” I believe. Here’s the actual URL: &lt;a href=&#34;http://www.youtube.com/watch?v=6BrWSC2uiAg&#34;&gt;http://www.youtube.com/watch?v=6BrWSC2uiAg&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;release-of-liability&#34;&gt;Release of Liability&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; I, ALEXANDER HOGEN, AND ANY OTHER INDIVIDUAL OR COMPANY ASSOCIATED WITH MYSELF SHALL NOT BE HELD RESPONSIBLE FOR ANY DAMAGE, LOSS OF DATA, LOSS OF FUNCTIONALITY OR
+ANY OTHER OUTCOME AS A RESULT OF FOLLOWING THIS TUTORIAL. THE USER RECOGNIZES THAT THERE ARE CERTAIN INHERENT RISKS ASSOCIATED WITH PERFORMING THE OPERATIONS DESCRIBED IN THIS TUTORIAL AND THE USER ASSUMES FULL RESPONSIBILITY FOR ANY UNDESIRABLE OUTCOME DURING OR AFTER PERFORMING THE STEPS DESCRIBED ON THIS WEBSITE.&lt;/p&gt;
+&lt;p&gt;I put that notification up in case someone messes up their device by following this tutorial, although I &lt;em&gt;seriously&lt;/em&gt; doubt they will. These steps aren&amp;rsquo;t hard and there is no rooting or &amp;ldquo;jail-breaking&amp;rdquo; involved. Okay, here we go.&lt;/p&gt;
+&lt;h1 id=&#34;instructions&#34;&gt;Instructions&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;On your computer, download the “Android Market_install_files.zip” below and unzip all the files to a convenient location (say, your desktop). &lt;a href=&#34;https://ahogen.github.io/downloads/Android-Market_install_files.zip&#34;&gt;&lt;strong&gt;Android Market_install_files.zip&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now connect the tablet to your PC and put these files on your tablet’s SD card or internal memory. If your not sure how to do this, consult your &lt;a href=&#34;https://web.archive.org/web/20130822214307/http://cobyusa.com/files/manuals/MID7012_MN.pdf&#34;&gt;product manual&lt;/a&gt; (on page 30 I think). I stuck the files in the “downloads” folder on the device itself.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After the files have finished transferring, disconnect the tablet from your PC.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Go to your file viewer app. On my tablet, they installed “ES File Explorer”. Yours should have a similar file explorer program.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now find where you put those .apk files. I put mine in the “downloads” folder.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ok, now you are going to install them in a specific order. (Just tap on the file to install. Hit “Done” after each one. &lt;strong&gt;DON’T&lt;/strong&gt; RUN THEM AFTER THEY INSTALL!) Here is the order:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;OneTimeInitializer.apk&lt;/li&gt;
+&lt;li&gt;SetupWizard.apk&lt;/li&gt;
+&lt;li&gt;GoogleServicesFramework-signed.apk&lt;/li&gt;
+&lt;li&gt;com.android.vending.3.3.12.apk&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ok, this step is important. &lt;strong&gt;DO NOT&lt;/strong&gt; GO TO THE HOME SCREEN!!. Press and hold the power button on the tablet and turn it off.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now turn it back on!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After start-up, you will see a menu with two options. Check the “Use this as default” box on the bottom, then select the option on top (“Launcher”). You don’t want to set up anything. You just want to use the regular initializer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make sure you are connected to a wireless network (WIFI). If not, get your tablet connected.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now that your connected, go to the Apps list (by tapping the box made of little squares that’s either on the bottom or right hand side of your screen).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You should see the Android Market icon in this list. Go ahead and open it. Since this is the first run, you’ll need to enter your Google Account information and accept the license agreement.The Android Market will filter out most apps that won’t work with your tablet.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;You should be good to go. Enjoy your new apps!&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

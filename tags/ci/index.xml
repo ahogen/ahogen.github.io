@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ci | Alex Hogen</title>
+    <link>https://ahogen.github.io/tags/ci/</link>
+      <atom:link href="https://ahogen.github.io/tags/ci/index.xml" rel="self" type="application/rss+xml" />
+    <description>ci</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 Alexander Hogen</copyright><lastBuildDate>Sat, 04 Jun 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://ahogen.github.io/images/icon_hu41297bf952fcc5965d442cd00908f20d_1356_512x512_fill_lanczos_center_2.png</url>
+      <title>ci</title>
+      <link>https://ahogen.github.io/tags/ci/</link>
+    </image>
+    
+    <item>
+      <title>cppcheck-codequality</title>
+      <link>https://ahogen.github.io/project/cppcheck-codequality/</link>
+      <pubDate>Sat, 04 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/project/cppcheck-codequality/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

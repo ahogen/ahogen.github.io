@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.7.0">
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="My fix for Google Pixel Now Playing A few weeks ago, I noticed the Now Playing feature of my new Google Pixel 3 phone stopped working. The shortcut/icon was still on my home screen, however it hadn&rsquo;t detected any songs recently.
+Testing if Now Playing is broken I wanted to quickly verify that the reason Now Playing history looked old was in fact because Now Playing had stopped working. It is possible for the phone to be muffled by a pocket or out of range and not detect songs.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://ahogen.github.io/post/tutorial-fix-google-pixel-now-playing/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="rgb(0, 126, 124)">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46683639-6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           document.location = url;
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target);  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-46683639-6', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu41297bf952fcc5965d442cd00908f20d_1356_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu41297bf952fcc5965d442cd00908f20d_1356_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://ahogen.github.io/post/tutorial-fix-google-pixel-now-playing/">
+
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@alex_hogen">
+  <meta property="twitter:creator" content="@alex_hogen">
+  
+  <meta property="og:site_name" content="Alex Hogen">
+  <meta property="og:url" content="https://ahogen.github.io/post/tutorial-fix-google-pixel-now-playing/">
+  <meta property="og:title" content="Fixing &#34;Now Playing&#34; feature on Google Pixel 3 | Alex Hogen">
+  <meta property="og:description" content="My fix for Google Pixel Now Playing A few weeks ago, I noticed the Now Playing feature of my new Google Pixel 3 phone stopped working. The shortcut/icon was still on my home screen, however it hadn&rsquo;t detected any songs recently.
+Testing if Now Playing is broken I wanted to quickly verify that the reason Now Playing history looked old was in fact because Now Playing had stopped working. It is possible for the phone to be muffled by a pocket or out of range and not detect songs."><meta property="og:image" content="https://ahogen.github.io/images/icon_hu41297bf952fcc5965d442cd00908f20d_1356_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://ahogen.github.io/images/icon_hu41297bf952fcc5965d442cd00908f20d_1356_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2018-12-01T00:00:00-08:00">
+    
+    <meta property="article:modified_time" content="2020-12-23T13:08:59-08:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ahogen.github.io/post/tutorial-fix-google-pixel-now-playing/"
+  },
+  "headline": "Fixing \"Now Playing\" feature on Google Pixel 3",
+  
+  "datePublished": "2018-12-01T00:00:00-08:00",
+  "dateModified": "2020-12-23T13:08:59-08:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Alex Hogen"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Alex Hogen",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "img/https://ahogen.github.io/"
+    }
+  },
+  "description": "My fix for Google Pixel Now Playing A few weeks ago, I noticed the Now Playing feature of my new Google Pixel 3 phone stopped working. The shortcut/icon was still on my home screen, however it hadn\u0026rsquo;t detected any songs recently.\nTesting if Now Playing is broken I wanted to quickly verify that the reason Now Playing history looked old was in fact because Now Playing had stopped working. It is possible for the phone to be muffled by a pocket or out of range and not detect songs."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Fixing &#34;Now Playing&#34; feature on Google Pixel 3 | Alex Hogen</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Alex Hogen</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Alex Hogen</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/post"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/project"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Fixing &#34;Now Playing&#34; feature on Google Pixel 3</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  
+  <span><a href="/authors/alex/">Alex Hogen</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Dec 23, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min read
+  </span>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/tutorial-fix-google-pixel-now-playing/#disqus_thread"></a>
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h1 id="my-fix-for-google-pixel-now-playing">My fix for Google Pixel Now Playing</h1>
+<p>A few weeks ago, I noticed the Now Playing feature of my new Google Pixel 3 phone stopped working. The shortcut/icon was still on my home screen, however it hadn&rsquo;t detected any songs recently.</p>
+<h1 id="testing-if-now-playing-is-broken">Testing if Now Playing is broken</h1>
+<p>I wanted to quickly verify that the reason Now Playing history looked old was in fact because Now Playing had stopped working. It is possible for the phone to be muffled by a pocket or out of range and not detect songs. So i eliminated this possibility by running a quick test.</p>
+<p>It&rsquo;s been reported that &ldquo;Rap god&rdquo; by Eminim is known to be detected by Now Playing. So I&rsquo;ll use that.</p>
+<ul>
+<li>
+<p>Navigate to Now Playing history, either by tapping the shortcut on your home screen or by going to <code>Settings &gt; Sounds &gt; Now Playing &gt; Now Playing history</code> (If the history option is even available. It was missing for me when this problem occurred.)</p>
+</li>
+<li>
+<p>Start playing the test song on another device.</p>
+</li>
+<li>
+<p>Wait for up to 1 minute to see if Now Playing detects the song.</p>
+</li>
+<li>
+<p>If the song does not appear in your Now Playing history or on the home screen after a minute, it&rsquo;s likely broken.</p>
+</li>
+</ul>
+<h1 id="reset-now-playing">Reset Now Playing</h1>
+<p>Essentially what I did is clear all app data, uninstall, and then reinstall the applications that looked like they were related to Now Playing.</p>
+<ul>
+<li>
+<p>Navigate to <code>Settings &gt; Apps &amp; Notifications &gt; See all N apps</code></p>
+</li>
+<li>
+<p>Tap <code>Action Services &gt; Storage</code> and then tap the <code>Clear storage</code> button</p>
+</li>
+<li>
+<p>Go back to the apps list and find the &ldquo;Pixel Ambient Services&rdquo; app. Tap <code>Storage</code> and tap the <code>Clear storage</code> button here as well.</p>
+</li>
+<li>
+<p>Now that both apps&rsquo; data has been cleared, I went ahead and uninstalled them. This step may not be necessary but I did it anyway.</p>
+<ul>
+<li>Find the &ldquo;Actions Services&rdquo; and &ldquo;Pixel Ambient Services&rdquo; apps in the apps list again</li>
+<li>Tap <code>Force stop</code> and tap <code>OK</code> at the prompt</li>
+<li>Next tap <code>Disable</code> and accept the two prompts. This reverts any updates and replaces it with the original app your phone came with out of the box. Now tap <code>Enable</code> to turn the app back on.</li>
+<li>Do the above steps for both apps.</li>
+<li>Now open Google Play Store app. Tap the hamburger menu on the top left, tap <code>My apps and games</code> and tap the <code>Updates</code> tab. You may need to hit the refresh button to see updates for the two apps we reverted back to factory versions.</li>
+<li>Tap the <code>Update All</code></li>
+</ul>
+</li>
+<li>
+<p>Now we&rsquo;ll get Now Playing re-enabled. To do this, we have to open the Pixel tips/tutorial app that you encoutered when you powered up your phone for the first time. Confusingly, to open &ldquo;Pixel Tips&rdquo; do this&hellip;</p>
+<ul>
+<li>Find &ldquo;Actions Services&rdquo; app in the &ldquo;Installed&rdquo; tab of Google Play Store.</li>
+<li>Tap <code>Open</code>. Notice the title of the app we just opened says &ldquo;Pixel Tips&rdquo;, not &ldquo;Actions Services&rdquo;. Very annoying&hellip; Oh well&hellip;</li>
+<li>Tap <code>Maximize Google</code> near the bottom of the screen</li>
+<li>Tap the right arrow a few times to get over to the &ldquo;Now Playing&rdquo; screen.</li>
+<li>Tap <code>Turn on in settings</code></li>
+<li>This should take you to Now Playing in settings where you could enable notifications on the lock screen.</li>
+</ul>
+</li>
+</ul>
+<p>At this point, it started working for me.</p>
+<h3 id="some-miscallaneous-notes">Some miscallaneous notes</h3>
+<ul>
+<li>
+<p>It seems Pixel Tips is also accessable by going to <code>Settings &gt; Tips &amp; Support &gt; Go to Tips</code></p>
+</li>
+<li>
+<p>After re-enabling and updating the Pixel Ambient Services app, you might be able to simply open the Settings app and at the top of the screen there might be a box with a suggestion to turn on Now Playing.</p>
+</li>
+</ul>
+<p>I hope this helps!</p>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/blog/">blog</a>
+  
+  <a class="badge badge-light" href="/tags/tutorial/">tutorial</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://ahogen.github.io/post/tutorial-fix-google-pixel-now-playing/&amp;text=Fixing%20&amp;#34;Now%20Playing&amp;#34;%20feature%20on%20Google%20Pixel%203" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://ahogen.github.io/post/tutorial-fix-google-pixel-now-playing/&amp;t=Fixing%20&amp;#34;Now%20Playing&amp;#34;%20feature%20on%20Google%20Pixel%203" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Fixing%20&amp;#34;Now%20Playing&amp;#34;%20feature%20on%20Google%20Pixel%203&amp;body=https://ahogen.github.io/post/tutorial-fix-google-pixel-now-playing/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://ahogen.github.io/post/tutorial-fix-google-pixel-now-playing/&amp;title=Fixing%20&amp;#34;Now%20Playing&amp;#34;%20feature%20on%20Google%20Pixel%203" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Fixing%20&amp;#34;Now%20Playing&amp;#34;%20feature%20on%20Google%20Pixel%203%20https://ahogen.github.io/post/tutorial-fix-google-pixel-now-playing/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://ahogen.github.io/post/tutorial-fix-google-pixel-now-playing/&amp;title=Fixing%20&amp;#34;Now%20Playing&amp;#34;%20feature%20on%20Google%20Pixel%203" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+  
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="portrait mr-3" src="/authors/alex/avatar_huaf958400d62ddb46e1761e06234260e4_1855_250x250_fill_lanczos_center_2.png" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/authors/alex/">Alex Hogen</a></h5>
+      <h6 class="card-subtitle">Embedded Firmware Engineer</h6>
+      <p class="card-text">My interests include music, embedded networking, and automated testing.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://gitlab.com/ahogen" target="_blank" rel="noopener">
+        <i class="fab fa-gitlab"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/ahogen" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=sYtNsl4AAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/alexander-hogen/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+<section id="comments">
+  
+    
+<div id="disqus_thread"></div>
+<script>
+  let disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "ahogen-github-io" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  
+</section>
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/guild-wars-2-in-linux-mint/">Install Guild Wars 2 on Linux Mint</a></li>
+      
+      <li><a href="/post/tutorial-picaxe-parallax-lcd-display/">PICAXE Microcontroller with Parallax Serial LCD Display</a></li>
+      
+      <li><a href="/post/tutorial-android-market-coby-kyros-mid7012/">Install Android Market on Coby Kyros MID7012 (or most other tablets running Android 2.3.3)</a></li>
+      
+      <li><a href="/post/pixel-3-personal-concerns/">Pixel 3 Personal Concerns</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/verilog.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/cpp.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/python.min.js"></script>
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    <script id="dsq-count-scr" src="https://ahogen-github-io.disqus.com/count.js" async></script>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.a0d331bcd05dbe8b31e244f796710f08.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2020 Alexander Hogen &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

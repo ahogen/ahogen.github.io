@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>latex | Alex Hogen</title>
+    <link>https://ahogen.github.io/tags/latex/</link>
+      <atom:link href="https://ahogen.github.io/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    <description>latex</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 Alexander Hogen</copyright><lastBuildDate>Thu, 07 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://ahogen.github.io/images/icon_hu41297bf952fcc5965d442cd00908f20d_1356_512x512_fill_lanczos_center_2.png</url>
+      <title>latex</title>
+      <link>https://ahogen.github.io/tags/latex/</link>
+    </image>
+    
+    <item>
+      <title>A Two-Column Spec Sheet Table in LaTeX</title>
+      <link>https://ahogen.github.io/post/latex-nested-table-layout/</link>
+      <pubDate>Thu, 07 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/post/latex-nested-table-layout/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#latex-code&#34;&gt;LaTeX Code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Many datasheets I&amp;rsquo;ve seen tend to use a two-column layout. I&amp;rsquo;m no professional
+typesetter and I haven&amp;rsquo;t looked into why this is (is it easier for our eyes to
+read shorter lines?), but it does look nice.&lt;/p&gt;
+&lt;p&gt;Recently I was writing some documentation and needed to generate a section
+for device specifications. Here&amp;rsquo;s what I came up with. It&amp;rsquo;s a nested table.
+I use the outer table simply to split the page into two columns. I then use two
+separate tables, one in each column, for the content.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s an example of this layout:
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://ahogen.github.io/img/post/latex_twocol_spec_table.jpg&#34; data-caption=&#34;LaTeX rendered output&#34;&gt;
+&lt;img data-src=&#34;https://ahogen.github.io/img/post/latex_twocol_spec_table.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    LaTeX rendered output
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;latex-code&#34;&gt;LaTeX Code&lt;/h2&gt;
+&lt;p&gt;And here&amp;rsquo;s how I made it.&lt;/p&gt;
+&lt;p&gt;Notice the &lt;code&gt;[t]&lt;/code&gt; in both &lt;code&gt;tabularx&lt;/code&gt; tables. This aligns the tables to the
+&lt;strong&gt;t&lt;/strong&gt;op. Without this, I found that the tables would not be aligned, vertically,
+with each other.&lt;/p&gt;
+&lt;p&gt;Got a better way of doing this? I&amp;rsquo;d love to know in the comments!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\documentclass[10pt, english, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[%
+    letterpaper,
+    %includeheadfoot,
+    head=\baselineskip,  % distance from bottom of header to block of
+    % text aka \headsep e.g. \baselineskip
+    foot=2.3cm,          % distance from top of footer to block of text aka \footskip
+    headheight=13.7pt,   % height for the header block (no equivalent for footer)
+    %heightrounded,      % ensure an integer number of lines
+    marginparwidth=2cm,  % right marginal note width
+    marginparsep=2mm,    % distance from text block to marginal note box
+    %height=\textheight, % height of the text block
+    %width=\textwidth,   % width of the text block
+    top=2.0cm,           % distance of the text block from the top of the page
+    bottom=1.5in,
+    left=0.6in,
+    right=0.6in,
+    %showframe,          % show the main blocks
+    %verbose,            % show the values of the parameters in the log file
+]{geometry}
+
+\usepackage{array}
+%\usepackage{booktabs}    % Good/better tabular typography
+\usepackage{multicol}    % Multi-column page layouts
+\usepackage{tabularx}
+
+% TABLE TWEAKS
+\setlength\extrarowheight{2pt} % Extra padding in tables.
+\newcommand{\tabindent}{\hspace{4.0mm}} % Horizontal space, often used in tables
+                                        % as a &amp;lt;TAB&amp;gt; character
+
+\begin{document}
+
+\begin{tabular}[t]{|p{0.475\linewidth} p{0.475\linewidth}|}
+\hline
+\begin{tabularx}{1\linewidth}[t]{&amp;gt;{\raggedright}X r}
+
+    \textbf{Spec a} &amp;amp; 1234 \\
+    
+    \textbf{Spec b} &amp;amp; 5678 [unit] \\
+    
+    \textbf{This was a good measurement} &amp;amp; 12.34 [unit] \\
+    
+    \textbf{We can do this} &amp;amp; \\
+    \tabindent From 123, we get &amp;amp; 123 \\
+    \tabindent From 456, we get &amp;amp; 456 \\
+    
+\end{tabularx}
+&amp;amp;
+\begin{tabularx}{1\linewidth}[t]{&amp;gt;{\raggedright}X r}
+    
+    \textbf{Options on New Line} &amp;amp; \\
+    \multicolumn{2}{r}{A, B, C, D} \\
+    \multicolumn{2}{r}{E, F, G, H, I} \\
+    
+    \multicolumn{2}{l}{\textbf{Many Options}} \\
+    \multicolumn{2}{r}{1, 2, 3, 4, 5, 6, 7} \\
+    
+    \textbf{Standards Compliance} &amp;amp; \\
+    \tabindent IEEE Std. 123.45 &amp;amp; Yes  \\
+    &amp;amp; (we think) \\
+    \tabindent UL safety stuff &amp;amp; Yes yes... \\
+    
+\end{tabularx} \\ \hline
+\end{tabular}
+
+\end{document}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

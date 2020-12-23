@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog | Alex Hogen</title>
+    <link>https://ahogen.github.io/tags/blog/</link>
+      <atom:link href="https://ahogen.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <description>blog</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 Alexander Hogen</copyright><lastBuildDate>Thu, 13 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://ahogen.github.io/images/icon_hu41297bf952fcc5965d442cd00908f20d_1356_512x512_fill_lanczos_center_2.png</url>
+      <title>blog</title>
+      <link>https://ahogen.github.io/tags/blog/</link>
+    </image>
+    
+    <item>
+      <title>Remotely Debug ARM Cortex with Segger Tools</title>
+      <link>https://ahogen.github.io/post/remote-debug-arm-cortex-with-segger/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/post/remote-debug-arm-cortex-with-segger/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;JLink v682b&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Connect your JLink debugger to the target microcontroller.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Connect your JLink debugger to the server computer, via USB.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Open port 19020/tcp on you server&amp;rsquo;s firewall.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Start &lt;code&gt;JLinkRemoteServer&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Open Ozone&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Choose chip model and core type&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Choose connection settings. In this example, I&amp;rsquo;m connecting to the server
+I just set up, so I&amp;rsquo;m going to use that server&amp;rsquo;s IP address.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Select your compiled binary.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use as normal!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;segger-swo-viewer-with-remote-debugger&#34;&gt;SEGGER SWO Viewer with Remote Debugger&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;JLinkSWOViewer.exe -ip 192.168.1.123 -device MIMXRT1021DAG5A -swofreq 921600
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Notes on Building HPM Baugh-Wooley Multiplier Generator</title>
+      <link>https://ahogen.github.io/post/building-hpm-bough-wooly-multiplier-generator/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/post/building-hpm-bough-wooly-multiplier-generator/</guid>
+      <description>&lt;p&gt;This blog post may not make complete sense if read by itself. These are my notes
+written while I was reading the HPM Baugh-Wooley Multiplier research papers and
+figuring out how I would generate a multiplier in C++ code. So to make sense of
+this, get a copy of the first paper in the list: &amp;ldquo;Multiplier Reduction Tree&amp;hellip;&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Check out the &lt;a href=&#34;https://ahogen.github.io/project/fft-ip-core-generator/&#34;&gt;FFT Generator project&lt;/a&gt; where
+this multiplier is intended to be used.&lt;/p&gt;
+&lt;p&gt;The papers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;H. Eriksson, P. Larsson-Edefors, M. Sheeran, M. Själander, D. Johansson, M. Schölin. &lt;a href=&#34;http://www.sjalander.com/research/pdf/sjalander-iscas2006.pdf&#34;&gt;&amp;ldquo;Multiplier Reduction Tree with Logarithmic Logic Depth and Regular Connectivity&amp;rdquo;&lt;/a&gt;. Proceedings of IEEE International Symposium on Circuits and Systems (ISCAS). Island of Kos, Greece, pp. 4-8, 21-24 May 2006.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;M. Själander and P. Larsson-Edefors. &lt;a href=&#34;http://www.sjalander.com/research/pdf/sjalander-techreport-2008-08.pdf&#34;&gt;&amp;ldquo;The Case for HPM-Based Baugh-Wooley Multipliers&amp;rdquo;&lt;/a&gt;. Chalmers University of Technology, Sweden (2008).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Jipsa Antony, Jyotirmoy Pathak. &lt;a href=&#34;http://doi.org/10.15623/ijret.2014.0308011&#34;&gt;&amp;ldquo;DESIGN AND IMPLEMENTATION OF HIGH SPEED BAUGH WOOLEY AND MODIFIED BOOTH MULTIPLIER USING CADENCE RTL&amp;rdquo;&lt;/a&gt;. International Journal of Research in Engineering and Technology 03.08 (2014): 56-63. Web. 30 Jan. 2017.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Note that the 2D array of partial products looks kind of like an inverted
+pyramid. In the case of a 4-bit multiplier, where AAAA is the multiplicand
+and BBBB is the multiplier, the partial product array is created like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;                                 A3        A2        A1        A0
+X                                B3        B2        B1        B0
+--------------------------------------------------------------------
+                              pp[0][3]  pp[0][2]  pp[0][1]  pp[0][0]
+                    pp[1][3]  pp[1][2]  pp[1][1]  pp[1][0]
+          pp[2][3]  pp[2][2]  pp[2][1]  pp[2][0]
+pp[3][3]  pp[3][2]  pp[3][1]  pp[3][0]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But when we &amp;ldquo;flatten&amp;rdquo; the array, it looks like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;   ^         ^         ^      pp[0][3]  pp[0][2]  pp[0][1]  pp[0][0]
+   |         |      pp[1][3]  pp[1][2]  pp[1][1]  pp[1][0]
+   |      pp[2][3]  pp[2][2]  pp[2][1]  pp[2][0]
+pp[3][3]  pp[3][2]  pp[3][1]  pp[3][0]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;pp[3][3]  pp[2][3]  pp[1][3]  pp[0][3]  pp[0][2]  pp[0][1]  pp[0][0]
+          pp[3][2]  pp[2][2]  pp[1][2]  pp[1][1]  pp[1][0]
+                    pp[3][1]  pp[2][1]  pp[2][0]
+                              pp[3][0]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When we have an array of partial products to work with, we will group and
+remove the elements which will be plugged into adders. The sum and carry
+outputs of the adders will need to be appended to this array so that they may
+be used in the next level of adders.&lt;/p&gt;
+&lt;p&gt;We start with the uppermost adder level, which always has two adders: one
+half-adder and one full adder.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Generate partial products (&lt;strong&gt;PPs&lt;/strong&gt;) in inverted pyramid layout (as shown
+visually above)&lt;/li&gt;
+&lt;li&gt;Determine how many levels of adders will be created&lt;/li&gt;
+&lt;li&gt;Set &lt;code&gt;current_adder_level&lt;/code&gt; to the total number of levels to be created&lt;/li&gt;
+&lt;li&gt;Find tallest column. Call it &lt;code&gt;Cm&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set &lt;code&gt;col_left: Cm + 1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set &lt;code&gt;col_right: Cm&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create two half-adders (&lt;strong&gt;HAs&lt;/strong&gt;)
+&lt;ul&gt;
+&lt;li&gt;Inputs for first HA are in column &lt;code&gt;col_right&lt;/code&gt; rows 0 and 1&lt;/li&gt;
+&lt;li&gt;Inputs for second HA are in column &lt;code&gt;col_left&lt;/code&gt; rows 0 and 1&lt;/li&gt;
+&lt;li&gt;Change second HA to &amp;ldquo;FA1&amp;rdquo; adder. This is a modified full-adder which
+technically has 3 inputs but one of them is set to a constant &amp;lsquo;1&amp;rsquo; due to
+the Baugh-Wooley multiplier scheme. Because of this constant, some logic
+optimizations can be made, which is why the adder will be a separate,
+special module instead of a regular half or full adder.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Remove the PPs just assigned to the adders from the array&lt;/li&gt;
+&lt;li&gt;Flatten the array (slide the columns which now have empty elements &amp;ldquo;upwards&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;Insert sum of first HA at bottom of column &lt;code&gt;col_right&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Insert carry of first HA at bottom of column &lt;code&gt;col_left&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Insert sum of second HA at bottom of column &lt;code&gt;col_left&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Insert carry of second HA at bottom of column &lt;code&gt;col_left + 1&lt;/code&gt;&amp;gt;&lt;/li&gt;
+&lt;li&gt;Decrement &lt;code&gt;current_adder_level&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now that the top level half-adders have been created, we can begin to generate
+the other full and half adders until there are only 2 levels in the
+partial-product (PP) array.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;While number of PP rows is &amp;gt; 2
+&lt;ul&gt;
+&lt;li&gt;Increment &lt;code&gt;col_left&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Decrement &lt;code&gt;col_right&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create HA with inputs at row 0 and 1 of &lt;code&gt;col_right&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Remove the points at row 0 and 1 of &lt;code&gt;col_right&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Flatten()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Insert sum of HA at bottom of &lt;code&gt;col_right&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Insert carry of HA at bottom of &lt;code&gt;col_right + 1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set &lt;code&gt;col_current: col_right&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;While &lt;code&gt;(col_current &amp;lt;= col_left)&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;Create FA with inputs at row 0 and 1 of &lt;code&gt;col_current&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Remove the points at row 0 and 1 of &lt;code&gt;col_current&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Flatten()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Insert sum of FA at bottom of &lt;code&gt;col_current&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Insert carry of FA at bottom of &lt;code&gt;col_current + 1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Increment &lt;code&gt;col_current&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Decrement &lt;code&gt;current_adder_level&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Two-Column Spec Sheet Table in LaTeX</title>
+      <link>https://ahogen.github.io/post/latex-nested-table-layout/</link>
+      <pubDate>Thu, 07 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/post/latex-nested-table-layout/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#latex-code&#34;&gt;LaTeX Code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Many datasheets I&amp;rsquo;ve seen tend to use a two-column layout. I&amp;rsquo;m no professional
+typesetter and I haven&amp;rsquo;t looked into why this is (is it easier for our eyes to
+read shorter lines?), but it does look nice.&lt;/p&gt;
+&lt;p&gt;Recently I was writing some documentation and needed to generate a section
+for device specifications. Here&amp;rsquo;s what I came up with. It&amp;rsquo;s a nested table.
+I use the outer table simply to split the page into two columns. I then use two
+separate tables, one in each column, for the content.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s an example of this layout:
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://ahogen.github.io/img/post/latex_twocol_spec_table.jpg&#34; data-caption=&#34;LaTeX rendered output&#34;&gt;
+&lt;img data-src=&#34;https://ahogen.github.io/img/post/latex_twocol_spec_table.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    LaTeX rendered output
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;latex-code&#34;&gt;LaTeX Code&lt;/h2&gt;
+&lt;p&gt;And here&amp;rsquo;s how I made it.&lt;/p&gt;
+&lt;p&gt;Notice the &lt;code&gt;[t]&lt;/code&gt; in both &lt;code&gt;tabularx&lt;/code&gt; tables. This aligns the tables to the
+&lt;strong&gt;t&lt;/strong&gt;op. Without this, I found that the tables would not be aligned, vertically,
+with each other.&lt;/p&gt;
+&lt;p&gt;Got a better way of doing this? I&amp;rsquo;d love to know in the comments!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\documentclass[10pt, english, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[%
+    letterpaper,
+    %includeheadfoot,
+    head=\baselineskip,  % distance from bottom of header to block of
+    % text aka \headsep e.g. \baselineskip
+    foot=2.3cm,          % distance from top of footer to block of text aka \footskip
+    headheight=13.7pt,   % height for the header block (no equivalent for footer)
+    %heightrounded,      % ensure an integer number of lines
+    marginparwidth=2cm,  % right marginal note width
+    marginparsep=2mm,    % distance from text block to marginal note box
+    %height=\textheight, % height of the text block
+    %width=\textwidth,   % width of the text block
+    top=2.0cm,           % distance of the text block from the top of the page
+    bottom=1.5in,
+    left=0.6in,
+    right=0.6in,
+    %showframe,          % show the main blocks
+    %verbose,            % show the values of the parameters in the log file
+]{geometry}
+
+\usepackage{array}
+%\usepackage{booktabs}    % Good/better tabular typography
+\usepackage{multicol}    % Multi-column page layouts
+\usepackage{tabularx}
+
+% TABLE TWEAKS
+\setlength\extrarowheight{2pt} % Extra padding in tables.
+\newcommand{\tabindent}{\hspace{4.0mm}} % Horizontal space, often used in tables
+                                        % as a &amp;lt;TAB&amp;gt; character
+
+\begin{document}
+
+\begin{tabular}[t]{|p{0.475\linewidth} p{0.475\linewidth}|}
+\hline
+\begin{tabularx}{1\linewidth}[t]{&amp;gt;{\raggedright}X r}
+
+    \textbf{Spec a} &amp;amp; 1234 \\
+    
+    \textbf{Spec b} &amp;amp; 5678 [unit] \\
+    
+    \textbf{This was a good measurement} &amp;amp; 12.34 [unit] \\
+    
+    \textbf{We can do this} &amp;amp; \\
+    \tabindent From 123, we get &amp;amp; 123 \\
+    \tabindent From 456, we get &amp;amp; 456 \\
+    
+\end{tabularx}
+&amp;amp;
+\begin{tabularx}{1\linewidth}[t]{&amp;gt;{\raggedright}X r}
+    
+    \textbf{Options on New Line} &amp;amp; \\
+    \multicolumn{2}{r}{A, B, C, D} \\
+    \multicolumn{2}{r}{E, F, G, H, I} \\
+    
+    \multicolumn{2}{l}{\textbf{Many Options}} \\
+    \multicolumn{2}{r}{1, 2, 3, 4, 5, 6, 7} \\
+    
+    \textbf{Standards Compliance} &amp;amp; \\
+    \tabindent IEEE Std. 123.45 &amp;amp; Yes  \\
+    &amp;amp; (we think) \\
+    \tabindent UL safety stuff &amp;amp; Yes yes... \\
+    
+\end{tabularx} \\ \hline
+\end{tabular}
+
+\end{document}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Fixing &#34;Now Playing&#34; feature on Google Pixel 3</title>
+      <link>https://ahogen.github.io/post/tutorial-fix-google-pixel-now-playing/</link>
+      <pubDate>Sat, 01 Dec 2018 00:00:00 -0800</pubDate>
+      <guid>https://ahogen.github.io/post/tutorial-fix-google-pixel-now-playing/</guid>
+      <description>&lt;h1 id=&#34;my-fix-for-google-pixel-now-playing&#34;&gt;My fix for Google Pixel Now Playing&lt;/h1&gt;
+&lt;p&gt;A few weeks ago, I noticed the Now Playing feature of my new Google Pixel 3 phone stopped working. The shortcut/icon was still on my home screen, however it hadn&amp;rsquo;t detected any songs recently.&lt;/p&gt;
+&lt;h1 id=&#34;testing-if-now-playing-is-broken&#34;&gt;Testing if Now Playing is broken&lt;/h1&gt;
+&lt;p&gt;I wanted to quickly verify that the reason Now Playing history looked old was in fact because Now Playing had stopped working. It is possible for the phone to be muffled by a pocket or out of range and not detect songs. So i eliminated this possibility by running a quick test.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s been reported that &amp;ldquo;Rap god&amp;rdquo; by Eminim is known to be detected by Now Playing. So I&amp;rsquo;ll use that.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Navigate to Now Playing history, either by tapping the shortcut on your home screen or by going to &lt;code&gt;Settings &amp;gt; Sounds &amp;gt; Now Playing &amp;gt; Now Playing history&lt;/code&gt; (If the history option is even available. It was missing for me when this problem occurred.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Start playing the test song on another device.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Wait for up to 1 minute to see if Now Playing detects the song.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the song does not appear in your Now Playing history or on the home screen after a minute, it&amp;rsquo;s likely broken.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;reset-now-playing&#34;&gt;Reset Now Playing&lt;/h1&gt;
+&lt;p&gt;Essentially what I did is clear all app data, uninstall, and then reinstall the applications that looked like they were related to Now Playing.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Navigate to &lt;code&gt;Settings &amp;gt; Apps &amp;amp; Notifications &amp;gt; See all N apps&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Tap &lt;code&gt;Action Services &amp;gt; Storage&lt;/code&gt; and then tap the &lt;code&gt;Clear storage&lt;/code&gt; button&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Go back to the apps list and find the &amp;ldquo;Pixel Ambient Services&amp;rdquo; app. Tap &lt;code&gt;Storage&lt;/code&gt; and tap the &lt;code&gt;Clear storage&lt;/code&gt; button here as well.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now that both apps&amp;rsquo; data has been cleared, I went ahead and uninstalled them. This step may not be necessary but I did it anyway.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Find the &amp;ldquo;Actions Services&amp;rdquo; and &amp;ldquo;Pixel Ambient Services&amp;rdquo; apps in the apps list again&lt;/li&gt;
+&lt;li&gt;Tap &lt;code&gt;Force stop&lt;/code&gt; and tap &lt;code&gt;OK&lt;/code&gt; at the prompt&lt;/li&gt;
+&lt;li&gt;Next tap &lt;code&gt;Disable&lt;/code&gt; and accept the two prompts. This reverts any updates and replaces it with the original app your phone came with out of the box. Now tap &lt;code&gt;Enable&lt;/code&gt; to turn the app back on.&lt;/li&gt;
+&lt;li&gt;Do the above steps for both apps.&lt;/li&gt;
+&lt;li&gt;Now open Google Play Store app. Tap the hamburger menu on the top left, tap &lt;code&gt;My apps and games&lt;/code&gt; and tap the &lt;code&gt;Updates&lt;/code&gt; tab. You may need to hit the refresh button to see updates for the two apps we reverted back to factory versions.&lt;/li&gt;
+&lt;li&gt;Tap the &lt;code&gt;Update All&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now we&amp;rsquo;ll get Now Playing re-enabled. To do this, we have to open the Pixel tips/tutorial app that you encoutered when you powered up your phone for the first time. Confusingly, to open &amp;ldquo;Pixel Tips&amp;rdquo; do this&amp;hellip;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Find &amp;ldquo;Actions Services&amp;rdquo; app in the &amp;ldquo;Installed&amp;rdquo; tab of Google Play Store.&lt;/li&gt;
+&lt;li&gt;Tap &lt;code&gt;Open&lt;/code&gt;. Notice the title of the app we just opened says &amp;ldquo;Pixel Tips&amp;rdquo;, not &amp;ldquo;Actions Services&amp;rdquo;. Very annoying&amp;hellip; Oh well&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Tap &lt;code&gt;Maximize Google&lt;/code&gt; near the bottom of the screen&lt;/li&gt;
+&lt;li&gt;Tap the right arrow a few times to get over to the &amp;ldquo;Now Playing&amp;rdquo; screen.&lt;/li&gt;
+&lt;li&gt;Tap &lt;code&gt;Turn on in settings&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;This should take you to Now Playing in settings where you could enable notifications on the lock screen.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;At this point, it started working for me.&lt;/p&gt;
+&lt;h3 id=&#34;some-miscallaneous-notes&#34;&gt;Some miscallaneous notes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;It seems Pixel Tips is also accessable by going to &lt;code&gt;Settings &amp;gt; Tips &amp;amp; Support &amp;gt; Go to Tips&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After re-enabling and updating the Pixel Ambient Services app, you might be able to simply open the Settings app and at the top of the screen there might be a box with a suggestion to turn on Now Playing.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I hope this helps!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pixel 3 Personal Concerns</title>
+      <link>https://ahogen.github.io/post/pixel-3-personal-concerns/</link>
+      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/post/pixel-3-personal-concerns/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been trying to keep up with some of the Pixel 3 rumors and leaks that have
+been coming out. My Nexus 5X just took a turn for the worst. After 2 years and
+1 month of use, it suddenly slowed and then started bootlooping &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.
+And, no, I was not made aware of the class-action lawsuit. I had bought an extended
+damage protection plan, but that expired just a month before.&lt;/p&gt;
+&lt;p&gt;So, I&amp;rsquo;m the market for a new phone. We&amp;rsquo;re likely 2 months away from the next
+Google phone, the Pixel 3, but there are some things that really bother me about
+this potential option.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No 3.5mm headphone jack. A major negative for a constant audio enthusiast.&lt;/li&gt;
+&lt;li&gt;Obscenely large notch. I&amp;rsquo;m paying for a very nice, high-density screen. I
+really dislike the idea of it being defiled by a notch.&lt;/li&gt;
+&lt;li&gt;Potentially smaller battery compared to Pixel 2. Not as big a deal as the
+other two, but would be disappointing to get the next biggest thing and
+have reduced specs in a very important area.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://www.androidcentral.com/sites/androidcentral.com/files/styles/xlarge/public/article_images/2018/08/pixel-3-xl-yuck.jpg?itok=2EnCPFmh&#34; data-caption=&#34;Pixel 3 XL leaked photos&#34;&gt;
+&lt;img data-src=&#34;https://www.androidcentral.com/sites/androidcentral.com/files/styles/xlarge/public/article_images/2018/08/pixel-3-xl-yuck.jpg?itok=2EnCPFmh&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Pixel 3 XL leaked photos
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;But here&amp;rsquo;s what&amp;rsquo;s really annoying to me. The competition, from what I&amp;rsquo;ve found
+so far, has a lot more negatives. The biggest name seems to be Samsung.&lt;/p&gt;
+&lt;p&gt;Samsung just released it&amp;rsquo;s Galaxy S9. But, oh look, camera under-performs in
+low-light conditions, battery life is inconclusive, and well&amp;hellip; Bixby &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.
+Also it looks like it&amp;rsquo;s got the trending notch.&lt;/p&gt;
+&lt;p&gt;Not to mention all the garbage-ware that you can&amp;rsquo;t get rid of. I have a Samsung
+Tab 4 which has its own calendar, contacts, and calculator; all of which are
+terrible in comparison to others on the Play app store. But nope, you can&amp;rsquo;t
+remove them. And, in the case of calendar and contacts, both the Samsung version
+and the Google version sync data from my Google account. So both produce
+notifications and suck up data, without some tweaking. I haven&amp;rsquo;t used Samsung
+since, so maybe they fixed this.&lt;/p&gt;
+&lt;p&gt;Oh, and the Galaxy S9 is more expensive than the Pixel 2.&lt;/p&gt;
+&lt;p&gt;Oh, &lt;strong&gt;and&lt;/strong&gt; I&amp;rsquo;ll get Android updates much less frequently than if I had a
+Pixel 3.&lt;/p&gt;
+&lt;p&gt;The hardware on some phones from OnePlus, LG, and Huawei looked interesting.
+However, I have a bad taste in my mouth from LG&amp;rsquo;s Nexus 5X since it bootlooped
+on me. The U.S. Government highly recommends not getting a Huawei phone due to
+spying concerns &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. OnePlus and Xiaumi are also China-based
+companies.&lt;/p&gt;
+&lt;p&gt;Data-mining for advertisement purposes is distasteful to me, but if there was
+super compelling hardware, I might not care. However, security is a concern.
+And in the world of Android, from what I&amp;rsquo;ve read, most people agree that you
+need a Google phone for faster updates.&lt;/p&gt;
+&lt;p&gt;So what am I to do? These slabs of silicon are not cheap. So if I&amp;rsquo;m going to
+drop that kind of money, I feel like I should be really happy with what I
+get.&lt;/p&gt;
+&lt;h3 id=&#34;pixel-3-pros&#34;&gt;Pixel 3 Pros:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Better security (faster updates)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Less bloatware. I want the Google apps anyway.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Better camera than most competition, if it&amp;rsquo;s as good or better than Pixel 2.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Because it&amp;rsquo;s the new flagship, should be built for the new Android Pie, and
+phone will be supported for a while (longer than Pixel 2, I would imagine).
+My Nexus 5X was going to lose support here in September 2018 I believe; just
+over 2 yrs after buying it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If price is comparable to the Pixel 2&amp;rsquo;s $625 starting price, then it comes in
+a little cheaper than some of the Samsung flagship stuff I&amp;rsquo;ve read about.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;pixel-3-cons&#34;&gt;Pixel 3 Cons:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;No headphone jack. I don&amp;rsquo;t want to charge any d**n bluetooth headphones either.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Can&amp;rsquo;t charge phone and listen to music with wired headphones &lt;strong&gt;unless&lt;/strong&gt; maybe
+it has wireless charging.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Stupidly obnoxious notch. Pay a premium to get little bits of pixels to throw
+away?!? Err, no. I&amp;rsquo;d rather have a fully-utilized, clean, rectagular display.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;what-would-my-ideal-phone-be&#34;&gt;What would my ideal phone be?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Gets updates fast. As in, same time as Pixel phones.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Headphone jack&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;No notch&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Battery lasts all day&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Solid 12+ MP camera with good low-light performance and HDR&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Don&amp;rsquo;t care about GPUs much since I don&amp;rsquo;t game. Just a few YouTube videos
+here and there.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SIM card.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Supports CDMA and GSM networks, so I can choose either with TracFone, like I
+did with my Nexus 5X&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fingerprint sensor&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;5.1&amp;rdquo; - 5.2&amp;rdquo; display &amp;ndash; I dislike large phones that won&amp;rsquo;t fit in my pockets&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;4-6GB RAM&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;32GB storage&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I guess I&amp;rsquo;m peeved because I don&amp;rsquo;t think my ideal specs are too hard to ask for.
+I really actually don&amp;rsquo;t wany anything complicated. I want a good solid camera
+because it&amp;rsquo;s the only one I cary with me and if I see something cool, it&amp;rsquo;s
+important for me to have a tool to capture that moment clearly.&lt;/p&gt;
+&lt;p&gt;I enjoy my music all the time. At work and at home, both being places where I
+often charge my phone as well. I want to charge the phone and play music at the
+same time. That wasn&amp;rsquo;t so hard to ask for in the past; I really don&amp;rsquo;t see why I
+should have to let that go now. And I dislike the idea of having a second battery
+(the wireless headphones) to charge.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve read some complaints about how this new version of Android, Android Pie,
+is a pain to use &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;. But if this really is going to
+be the future of Android, then I&amp;rsquo;d rather be running this on a Pixel 3, than
+on something else from a 3rd party who may or may not be designing the hardware
+to match upcoming software.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m desperate for a new phone, so maybe I will just have to get a Pixel 3, because
+it&amp;rsquo;s the best I can do. I really did not want to settle for &amp;ldquo;good enough&amp;rdquo; when
+it comes to anything over $300. I&amp;rsquo;ll keep looking for other options until
+October, when the Pixel 3 is expected to be released, and see if I can find
+something that fits my needs better.&lt;/p&gt;
+&lt;p&gt;In the mean time, it&amp;rsquo;s not looking great.&lt;/p&gt;
+&lt;p&gt;Regards,&lt;/p&gt;
+&lt;p&gt;- an android user&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/LG_smartphone_bootloop_issues#Nexus_5X&#34;&gt;https://en.wikipedia.org/wiki/LG_smartphone_bootloop_issues#Nexus_5X&lt;/a&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnet.com/reviews/samsung-galaxy-s9-review/&#34;&gt;https://www.cnet.com/reviews/samsung-galaxy-s9-review/&lt;/a&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.fastcompany.com/90218406/new-law-prohibits-government-from-using-zte-huawei-gear&#34;&gt;https://www.fastcompany.com/90218406/new-law-prohibits-government-from-using-zte-huawei-gear&lt;/a&gt; &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.androidcentral.com/pixel-3-xl-might-be-first-phone-google-i-just-dont-want&#34;&gt;https://www.androidcentral.com/pixel-3-xl-might-be-first-phone-google-i-just-dont-want&lt;/a&gt; &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Install Guild Wars 2 on Linux Mint</title>
+      <link>https://ahogen.github.io/post/guild-wars-2-in-linux-mint/</link>
+      <pubDate>Mon, 30 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/post/guild-wars-2-in-linux-mint/</guid>
+      <description>&lt;p&gt;Looking to play an awesome open-world &lt;a href=&#34;https://en.wikipedia.org/wiki/Massively_multiplayer_online_game&#34;&gt;MMO&lt;/a&gt; on your
+open-source machine? Well you most certianly can play Guild Wars 2 on Linux!&lt;/p&gt;
+&lt;p&gt;Here are my system specs. Note that I did not have to install or configure
+any special graphics drivers. If you have an Nvidea or AMD/Radeon graphics
+card, you may want to set up those 3rd party drivers before attempting this.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;-&lt;/th&gt;
+&lt;th&gt;-&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;OS&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.linuxmint.com/rel_sylvia_cinnamon.php&#34;&gt;Linux Mint 18.3 &amp;ldquo;Sylvia&amp;rdquo;&lt;/a&gt; (based on &lt;a href=&#34;https://wiki.ubuntu.com/XenialXerus/ReleaseNotes&#34;&gt;Ubuntu 16.04&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Processor:&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://ark.intel.com/products/80807/Intel-Core-i7-4790K-Processor-8M-Cache-up-to-4_40-GHz&#34;&gt;Intel i7-4790K&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Graphics:&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;(internal) Intel HD Graphics 4600&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;step-1-get-and-install-wine&#34;&gt;Step 1: Get and install Wine&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;IMPORTANT:&lt;/strong&gt; Remove any previous Wine install, including any package
+of which the old Wine is a dependency. Since I was starting with a clean Mint
+install, I did not have anything to un-install.&lt;/p&gt;
+&lt;p&gt;Once Wine has been fully removed from your system, run these commands.&lt;/p&gt;
+&lt;p&gt;I used the official Wine install instructions, available here: &lt;a href=&#34;https://wiki.winehq.org/Ubuntu&#34;&gt;https://wiki.winehq.org/Ubuntu&lt;/a&gt;
+but I have also duplicated them below for convenience.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# If your system is 64-bit, like mine, enable 32-bit architecture
+sudo dpkg --add-architecture i386
+
+# Add Wine repository key
+wget -nc https://dl.winehq.org/wine-builds/Release.key
+sudo apt-key add Release.key
+
+# Add Wine repository
+# On Linux Mint 18.x, use this line. It is different for Mint 17.x.
+sudo apt-add-repository &#39;deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main&#39;
+
+# Update your packages list
+sudo apt-get update
+
+# Install Stable branch of Wine
+sudo apt-get install --install-recommends winehq-stable
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;step-2-get-and-install-guild-wars-2&#34;&gt;Step 2: Get and install Guild Wars 2&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://account.arena.net/welcome&#34;&gt;Download the Guild Wars 2 Windows installer&lt;/a&gt; (&amp;ldquo;Gw2Setup(-64).exe&amp;rdquo;) from the ArenaNet website. If you don&amp;rsquo;t have an account yet, you&amp;rsquo;ll want to &lt;a href=&#34;https://account.arena.net/register?alt=gw2&#34;&gt;create one&lt;/a&gt; there on the website as well.&lt;/li&gt;
+&lt;li&gt;Run installer with Wine (e.g. &lt;code&gt;wine64 &amp;quot;~/Downloads/Gw2Setup-64.exe&amp;quot;&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Follow the installer&amp;rsquo;s instructions.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://ahogen.github.io/img/post/gw2-client-downloading-dat-file.jpg&#34; data-caption=&#34;GW2 client downloading data file(s)&#34;&gt;
+&lt;img data-src=&#34;https://ahogen.github.io/img/post/gw2-client-downloading-dat-file.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    GW2 client downloading data file(s)
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;If you&amp;rsquo;ve already downloaded and installed GW2 on another machine, you can &lt;strong&gt;save
+time&lt;/strong&gt; by using that large (~35GB) data file from the old install, in the new
+installation. Otherwise, the client will download this file for you.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;After the game is installed and starts downloading packages (shown above), &lt;strong&gt;close it&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;From the old/existing install &lt;strong&gt;find the &lt;code&gt;Gw2.dat&lt;/code&gt; file&lt;/strong&gt; (again, normally about 35GB). You&amp;rsquo;ll find this in the GW2 install directory, such as &amp;ldquo;C:/Program Files/Guild Wars 2/&amp;quot;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Copy&lt;/strong&gt; that file into the new install directory, right next to the &amp;ldquo;Gw2-64.exe&amp;rdquo; file. If there is an existing &lt;code&gt;Gw2.dat&lt;/code&gt; file which is rather small, copy over (replace) it with our larger one. It was the file being downloaded before we closed the application.&lt;/li&gt;
+&lt;li&gt;Now &lt;strong&gt;launch GW2&lt;/strong&gt; (e.g. &lt;code&gt;wine64 &amp;quot;/home/username/bin/Guild Wars 2/Gw2-64.exe&amp;quot;&lt;/code&gt;). After a few moments, and possibly downloading any updates, it should open to the login screen!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is all I had to do to get started. However, you can improve performance
+a little bit by turning off debugging messages in wine. I made a launch
+script to do this for me.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
+
+# https://us.download.nvidia.com/XFree86/Linux-x86/319.32/README/openglenvvariables.html
+#export LD_PRELOAD=&amp;quot;libpthread.so.0 libGL.so.1&amp;quot;;
+#export __GL_THREADED_OPTIMIZATIONS=1;
+
+# Disable all Wine debug output, both to the terminal and to any log files
+# https://wiki.winehq.org/Debug_Channels
+export WINEDEBUG=-all;
+export LOGFILE=/dev/null;
+
+# GW2 Client cmdline args are documented here:
+# https://wiki.guildwars2.com/wiki/Command_line_arguments
+# &amp;quot;-dx9single&amp;quot; is common for Wine
+# I find &amp;quot;-mapLoadInfo&amp;quot; to be kind of nice as well.
+wine64 &amp;quot;/home/username/bin/Guild Wars 2/Gw2-64.exe&amp;quot; -dx9single -mapLoadInfo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;From here, it&amp;rsquo;s up to you to try out settings that may or may not improve
+performance on your system. I don&amp;rsquo;t have a gaming setup at all. Heck, the
+embedded graphics in my CPU uses shared RAM even. Even so, I get a solid
+30 FPS. This is about 10 FPS less than running GW2 on Windows on the same
+machine. I find the game very playable nonetheless.&lt;/p&gt;
+&lt;p&gt;You may find lots of helpful info on the Guild Wars 2 Wiki pages.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://wiki.guildwars2.com/wiki/Guild_Wars_2_on_Wine&#34;&gt;https://wiki.guildwars2.com/wiki/Guild_Wars_2_on_Wine&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I hope this was useful! Feel free to let me know in the comments if I missed
+something.&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PICAXE Microcontroller with Parallax Serial LCD Display</title>
+      <link>https://ahogen.github.io/post/tutorial-picaxe-parallax-lcd-display/</link>
+      <pubDate>Sun, 22 Sep 2013 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/post/tutorial-picaxe-parallax-lcd-display/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    This tutorial originally appeared on my (Alex&amp;rsquo;s) blog on Northwest Tech Experience (nwteche.com). That website has been removed. I have moved some of the content I wrote, including this page, to this website of mine. I may have edited the original content for clarity.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Do you want to add an LCD display to your &lt;a href=&#34;http://www.picaxe.com/&#34;&gt;PICAXE&lt;/a&gt; project? Do you have a limited number of output pins on your microcontroller? The &lt;a href=&#34;https://www.parallax.com/product/27977&#34;&gt;&lt;strong&gt;Parallax 2x16 Serial LCD&lt;/strong&gt; (Backlit)&lt;/a&gt; display is a great solution!&lt;/p&gt;
+&lt;p&gt;The Parallax 2×16 serial LCD display has only 3 pins. Only one of those pins connects to the microcontroller. The other two are for power connections.&lt;/p&gt;
+&lt;p&gt;It turns out, Parallax has made it very easy to communicate with the LCD display with simple serial commands. You can test your display by using or modifying the &lt;a href=&#34;http://www.picaxe.com/&#34;&gt;PICAXE&lt;/a&gt; program I have written below.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;To use the LCD display at the &lt;a href=&#34;http://www.picaxe.com/&#34;&gt;PICAXE&lt;/a&gt;’s default 4 MHz, the LCD will need to be set for a 2400 baud rate and the program will change from:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-basic&#34;&gt;setfreq m16
+symbol tx = c.4
+symbol baud = T9600_16
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;…to…&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-basic&#34;&gt;setfreq m4
+symbol tx = c.4
+symbol baud = T2400_
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The code below will test the serial communication, the display back-lighting (if applicable), and the on-board speaker/sound controls.&lt;/p&gt;
+&lt;p&gt;I hope this proves useful to somebody!&lt;/p&gt;
+&lt;h3 id=&#34;resources&#34;&gt;Resources:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.parallax.com/sites/default/files/downloads/27979-Parallax-Serial-LCDs-Product-Guide-v3.1.pdf&#34;&gt;Parallax Serial LCD Display PDF manual&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-basic&#34;&gt;&#39; ------------
+&#39;|  LCD Test  |
+&#39; ------------
+
+&#39;by Alexander Hogen
+
+&#39;Started: 9-16-2013
+&#39;Finished: 9-16-2013
+
+&#39;See &amp;quot;Command Set&amp;quot; in this PDF for
+&#39;more information.
+&#39;http://www.parallax.com/sites/default/files/downloads/27979-Parallax-Serial-LCDs-Product-Guide-v3.1.pdf
+
+setfreq m16
+
+&#39;9600 baud only works in 16MHz or higher
+
+&#39;Multiply desired millisecond (ms) timing
+&#39;by 4 to get desired result.
+&#39;i.e. &amp;quot;Pause 5&amp;quot; becomes &amp;quot;Pause 20&amp;quot;
+
+symbol tx = c.4
+symbol baud = T9600_16
+
+pause 400
+
+main:
+serout tx, baud,(22) &#39;Turn display on
+pause 40
+gosub clearLCD
+serout tx, baud,(17) &#39;Turn backlight on
+
+serout tx, baud,(&amp;quot;Hello&amp;quot;)
+
+pause 4000
+
+gosub clearLCD
+serout tx, baud,(&amp;quot;LCD works great!&amp;quot;)
+
+gosub beeps
+
+end
+
+clearLCD:
+
+serout tx, baud, (12)
+pause 40
+return
+
+beeps:
+
+serout tx, baud,(216) &#39;Select the 4th scale (A=440Hz)
+pause 40
+serout tx, baud,(210) &#39;Set note length to 1/16 note
+pause 40
+
+serout tx, baud,(220,221,222,223,224,225,226,227)
+pause 4000
+
+return
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Install Android Market on Coby Kyros MID7012 (or most other tablets running Android 2.3.3)</title>
+      <link>https://ahogen.github.io/post/tutorial-android-market-coby-kyros-mid7012/</link>
+      <pubDate>Fri, 06 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/post/tutorial-android-market-coby-kyros-mid7012/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    This &lt;a href=&#34;https://web.archive.org/web/20170201091154/http://nwteche.com/alex_blog/install-android-market-on-coby-kyros-mid7012-or-most-other-tablets-running-android-2-3-3/&#34;&gt;tutorial originally appeared&lt;/a&gt;
+back in 2012 on my (Alex&amp;rsquo;s) blog on Northwest Tech Experience (nwteche.com).
+That website has been removed and I migrated some of my content to this new site.
+I may have edited the original content for clarity.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;
+&lt;p&gt;This Christmas I put the &lt;a href=&#34;https://www.amazon.com/gp/product/B005HUH88K&#34;&gt;Coby Kyros MID7012 tablet&lt;/a&gt; (which only runs Android 2.3.3) on my wish list. I was surprised when I actually received it! By that time, I had decided I didn’t really need it.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://www.amazon.com/gp/product/B005HUH88K&#34;&gt;Kyros 7012&lt;/a&gt; and others don’t have the &lt;a href=&#34;https://en.wikipedia.org/wiki/Google_Play#History&#34;&gt;Android Market&lt;/a&gt; installed out of the box. It would seem like all you’d need to do is install a few .apk files and you’d be good, right? Well all but two articles I read online were not like that at all. Most required you to &lt;a href=&#34;https://en.wikipedia.org/wiki/Rooting_(Android)&#34;&gt;root&lt;/a&gt; the device. Although rooting itself can be undone, certain things done with rooting privileges cannot. Not to mention the fact that “rooting” the tablet most likely voids the warranty on the device. So, in short, it doesn’t seem like “doing it right the first time” is very popular with people installing the Android Market. That is why I wanted to throw in my two cents about this so that more people can do this right and not mess up their devices.&lt;/p&gt;
+&lt;p&gt;After some research, I found a method that worked for me. It is based off a YouTube tutorial. If you go on YouTube, it’s the first one that pops up if you search “install android market on coby” I believe. Here’s the actual URL: &lt;a href=&#34;http://www.youtube.com/watch?v=6BrWSC2uiAg&#34;&gt;http://www.youtube.com/watch?v=6BrWSC2uiAg&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;release-of-liability&#34;&gt;Release of Liability&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; I, ALEXANDER HOGEN, AND ANY OTHER INDIVIDUAL OR COMPANY ASSOCIATED WITH MYSELF SHALL NOT BE HELD RESPONSIBLE FOR ANY DAMAGE, LOSS OF DATA, LOSS OF FUNCTIONALITY OR
+ANY OTHER OUTCOME AS A RESULT OF FOLLOWING THIS TUTORIAL. THE USER RECOGNIZES THAT THERE ARE CERTAIN INHERENT RISKS ASSOCIATED WITH PERFORMING THE OPERATIONS DESCRIBED IN THIS TUTORIAL AND THE USER ASSUMES FULL RESPONSIBILITY FOR ANY UNDESIRABLE OUTCOME DURING OR AFTER PERFORMING THE STEPS DESCRIBED ON THIS WEBSITE.&lt;/p&gt;
+&lt;p&gt;I put that notification up in case someone messes up their device by following this tutorial, although I &lt;em&gt;seriously&lt;/em&gt; doubt they will. These steps aren&amp;rsquo;t hard and there is no rooting or &amp;ldquo;jail-breaking&amp;rdquo; involved. Okay, here we go.&lt;/p&gt;
+&lt;h1 id=&#34;instructions&#34;&gt;Instructions&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;On your computer, download the “Android Market_install_files.zip” below and unzip all the files to a convenient location (say, your desktop). &lt;a href=&#34;https://ahogen.github.io/downloads/Android-Market_install_files.zip&#34;&gt;&lt;strong&gt;Android Market_install_files.zip&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now connect the tablet to your PC and put these files on your tablet’s SD card or internal memory. If your not sure how to do this, consult your &lt;a href=&#34;https://web.archive.org/web/20130822214307/http://cobyusa.com/files/manuals/MID7012_MN.pdf&#34;&gt;product manual&lt;/a&gt; (on page 30 I think). I stuck the files in the “downloads” folder on the device itself.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After the files have finished transferring, disconnect the tablet from your PC.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Go to your file viewer app. On my tablet, they installed “ES File Explorer”. Yours should have a similar file explorer program.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now find where you put those .apk files. I put mine in the “downloads” folder.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ok, now you are going to install them in a specific order. (Just tap on the file to install. Hit “Done” after each one. &lt;strong&gt;DON’T&lt;/strong&gt; RUN THEM AFTER THEY INSTALL!) Here is the order:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;OneTimeInitializer.apk&lt;/li&gt;
+&lt;li&gt;SetupWizard.apk&lt;/li&gt;
+&lt;li&gt;GoogleServicesFramework-signed.apk&lt;/li&gt;
+&lt;li&gt;com.android.vending.3.3.12.apk&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ok, this step is important. &lt;strong&gt;DO NOT&lt;/strong&gt; GO TO THE HOME SCREEN!!. Press and hold the power button on the tablet and turn it off.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now turn it back on!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After start-up, you will see a menu with two options. Check the “Use this as default” box on the bottom, then select the option on top (“Launcher”). You don’t want to set up anything. You just want to use the regular initializer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make sure you are connected to a wireless network (WIFI). If not, get your tablet connected.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now that your connected, go to the Apps list (by tapping the box made of little squares that’s either on the bottom or right hand side of your screen).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You should see the Android Market icon in this list. Go ahead and open it. Since this is the first run, you’ll need to enter your Google Account information and accept the license agreement.The Android Market will filter out most apps that won’t work with your tablet.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;You should be good to go. Enjoy your new apps!&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

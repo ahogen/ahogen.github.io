@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects | Alex Hogen</title>
+    <link>https://ahogen.github.io/project/</link>
+      <atom:link href="https://ahogen.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 Alexander Hogen</copyright>
+    <image>
+      <url>https://ahogen.github.io/img/banners/default.png</url>
+      <title>Projects</title>
+      <link>https://ahogen.github.io/project/</link>
+    </image>
+    
+    <item>
+      <title>FFT IP Core Generator</title>
+      <link>https://ahogen.github.io/project/fft-ip-core-generator/</link>
+      <pubDate>Sun, 29 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/project/fft-ip-core-generator/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://ahogen.github.io/img/banners/fft-ip-core.png&#34; alt=&#34;FFT IP Core banner image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This project&amp;rsquo;s goal is to make integrating a fast Fourier transform (FFT)
+processing core into your project incredibly simple. If you are reading this,
+then you are well aware of the many uses for an FFT in an FPGA.&lt;/p&gt;
+&lt;h3 id=&#34;background-&#34;&gt;Background&lt;/h3&gt;
+&lt;p&gt;I was going to use an FFT core for my senior project, but I had a difficult time
+integrating a proprietary FFT core. The User Guide for the core did not give me
+enough detail for me to build a proper interface. Even if I could have gotten it
+working, I didn&amp;rsquo;t (and still don&amp;rsquo;t) have the money to purchase a license for the
+core, so it would be severely limited in its functionality.&lt;/p&gt;
+&lt;p&gt;My senior project research taught me a lot about FFT processing in a hardware
+platform, which got me thinking about how I could build my own core. However, I
+didn&amp;rsquo;t want to just make a single core for my own specific application, I wanted
+the functionality of generating an FFT processor of any length and bit-width.
+And that is how this FFT generator was born.&lt;/p&gt;
+&lt;h3 id=&#34;features-&#34;&gt;Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Automatically calculates twiddle factors&lt;/li&gt;
+&lt;li&gt;Uses a high-performance implementation of a Baugh-Wooley multiplier
+&lt;ul&gt;
+&lt;li&gt;Relatively new HPM reduction tree architecture &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Good compromise between power usage and speed&lt;/li&gt;
+&lt;li&gt;Faster than conventional Baugh-Wooley multiplier &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Faster than HPM Modified Booth multiplier &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Length and width can be (nearly) any number&lt;/li&gt;
+&lt;li&gt;Generates clean, clear &lt;a href=&#34;https://en.wikipedia.org/wiki/SystemVerilog&#34;&gt;SystemVerilog&lt;/a&gt; code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;architecture-&#34;&gt;Architecture&lt;/h3&gt;
+&lt;p&gt;With the guidance of &lt;a href=&#34;https://www.researchgate.net/publication/235995761_The_Fast_Fourier_Transform_in_Hardware_A_Tutorial_Based_on_an_FPGA_Implementation&#34;&gt;George Slade&amp;rsquo;s paper&lt;/a&gt;, along with some other internet resources, I have been working on an object-oriented, &lt;strong&gt;C++&lt;/strong&gt; library to configure and generate &lt;strong&gt;SystemVerilog&lt;/strong&gt; compatible modules for use in &lt;em&gt;any vendor&amp;rsquo;s&lt;/em&gt; FPGA.&lt;/p&gt;
+&lt;p&gt;The FFT core uses a custom-built multiplier. Specifically, a SystemVerilog implementation of the HPM-based Baugh-Wooley multiplier, as researched by H. Eriksson, P. Larsson-Edefors, M. Sheeran, M. Sjalander, D. Johansson, and M. Scholin. Refer to their paper &lt;a href=&#34;http://www.sjalander.com/research/pdf/sjalander-iscas2006.pdf&#34;&gt;&lt;em&gt;Multiplier Reduction Tree with Logarithmic Logic Depth and Regular Connectivity&lt;/em&gt;&lt;/a&gt; for more information. I have contacted Mr. Sjalander and received permission to impliment their multiplier design.&lt;/p&gt;
+&lt;h3 id=&#34;status-&#34;&gt;Status&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Component Name&lt;/th&gt;
+&lt;th&gt;C++ Code Written&lt;/th&gt;
+&lt;th&gt;C++ Code Tested&lt;/th&gt;
+&lt;th&gt;SV Synthesizes&lt;/th&gt;
+&lt;th&gt;SV ModelSim Simulation Test&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ROM&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Twiddle ROM&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Multiplier&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RAM&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/chk.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/spinner.gif&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2-port RAM&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Butterfly Unit (BFU)&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Top-level module&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;(op) Kogge-Stone Adder&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://ahogen.github.io/img/x.png&#34; alt=&#34;picture&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;more-information-&#34;&gt;More Information&lt;/h3&gt;
+&lt;p&gt;The project is developed in a GIT repository. Right now, the repository is
+hidden/private, but when I make it public, you will be able to access it at the
+following URL.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gitlab.com/ahogen/PLD-FFT-Gen&#34;&gt;https://gitlab.com/ahogen/PLD-FFT-Gen&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;H. Eriksson, P. Larsson-Edefors, M. Sheeran, M. Själander, D. Johansson, M. Schölin. &lt;a href=&#34;http://www.sjalander.com/research/pdf/sjalander-iscas2006.pdf&#34;&gt;&amp;ldquo;Multiplier Reduction Tree with Logarithmic Logic Depth and Regular Connectivity&amp;rdquo;&lt;/a&gt;. Proceedings of IEEE International Symposium on Circuits and Systems (ISCAS). Island of Kos, Greece, pp. 4-8, 21-24 May 2006. &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Jipsa Antony, Jyotirmoy Pathak. &lt;a href=&#34;http://doi.org/10.15623/ijret.2014.0308011&#34;&gt;&amp;ldquo;DESIGN AND IMPLEMENTATION OF HIGH SPEED BAUGH WOOLEY AND MODIFIED BOOTH MULTIPLIER USING CADENCE RTL&amp;rdquo;&lt;/a&gt;. International Journal of Research in Engineering and Technology 03.08 (2014): 56-63. Web. 30 Jan. 2017. &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MegaMoto Lib</title>
+      <link>https://ahogen.github.io/project/megamotolib/</link>
+      <pubDate>Sat, 31 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/project/megamotolib/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ALPS Laser Projector</title>
+      <link>https://ahogen.github.io/project/alps-laser-projector/</link>
+      <pubDate>Sat, 04 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/project/alps-laser-projector/</guid>
+      <description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#background&#34;&gt;Background&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#features&#34;&gt;Features&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#hardware-architecture&#34;&gt;Hardware Architecture&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#images&#34;&gt;Images&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;p&gt;This was the junior project for my undergraduate degree. Four of us students
+designed and built this project. It was later used by OIT faculty in a few
+highschool recruiting sessions.&lt;/p&gt;
+&lt;p&gt;Below is some marketing-style documentation for our &amp;ldquo;product.&amp;rdquo;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;background&#34;&gt;Background&lt;/h3&gt;
+&lt;p&gt;The acronym ALPS stands for Amplified Light Projection System. ALPS is
+built for long-distance, high-powered alphanumeric projection applications. The
+system controller rotates two separate mirrors (see Figure 1) to direct a laser
+beam rapidly across any projection surface. This rotation occurs quickly enough
+to create lines and shapes with the laser dot. This phenomenon is known as
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Persistence_of_vision&#34;&gt;persistence of vision&lt;/a&gt;
+(POV) and has been used for decades in things like flip books as a means to
+create motion pictures and animations.&lt;/p&gt;
+&lt;h3 id=&#34;features&#34;&gt;Features&lt;/h3&gt;
+&lt;p&gt;ALPS has a number of key features which set it apart from other signage
+systems on the market today. Some of these features are listed below.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Visible at over 1000 feet &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Text is laser-thin so that your signage will always appear crisp and clean&lt;/li&gt;
+&lt;li&gt;Adding custom logos and typefaces is quite simple&lt;/li&gt;
+&lt;li&gt;Advanced, quiet cooling system ensures the hardware will never overheat&lt;/li&gt;
+&lt;li&gt;Text is entered with an IR keyboard&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With these features, this system is sure to meet many of your long distance
+signage needs, including requirements you may not know you have yet.&lt;/p&gt;
+&lt;h3 id=&#34;hardware-architecture&#34;&gt;Hardware Architecture&lt;/h3&gt;
+&lt;p&gt;Below is an overview of the hardware components used in this project:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;100mW green laser (yes, this will burn your skin!)&lt;/li&gt;
+&lt;li&gt;Laser galvanometer&lt;/li&gt;
+&lt;li&gt;TI Tiva C Launchpad (EK-TM4C123GXL)&lt;/li&gt;
+&lt;li&gt;Yamaha RCX IR remote&lt;/li&gt;
+&lt;li&gt;IR receiver&lt;/li&gt;
+&lt;li&gt;MAX5322 dual bipolar output DAC for contolling the galvos&lt;/li&gt;
+&lt;li&gt;(+/-)15V DC power supply, and various step-down linear voltage regulators&lt;/li&gt;
+&lt;li&gt;Temperature sensors&lt;/li&gt;
+&lt;li&gt;Plexiglass graciously donated by &lt;a href=&#34;http://basinglassandaluminum.com&#34;&gt;Basin Glass and Aluminium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;images&#34;&gt;Images&lt;/h3&gt;
+
+
+
+
+
+
+
+
+  
+  
+
+
+&lt;div class=&#34;gallery&#34;&gt;
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+    
+      
+    
+  
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; data-caption=&#34;The ALPS projector&#34; href=&#34;https://ahogen.github.io/img/projects/alps-case-3.jpg&#34;&gt;
+    &lt;img data-src=&#34;https://ahogen.github.io/img/projects/alps-case-3.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+  
+  
+  
+    
+      
+    
+  
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; data-caption=&#34;The ALPS projector (2)&#34; href=&#34;https://ahogen.github.io/img/projects/alps-case-1.jpg&#34;&gt;
+    &lt;img data-src=&#34;https://ahogen.github.io/img/projects/alps-case-1.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+  
+  
+  
+    
+      
+    
+  
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; data-caption=&#34;Laser with chalk dust in the air&#34; href=&#34;https://ahogen.github.io/img/projects/alps-laser-chalk-dust.jpg&#34;&gt;
+    &lt;img data-src=&#34;https://ahogen.github.io/img/projects/alps-laser-chalk-dust.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+  
+  
+  
+    
+      
+    
+  
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; data-caption=&#34;Laser with chalk dust in the air (2)&#34; href=&#34;https://ahogen.github.io/img/projects/alps-laser-chalk-dust-clock.jpg&#34;&gt;
+    &lt;img data-src=&#34;https://ahogen.github.io/img/projects/alps-laser-chalk-dust-clock.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+  
+  
+  
+    
+      
+    
+  
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; data-caption=&#34;Nighttime distance projection test, onto the OIT hill&#34; href=&#34;https://ahogen.github.io/img/projects/alps-night-hill-projection.jpg&#34;&gt;
+    &lt;img data-src=&#34;https://ahogen.github.io/img/projects/alps-night-hill-projection.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+  
+  
+  
+    
+      
+    
+  
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; data-caption=&#34;Nighttime distance projection test, onto the OIT hill&#34; href=&#34;https://ahogen.github.io/img/projects/alps-night-hill-hi-mom.jpg&#34;&gt;
+    &lt;img data-src=&#34;https://ahogen.github.io/img/projects/alps-night-hill-hi-mom.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+  
+  
+  
+    
+      
+    
+  
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; data-caption=&#34;Approximate projection distance measured with Google Maps&#34; href=&#34;https://ahogen.github.io/img/projects/alps-laser-projector-distance-google-maps.png&#34;&gt;
+    &lt;img data-src=&#34;https://ahogen.github.io/img/projects/alps-laser-projector-distance-google-maps.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+  
+  
+&lt;/div&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Long-distance test was performed after sunset. Projection may not be
+visable at this range during daylight hours. &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>cppcheck-codequality</title>
+      <link>https://ahogen.github.io/project/cppcheck-codequality/</link>
+      <pubDate>Sat, 04 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/project/cppcheck-codequality/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Greenhouse Automation</title>
+      <link>https://ahogen.github.io/project/greenhouse-control/</link>
+      <pubDate>Sun, 16 Dec 2012 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/project/greenhouse-control/</guid>
+      <description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#datasheets&#34;&gt;Datasheets&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#images&#34;&gt;Images&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    This article originally appeared back in 2012 on my (Alex&amp;rsquo;s) blog on Northwest
+Tech Experience (nwteche.com). That website has been removed and I migrated some
+of my content to this new site. I may have edited the original content for clarity.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;In a college class this last year, a group of us were assigned to design a
+system that would collect and graph environmental data from our campus
+greenhouse. We would take this data, graph it, and display those graphs on a
+&lt;a href=&#34;https://sites.google.com/site/coccgreenhousedatacollection/home&#34;&gt;public website&lt;/a&gt;.
+We’d also use current data to control the greenhouse (i.e. watering, heating,
+cooling…). Hopefully this information helps you if you are wanting to start your
+own DIY project and automate your greenhouse.&lt;/p&gt;
+&lt;p&gt;We decided to use an &lt;a href=&#34;https://store.arduino.cc/usa/arduino-uno-rev3&#34;&gt;Arduino UNO&lt;/a&gt;,
+a &lt;a href=&#34;http://www.picaxe.com/Hardware/PICAXE-Chips/PICAXE-14M2-microcontroller/&#34;&gt;PICAXE-14M2&lt;/a&gt;,
+and a desktop computer running Windows Vista. The Arduino functioned as the main
+interface and brain. We dedicated the PICAXE to simply reading sensors and
+sending that data in a continuous stream to the Arduino via a serial
+communication protocol.&lt;/p&gt;
+&lt;p&gt;The Arduino would format and send data to be logged to the PC, which runs
+&lt;a href=&#34;https://www.megunolink.com/&#34;&gt;MegunoLink&lt;/a&gt;. The Arduino would also decide, based
+on environmental conditions, if the heater/cooler/water should be turned on.
+Future groups working on the project would have to decided whether the Arduino
+would do this by sending a command to a dedicated microcontroller (reverse of
+what we did with the PICAXE being dedicated to sensors) or by directly
+controlling equipment in the greenhouse.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/IT-Layout-11-16-2012.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;So, in essence, for this project, we figured out how to set up data logging and
+automation of the greenhouse environment using cheap materials and open source
+equipment. We didn&amp;rsquo;t have the time to build the complete working system, so our
+final documentation was targeted at the next group that would use our research
+to realize the project.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;./IT-Budget.pdf&#34;&gt;IT Budget/Component Pricing.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;I&amp;rsquo;m sharing this here in case some DIY hobbyist could find the original
+information useful.&lt;/p&gt;
+&lt;p&gt;Now in 2020, it might make more sense to use a Raspberry Pi as the brains, and
+replace the PICAXE with an Arduino for I/O interfacing. The parts may be a
+little more expensive, but the connectivity and control options seem a lot more flexible.&lt;/p&gt;
+&lt;p&gt;Programming a greenhouse controller in Python running on a network-connected
+Pi seems like a lot of fun. And, if you can spend a little more money, the
+Arduino shields for relays and sensors would simplify the wiring process!&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;datasheets&#34;&gt;Datasheets&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;CO2 Sensor: &lt;a href=&#34;https://ahogen.github.io/datasheets/Spec-Sheet-GE-Telaire-T6004-CDS-1.pdf&#34;&gt;GE Telaire T6004 CDS-1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Hall Effect Sensor: &lt;a href=&#34;https://ahogen.github.io/datasheets/Melexis-Datasheet-MLX90217.pdf&#34;&gt;Melexis MLX90217&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Humidity Sensor: &lt;a href=&#34;https://ahogen.github.io/datasheets/Humirel-Datasheet-HS1101.pdf&#34;&gt;Humirel HS1101&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Humidity Sensor: &lt;a href=&#34;https://ahogen.github.io/datasheets/Parallax-Data-Sheet-HS1101-v1.0.pdf&#34;&gt;Parallax HS1101&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Photoresistor: &lt;a href=&#34;https://ahogen.github.io/datasheets/Photoresitor-Perkinelmer_Actives-and-Passives_9800015.pdf&#34;&gt;PerkinElmer 9800015&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Temperature Sensor: &lt;a href=&#34;https://ahogen.github.io/datasheets/Data-Sheet-Texas-Instruments-LM34.pdf&#34;&gt;TI LM34&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;images&#34;&gt;Images&lt;/h2&gt;
+
+
+
+
+
+
+
+
+  
+  
+
+
+&lt;div class=&#34;gallery&#34;&gt;
+
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/Air-Humidity-Picture.jpg&#34; data-caption=&#34;Air humidity sensor&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/Air-Humidity-Picture_huc481276552365ce4ad34e266c5e05428_36195_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/CO2-Sensor.jpg&#34; data-caption=&#34;CO2 gas sensor&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/CO2-Sensor_huc481276552365ce4ad34e266c5e05428_92266_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/IT-Layout-11-16-2012.jpg&#34; data-caption=&#34;Greenhouse automation system diagram&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/IT-Layout-11-16-2012_hua617d4aadfdfeadac2761dc1101b6443_50217_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/PICAXE-14-Proto-Board.jpg&#34; data-caption=&#34;PICAXE 14 proto board&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/PICAXE-14-Proto-Board_hu30c0ea1f24acc5dd5d0ea200f5b9ba0f_46558_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/Photoresistor.jpg&#34; data-caption=&#34;Photoresistor (light brightness sensor)&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/Photoresistor_huc481276552365ce4ad34e266c5e05428_19275_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/Soil-Moisture-2.jpg&#34; data-caption=&#34;Home made soil moisture sensor. See &amp;lt;a href=&amp;#34;http://gardenbot.org/howTo/soilMoisture/&amp;#34;&amp;gt;http://gardenbot.org/howTo/soilMoisture/&amp;lt;/a&amp;gt;&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/Soil-Moisture-2_hu409c1a58b8f87fc392aad1c63d131eb2_387942_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/Soil-Moisture-4.jpg&#34; data-caption=&#34;Home made soil moisture sensor. See &amp;lt;a href=&amp;#34;http://gardenbot.org/howTo/soilMoisture/&amp;#34;&amp;gt;http://gardenbot.org/howTo/soilMoisture/&amp;lt;/a&amp;gt;&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/Soil-Moisture-4_hua14ca4d8671450d1db82ee9724d60a05_786737_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/Soil-Moisture.jpg&#34; data-caption=&#34;Home made soil moisture sensor.&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/Soil-Moisture_hu95fd0450d0eb7138762798590831ab46_912766_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/arduino-uno.jpg&#34; data-caption=&#34;Arduino UNO&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/arduino-uno_hueac6279110b4466daa003e894095d380_107688_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/complete-sensor-4.jpg&#34; data-caption=&#34;A home made wind speed detector (Anemometer), using a hall effect sensor. See &amp;lt;a href=&amp;#34;http://www.hackersbench.com/Projects/anemometer/&amp;#34;&amp;gt;http://www.hackersbench.com/Projects/anemometer/&amp;lt;/a&amp;gt;&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/complete-sensor-4_huf5049808143429d16c20e2a3b12621d5_31385_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+    
+    
+    
+    
+    
+      
+        
+      
+    
+  &lt;a data-fancybox=&#34;gallery-img&#34; href=&#34;https://ahogen.github.io/project/greenhouse-control/img/lm35.jpg&#34; data-caption=&#34;Temperature sensor&#34;&gt;
+  &lt;img data-src=&#34;https://ahogen.github.io/project/greenhouse-control/img/lm35_hu1adc86708709d70cb21db11a59811457_16832_0x190_resize_q90_lanczos.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34;&gt;
+  &lt;/a&gt;
+  
+
+  
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

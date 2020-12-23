@@ -1,0 +1,2471 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.7.0">
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://ahogen.github.io/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="rgb(0, 126, 124)">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46683639-6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           document.location = url;
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target);  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-46683639-6', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Alex Hogen">
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu41297bf952fcc5965d442cd00908f20d_1356_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu41297bf952fcc5965d442cd00908f20d_1356_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://ahogen.github.io/">
+
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@alex_hogen">
+  <meta property="twitter:creator" content="@alex_hogen">
+  
+  <meta property="og:site_name" content="Alex Hogen">
+  <meta property="og:url" content="https://ahogen.github.io/">
+  <meta property="og:title" content="Alex Hogen">
+  <meta property="og:description" content=""><meta property="og:image" content="https://ahogen.github.io/images/icon_hu41297bf952fcc5965d442cd00908f20d_1356_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://ahogen.github.io/images/icon_hu41297bf952fcc5965d442cd00908f20d_1356_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+  
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://ahogen.github.io/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "url": "https://ahogen.github.io/"
+}
+</script>
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Alex Hogen</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Alex Hogen</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Alex Hogen</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/" data-target="[]"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/project"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications" data-target="#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<span class="js-widget-page d-none"></span>
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+    
+    
+    
+  
+
+  <section id="slider" class="home-section wg-slider    carousel slide"  data-ride="carousel" data-interval="5000">
+    
+      
+
+
+
+
+<ol class="carousel-indicators">
+  
+  <li data-target="#slider" data-slide-to="0" class="active"></li>
+  
+  <li data-target="#slider" data-slide-to="1" ></li>
+  
+</ol>
+
+
+<div class="carousel-inner">
+  
+  <div class="wg-hero dark carousel-item active" style="
+    
+    background-color: #666;
+    
+    
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url('https://ahogen.github.io/img/banners/fft-code-cpp.png');
+    
+    ;">
+    <div class="container" style="text-align: center;">
+        <h1 class="hero-title">
+          Hello!
+        </h1>
+
+        
+        <p class="hero-lead" style="margin: 0 auto 0 auto;">
+          <br>Here are some hobby projects I’ve been working on.
+        </p>
+        
+
+        
+      </div>
+  </div>
+  
+  <div class="wg-hero dark carousel-item" style="
+    
+    background-color: #555;
+    
+    
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+    url('https://ahogen.github.io/img/projects/alps-laser-chalk-dust.jpg');
+    
+    ;">
+    <div class="container" style="text-align: right;">
+        <h1 class="hero-title">
+          Lasers!
+        </h1>
+
+        
+        <p class="hero-lead" style="margin-left: auto; margin-right: 0">
+          Check out my (now old, but still cool) college junior project
+        </p>
+        
+
+        
+        
+        
+        
+          
+        
+        <p>
+          <a href="/project/alps-laser-projector/" class="btn btn-light btn-lg">View Project</a>
+        </p>
+        
+      </div>
+  </div>
+  
+</div>
+
+
+<a class="carousel-control-prev" href="#slider" data-slide="prev">
+  <span class="carousel-control-prev-icon"></span>
+  <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#slider" data-slide="next">
+  <span class="carousel-control-next-icon"></span>
+  <span class="sr-only">Next</span>
+</a>
+
+    
+  </section>
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  <section id="posts" class="home-section wg-pages   "  >
+    <div class="container">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="row">
+  <div class="col-12 col-lg-4 section-heading">
+    <h1>Recent Posts</h1>
+    
+  </div>
+  <div class="col-12 col-lg-8">
+
+    
+
+    
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/remote-debug-arm-cortex-with-segger/" >Remotely Debug ARM Cortex with Segger Tools</a>
+    </h3>
+
+    
+    <div class="article-style">
+      JLink v682b
+  Connect your JLink debugger to the target microcontroller.
+  Connect your JLink debugger to the server computer, via USB. …
+    </div>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  
+  <span><a href="/authors/alex/">Alex Hogen</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Dec 23, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
+  </span>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/remote-debug-arm-cortex-with-segger/#disqus_thread"></a>
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+    
+    <a href="/post/remote-debug-arm-cortex-with-segger/" >
+      <img src="/post/remote-debug-arm-cortex-with-segger/featured_hud9853f245c494bac8585ca0db515dec7_429334_150x0_resize_q90_lanczos.jpg" alt="">
+    </a>
+    
+  </div>
+</div>
+
+      
+    
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/building-hpm-bough-wooly-multiplier-generator/" >Notes on Building HPM Baugh-Wooley Multiplier Generator</a>
+    </h3>
+
+    
+    <div class="article-style">
+      This blog post may not make complete sense if read by itself. These are my notes written while I was reading the HPM Baugh-Wooley …
+    </div>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  
+  <span><a href="/authors/alex/">Alex Hogen</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Dec 23, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/building-hpm-bough-wooly-multiplier-generator/#disqus_thread"></a>
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+      
+    
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/latex-nested-table-layout/" >A Two-Column Spec Sheet Table in LaTeX</a>
+    </h3>
+
+    
+    <div class="article-style">
+      Writing a specifications section of a technical datasheet? This could help!
+    </div>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  
+  <span><a href="/authors/alex/">Alex Hogen</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Dec 23, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    2 min read
+  </span>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/latex-nested-table-layout/#disqus_thread"></a>
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+      
+    
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/tutorial-fix-google-pixel-now-playing/" >Fixing &#34;Now Playing&#34; feature on Google Pixel 3</a>
+    </h3>
+
+    
+    <div class="article-style">
+      My fix for Google Pixel Now Playing A few weeks ago, I noticed the Now Playing feature of my new Google Pixel 3 phone stopped working. …
+    </div>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  
+  <span><a href="/authors/alex/">Alex Hogen</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Dec 23, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min read
+  </span>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/tutorial-fix-google-pixel-now-playing/#disqus_thread"></a>
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+      
+    
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/post/pixel-3-personal-concerns/" >Pixel 3 Personal Concerns</a>
+    </h3>
+
+    
+    <div class="article-style">
+      Ramblings on why I dislike the looks of the upcoming Pixel 3.
+    </div>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  
+  <span><a href="/authors/alex/">Alex Hogen</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Dec 23, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/pixel-3-personal-concerns/#disqus_thread"></a>
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+      
+    
+
+    
+    <div class="see-all">
+      <a href="/post/">
+        See all posts
+        <i class="fas fa-angle-right"></i>
+      </a>
+    </div>
+    
+
+  </div>
+</div>
+
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  <section id="projects" class="home-section wg-portfolio   "  >
+    <div class="container">
+      
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-12 col-lg-4 section-heading">
+
+    <h1>Projects</h1>
+    
+
+  </div>
+  <div class="col-12 col-lg-8">
+
+
+
+    
+
+    
+
+      
+
+      
+      
+      
+      
+        
+      
+
+      <span class="d-none default-project-filter">*</span>
+
+      
+      
+      <div class="project-toolbar">
+        <div class="project-filters">
+          <div class="btn-toolbar">
+            <div class="btn-group flex-wrap">
+              
+                
+                
+                
+                  
+                
+                <a href="#" data-filter="*" class="btn btn-primary btn-lg active">All</a>
+              
+                
+                
+                
+                <a href="#" data-filter=".js-id-dsp" class="btn btn-primary btn-lg">DSP</a>
+              
+                
+                
+                
+                <a href="#" data-filter=".js-id-arduino" class="btn btn-primary btn-lg">Arduino</a>
+              
+                
+                
+                
+                <a href="#" data-filter=".js-id-system-verilog" class="btn btn-primary btn-lg">SystemVerilog</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    
+
+    <div class="isotope projects-container js-layout-masonry ">
+      
+
+        
+        
+        
+
+        
+          
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<div class="project-card project-item isotope-item js-id-ip-core js-id-cpp js-id-dsp js-id-system-verilog">
+  <div class="card">
+    
+    
+    <a href="/project/fft-ip-core-generator/"  class="card-image hover-overlay">
+      <img src="/project/fft-ip-core-generator/featured_hu32d9be15867e224ecabc96484a298915_234533_550x0_resize_q90_lanczos.jpg" alt="" class="img-responsive">
+    </a>
+    
+    <div class="card-text">
+      <h4><a href="/project/fft-ip-core-generator/" >FFT IP Core Generator</a></h4>
+      
+      <div class="article-style">
+        <p>A highly configurable FFT IP Core generator.</p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+        
+
+      
+
+        
+        
+        
+          
+          
+        
+
+        
+          
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<div class="project-card project-item isotope-item js-id-arduino js-id-library js-id-cpp">
+  <div class="card">
+    
+    
+    <a href="https://github.com/ahogen/MegaMotoLib" target="_blank" rel="noopener" class="card-image hover-overlay">
+      <img src="/project/megamotolib/featured_hu117c5430e2729ff5c3ad0cd2ba768e55_31715_550x0_resize_q90_lanczos.jpg" alt="" class="img-responsive">
+    </a>
+    
+    <div class="card-text">
+      <h4><a href="https://github.com/ahogen/MegaMotoLib" target="_blank" rel="noopener">MegaMoto Lib</a></h4>
+      
+      <div class="article-style">
+        <p>Arduino motor control library for MegaMoto and MegaMoto Plus by Robot Power</p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+        
+
+      
+
+        
+        
+        
+
+        
+          
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<div class="project-card project-item isotope-item js-id-cpp js-id-microcontroller">
+  <div class="card">
+    
+    
+    <a href="/project/alps-laser-projector/"  class="card-image hover-overlay">
+      <img src="/project/alps-laser-projector/featured_hu68255335fb9eff3980430936e4b8b2b0_11883_550x0_resize_q90_lanczos_2.png" alt="" class="img-responsive">
+    </a>
+    
+    <div class="card-text">
+      <h4><a href="/project/alps-laser-projector/" >ALPS Laser Projector</a></h4>
+      
+      <div class="article-style">
+        <p>Signage from the Mountaintops</p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+        
+
+      
+
+        
+        
+        
+          
+          
+        
+
+        
+          
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<div class="project-card project-item isotope-item js-id-python js-id-ci js-id-cpp">
+  <div class="card">
+    
+    <div class="card-text">
+      <h4><a href="https://pypi.org/project/cppcheck-codequality/" target="_blank" rel="noopener">cppcheck-codequality</a></h4>
+      
+      <div class="article-style">
+        <p>Convert a CppCheck XML report to a GitLab-compatible Code Quality JSON report</p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+        
+
+      
+
+        
+        
+        
+
+        
+          
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<div class="project-card project-item isotope-item js-id-microcontroller js-id-arduino">
+  <div class="card">
+    
+    
+    <a href="/project/greenhouse-control/"  class="card-image hover-overlay">
+      <img src="/project/greenhouse-control/featured_hu11915fedf280b758802be056e7614f09_241368_550x0_resize_q90_lanczos.jpg" alt="" class="img-responsive">
+    </a>
+    
+    <div class="card-text">
+      <h4><a href="/project/greenhouse-control/" >Greenhouse Automation</a></h4>
+      
+      <div class="article-style">
+        <p>DIY Control of your own Greenhouse</p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+        
+
+      
+    </div>
+
+  </div>
+</div>
+
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  <section id="about" class="home-section wg-about   "  >
+    <div class="container">
+      
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-12 col-lg-4">
+    <div id="profile">
+
+      
+      
+      <img class="portrait" src="/authors/alex/avatar_huaf958400d62ddb46e1761e06234260e4_1855_250x250_fill_lanczos_center_2.png" alt="Avatar">
+      
+
+      <div class="portrait-title">
+        <h2>Alex Hogen</h2>
+        <h3>Embedded Firmware Engineer</h3>
+
+        
+        <h3>
+          
+          <span></span>
+          
+        </h3>
+        
+      </div>
+
+      <ul class="network-icon" aria-hidden="true">
+        
+        
+        
+        
+          
+        
+        
+        
+        
+        
+          
+        
+        <li>
+          <a href="https://gitlab.com/ahogen" target="_blank" rel="noopener">
+            <i class="fab fa-gitlab big-icon"></i>
+          </a>
+        </li>
+        
+        
+        
+        
+          
+        
+        
+        
+        
+        
+          
+        
+        <li>
+          <a href="https://github.com/ahogen" target="_blank" rel="noopener">
+            <i class="fab fa-github big-icon"></i>
+          </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+          
+        
+        <li>
+          <a href="https://scholar.google.com/citations?user=sYtNsl4AAAAJ" target="_blank" rel="noopener">
+            <i class="ai ai-google-scholar big-icon"></i>
+          </a>
+        </li>
+        
+        
+        
+        
+          
+        
+        
+        
+        
+        
+          
+        
+        <li>
+          <a href="https://www.linkedin.com/in/alexander-hogen/" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin big-icon"></i>
+          </a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </div>
+  <div class="col-12 col-lg-8">
+
+    
+    <h1>Biography</h1>
+
+    <p>I write bare-metal code for microcontrollers. I also tinker with Linux and
+FPGAs. On this site I share some of my personal projects and technical
+discovery.</p>
+<p>Expect to find stuff about microcontrollers like
+<a href="https://developer.arm.com/ip-products/processors/cortex-m">ARM Cortex-M0/M4/M7</a>,
+<a href="https://en.wikipedia.org/wiki/PIC_microcontrollers">PIC32</a>, or
+<a href="https://www.microchip.com/design-centers/8-bit/avr-mcus/device-selection/attiny3217">AVR ATtiny</a>.</p>
+<p><em>Disclaimer: This is a personal website. Any information or opinions expressed
+here are my own. They do not reflect the opinions of any organization(s) I am
+associated with. Any information or advice is for informational purposes only
+and should be treated as such. Consult with an authorized engineering and/or
+legal professional before using this information.</em></p>
+
+
+    <div class="row">
+
+      
+      <div class="col-md-5">
+        <h3>Interests</h3>
+        <ul class="ul-interests">
+          
+          <li>Digital music</li>
+          
+          <li>Embedded networking</li>
+          
+          <li>Automated testing</li>
+          
+          <li><a href="https://visual.ly/community/infographic/food/38-ways-make-perfect-coffee">Coffee</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <div class="col-md-7">
+        <h3>Education</h3>
+        <ul class="ul-edu fa-ul">
+          
+          <li>
+            <i class="fa-li fas fa-graduation-cap"></i>
+            <div class="description">
+              <p class="course">B.S. Computer Engineering Technology, 2016</p>
+              <p class="institution">Oregon Institute of Technology</p>
+            </div>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+    </div>
+  </div>
+</div>
+
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  <section id="experience" class="home-section wg-experience   "  >
+    <div class="container">
+      
+
+
+
+<div class="row">
+  <div class="col-12 col-lg-4 section-heading">
+    <h1>Experience</h1>
+    
+  </div>
+  <div class="col-12 col-lg-8">
+    
+
+    
+    
+    
+    <div class="row experience">
+      
+      <div class="col-auto text-center flex-column d-none d-sm-flex">
+        <div class="row h-50">
+          <div class="col ">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+        <div class="m-2">
+          <span class="badge badge-pill border ">&nbsp;</span>
+        </div>
+        <div class="row h-50">
+          <div class="col border-right">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+      </div>
+      
+      <div class="col py-2">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title exp-title text-muted mt-0 mb-1">Firmware Engineer</h4>
+            <h4 class="card-title exp-company text-muted my-0"><a href="https://audixusa.com" target="_blank" rel="noopener">Audix Microphones</a></h4>
+            <div class="text-muted exp-meta">
+              Mar 2017 –
+              
+                Aug 2019
+              
+              
+                <span class="middot-divider"></span>
+                <span>Oregon</span>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row experience">
+      
+      <div class="col-auto text-center flex-column d-none d-sm-flex">
+        <div class="row h-50">
+          <div class="col border-right">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+        <div class="m-2">
+          <span class="badge badge-pill border ">&nbsp;</span>
+        </div>
+        <div class="row h-50">
+          <div class="col border-right">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+      </div>
+      
+      <div class="col py-2">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title exp-title text-muted mt-0 mb-1">CST 231 Research Assistant</h4>
+            <h4 class="card-title exp-company text-muted my-0"><a href="https://oit.edu" target="_blank" rel="noopener">Oregon Institute of Technology</a></h4>
+            <div class="text-muted exp-meta">
+              Apr 2015 –
+              
+                May 2015
+              
+              
+                <span class="middot-divider"></span>
+                <span>Oregon</span>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row experience">
+      
+      <div class="col-auto text-center flex-column d-none d-sm-flex">
+        <div class="row h-50">
+          <div class="col border-right">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+        <div class="m-2">
+          <span class="badge badge-pill border ">&nbsp;</span>
+        </div>
+        <div class="row h-50">
+          <div class="col ">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+      </div>
+      
+      <div class="col py-2">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title exp-title text-muted mt-0 mb-1">Engineering Intern</h4>
+            <h4 class="card-title exp-company text-muted my-0"><a href="https://energyneeringsolutions.com/" target="_blank" rel="noopener">EnergyNeering Solutions Inc.</a></h4>
+            <div class="text-muted exp-meta">
+              Apr 2011 –
+              
+                Aug 2011
+              
+              
+                <span class="middot-divider"></span>
+                <span>Oregon</span>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+  </div>
+</div>
+
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  <section id="publications" class="home-section wg-pages   "  >
+    <div class="container">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="row">
+  <div class="col-12 col-lg-4 section-heading">
+    <h1>Publications</h1>
+    
+  </div>
+  <div class="col-12 col-lg-8">
+
+    
+
+    
+      
+        
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <h3 class="article-title mb-0 mt-0">
+      <a href="/publication/custom-hardware-in-education/" >Value of Custom Hardware in Education</a>
+    </h3>
+
+    
+    <div class="article-style">
+      Instructors for digital logic and design courses have a wide variety of FPGA development kits to choose from. Should the instructor …
+    </div>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+      <div>
+        
+
+
+
+  
+  <span>Prof. Kevin Pintong, Alexander Hogen</span>
+
+      </div>
+      
+    </div>
+
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://peer.asee.org/28144" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+      
+    
+
+    
+
+  </div>
+</div>
+
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  <section id="tags" class="home-section wg-tag-cloud   "  >
+    <div class="container">
+      
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<div class="row">
+  <div class="col-12 col-lg-4 section-heading">
+    <h1>Popular Topics</h1>
+    
+  </div>
+  <div class="col-12 col-lg-8">
+    
+
+    
+
+      
+      
+      
+      
+      
+      
+
+      <div class="tag-cloud">
+        
+          
+          
+          
+          <a href="/tags/android/" style="font-size:0.7261859507142915rem">android</a>
+        
+          
+          
+          
+          <a href="/tags/arduino/" style="font-size:0.7261859507142915rem">arduino</a>
+        
+          
+          
+          
+          <a href="/tags/blog/" style="font-size:0.9785578521428744rem">blog</a>
+        
+          
+          
+          
+          <a href="/tags/ci/" style="font-size:0.6rem">ci</a>
+        
+          
+          
+          
+          <a href="/tags/cpp/" style="font-size:0.8523719014285829rem">cpp</a>
+        
+          
+          
+          
+          <a href="/tags/dsp/" style="font-size:0.6rem">dsp</a>
+        
+          
+          
+          
+          <a href="/tags/ip-core/" style="font-size:0.6rem">ip-core</a>
+        
+          
+          
+          
+          <a href="/tags/latex/" style="font-size:0.6rem">latex</a>
+        
+          
+          
+          
+          <a href="/tags/library/" style="font-size:0.6rem">library</a>
+        
+          
+          
+          
+          <a href="/tags/linux/" style="font-size:0.6rem">linux</a>
+        
+          
+          
+          
+          <a href="/tags/microcontroller/" style="font-size:0.7999999999999999rem">microcontroller</a>
+        
+          
+          
+          
+          <a href="/tags/python/" style="font-size:0.6rem">python</a>
+        
+          
+          
+          
+          <a href="/tags/system-verilog/" style="font-size:0.6rem">system-verilog</a>
+        
+          
+          
+          
+          <a href="/tags/tutorial/" style="font-size:0.8929947041435853rem">tutorial</a>
+        
+          
+          
+          
+          <a href="/tags/uc-picaxe/" style="font-size:0.6rem">uc-picaxe</a>
+        
+      </div>
+    
+
+  </div>
+</div>
+
+    </div>
+  </section>
+
+
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/verilog.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/cpp.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/python.min.js"></script>
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    <script id="dsq-count-scr" src="https://ahogen-github-io.disqus.com/count.js" async></script>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.a0d331bcd05dbe8b31e244f796710f08.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2020 Alexander Hogen &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>uc-picaxe | Alex Hogen</title>
+    <link>https://ahogen.github.io/tags/uc-picaxe/</link>
+      <atom:link href="https://ahogen.github.io/tags/uc-picaxe/index.xml" rel="self" type="application/rss+xml" />
+    <description>uc-picaxe</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 Alexander Hogen</copyright><lastBuildDate>Sun, 22 Sep 2013 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://ahogen.github.io/images/icon_hu41297bf952fcc5965d442cd00908f20d_1356_512x512_fill_lanczos_center_2.png</url>
+      <title>uc-picaxe</title>
+      <link>https://ahogen.github.io/tags/uc-picaxe/</link>
+    </image>
+    
+    <item>
+      <title>PICAXE Microcontroller with Parallax Serial LCD Display</title>
+      <link>https://ahogen.github.io/post/tutorial-picaxe-parallax-lcd-display/</link>
+      <pubDate>Sun, 22 Sep 2013 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/post/tutorial-picaxe-parallax-lcd-display/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    This tutorial originally appeared on my (Alex&amp;rsquo;s) blog on Northwest Tech Experience (nwteche.com). That website has been removed. I have moved some of the content I wrote, including this page, to this website of mine. I may have edited the original content for clarity.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Do you want to add an LCD display to your &lt;a href=&#34;http://www.picaxe.com/&#34;&gt;PICAXE&lt;/a&gt; project? Do you have a limited number of output pins on your microcontroller? The &lt;a href=&#34;https://www.parallax.com/product/27977&#34;&gt;&lt;strong&gt;Parallax 2x16 Serial LCD&lt;/strong&gt; (Backlit)&lt;/a&gt; display is a great solution!&lt;/p&gt;
+&lt;p&gt;The Parallax 2×16 serial LCD display has only 3 pins. Only one of those pins connects to the microcontroller. The other two are for power connections.&lt;/p&gt;
+&lt;p&gt;It turns out, Parallax has made it very easy to communicate with the LCD display with simple serial commands. You can test your display by using or modifying the &lt;a href=&#34;http://www.picaxe.com/&#34;&gt;PICAXE&lt;/a&gt; program I have written below.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;To use the LCD display at the &lt;a href=&#34;http://www.picaxe.com/&#34;&gt;PICAXE&lt;/a&gt;’s default 4 MHz, the LCD will need to be set for a 2400 baud rate and the program will change from:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-basic&#34;&gt;setfreq m16
+symbol tx = c.4
+symbol baud = T9600_16
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;…to…&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-basic&#34;&gt;setfreq m4
+symbol tx = c.4
+symbol baud = T2400_
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The code below will test the serial communication, the display back-lighting (if applicable), and the on-board speaker/sound controls.&lt;/p&gt;
+&lt;p&gt;I hope this proves useful to somebody!&lt;/p&gt;
+&lt;h3 id=&#34;resources&#34;&gt;Resources:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.parallax.com/sites/default/files/downloads/27979-Parallax-Serial-LCDs-Product-Guide-v3.1.pdf&#34;&gt;Parallax Serial LCD Display PDF manual&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-basic&#34;&gt;&#39; ------------
+&#39;|  LCD Test  |
+&#39; ------------
+
+&#39;by Alexander Hogen
+
+&#39;Started: 9-16-2013
+&#39;Finished: 9-16-2013
+
+&#39;See &amp;quot;Command Set&amp;quot; in this PDF for
+&#39;more information.
+&#39;http://www.parallax.com/sites/default/files/downloads/27979-Parallax-Serial-LCDs-Product-Guide-v3.1.pdf
+
+setfreq m16
+
+&#39;9600 baud only works in 16MHz or higher
+
+&#39;Multiply desired millisecond (ms) timing
+&#39;by 4 to get desired result.
+&#39;i.e. &amp;quot;Pause 5&amp;quot; becomes &amp;quot;Pause 20&amp;quot;
+
+symbol tx = c.4
+symbol baud = T9600_16
+
+pause 400
+
+main:
+serout tx, baud,(22) &#39;Turn display on
+pause 40
+gosub clearLCD
+serout tx, baud,(17) &#39;Turn backlight on
+
+serout tx, baud,(&amp;quot;Hello&amp;quot;)
+
+pause 4000
+
+gosub clearLCD
+serout tx, baud,(&amp;quot;LCD works great!&amp;quot;)
+
+gosub beeps
+
+end
+
+clearLCD:
+
+serout tx, baud, (12)
+pause 40
+return
+
+beeps:
+
+serout tx, baud,(216) &#39;Select the 4th scale (A=440Hz)
+pause 40
+serout tx, baud,(210) &#39;Set note length to 1/16 note
+pause 40
+
+serout tx, baud,(220,221,222,223,224,225,226,227)
+pause 4000
+
+return
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux | Alex Hogen</title>
+    <link>https://ahogen.github.io/tags/linux/</link>
+      <atom:link href="https://ahogen.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <description>linux</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 Alexander Hogen</copyright><lastBuildDate>Sat, 30 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://ahogen.github.io/images/icon_hu41297bf952fcc5965d442cd00908f20d_1356_512x512_fill_lanczos_center_2.png</url>
+      <title>linux</title>
+      <link>https://ahogen.github.io/tags/linux/</link>
+    </image>
+    
+    <item>
+      <title>Launch PuTTY in UART mode on Linux (Ubuntu)</title>
+      <link>https://ahogen.github.io/post/linux-putty-serial-com/</link>
+      <pubDate>Sat, 30 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>https://ahogen.github.io/post/linux-putty-serial-com/</guid>
+      <description>&lt;p&gt;I could not seem to remember the serial configuration string to start
+&lt;a href=&#34;http://www.putty.org/&#34;&gt;PuTTY&lt;/a&gt; with the correct baud rate and parity settings,
+so this is my way of jotting it down for myself and others like me. By default,
+PuTTY was ultra-tiny on my Linux Mint machine, so I change the font to a more
+normal 12pt font. I figured most people should have the &amp;ldquo;Ubuntu Mono&amp;rdquo; font, but
+maybe &amp;ldquo;Monospace Regular&amp;rdquo; would be better.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;putty /dev/ttyUSB0 -serial -sercfg 115200,8,n,1,N -fn &amp;quot;client:Ubuntu Mono 12&amp;quot; -geometry 90x100 -sl 500
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(This command is all one long line.)&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;For this to work, either you must have root access or your user account has been
+added to the appropriate group(s) to access serial devices. On Debian/Ubuntu
+systems, this is normally the &lt;code&gt;dialout&lt;/code&gt; group. To add yourself to &lt;code&gt;dialout&lt;/code&gt;,
+run:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo usermod -a -G dialout ${USER}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You must log out of your account, then log back in for the new group permissions
+to take effect.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Let&amp;rsquo;s break the PuTTY command (above) down.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;putty&lt;/code&gt; name of the command&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/dev/ttyUSB0&lt;/code&gt; serial device, in my case a USB to UART adapter which was
+enumerated by my machine as USB0&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-serial&lt;/code&gt; use serial mode, not SSH or telnet modes&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-sercfg&lt;/code&gt; the serial configuration string (explained below)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-fn&lt;/code&gt; specify the font (both typeface and pt size) of the PuTTY terminal&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-geometry&lt;/code&gt; specify the size (in number of character rows and columns) of the PuTTY terminal&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-sl&lt;/code&gt; number of scrollback lines PuTTY will remember&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &lt;code&gt;sercfg&lt;/code&gt; string has the following meaning. The settings I&amp;rsquo;ve chosen should
+be the default for some common devices, like a &lt;a href=&#34;https://spellfoundry.com/2016/05/29/configuring-gpio-serial-port-raspbian-jessie-including-pi-3/#Raspberry_Pi_3&#34;&gt;
+Raspberry Pi 3&lt;/a&gt;,
+however 9600 baud is also very common.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Setting Name&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Baud rate&lt;/td&gt;
+&lt;td&gt;115200&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Data bits&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Parity&lt;/td&gt;
+&lt;td&gt;none&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stop bits&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Flow control&lt;/td&gt;
+&lt;td&gt;none&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;For more detailed information about launching PuTTY from the command line or any
+other PuTTY operation, check out the PuTTY documentation, available here:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.chiark.greenend.org.uk/~sgtatham/putty/docs.html&#34;&gt;https://www.chiark.greenend.org.uk/~sgtatham/putty/docs.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
