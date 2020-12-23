@@ -30,7 +30,7 @@ education:
   courses:
   - course: B.S. Computer Engineering Technology
     institution: Oregon Institute of Technology
-    year: 2012
+    year: 2016
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
@@ -46,13 +46,6 @@ social:
 - icon: github
   icon_pack: fab
   link: https://github.com/ahogen
-- icon: bitbucket
-  icon_pack: fab
-  link: https://bitbucket.com/ahogen
-# I know, it's the wrong logo. But I like SO's logo better than SE.
-- icon: stack-overflow
-  icon_pack: fab
-  link: https://stackexchange.com/users/4473042/ahogen?tab=accounts
 - icon: google-scholar
   icon_pack: ai
   link: https://scholar.google.com/citations?user=sYtNsl4AAAAJ
@@ -83,7 +76,7 @@ Expect to find stuff about microcontrollers like
 [PIC32](https://en.wikipedia.org/wiki/PIC_microcontrollers), or
 [AVR ATtiny](https://www.microchip.com/design-centers/8-bit/avr-mcus/device-selection/attiny3217).
 
-*Disclamer: This is a personal website. Any information or opinions expressed
+*Disclaimer: This is a personal website. Any information or opinions expressed
 here are my own. They do not reflect the opinions of any organization(s) I am
 associated with. Any information or advice is for informational purposes only
 and should be treated as such. Consult with an authorized engineering and/or
