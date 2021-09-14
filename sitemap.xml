@@ -3,212 +3,211 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ahogen.github.io/authors/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/tags/blog/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/post/remote-debug-arm-cortex-with-segger/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/tags/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/tags/tutorial/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/post/building-hpm-bough-wooly-multiplier-generator/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/post/latex-nested-table-layout/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/tags/latex/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/post/tutorial-fix-google-pixel-now-playing/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/tags/android/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/post/pixel-3-personal-concerns/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/post/guild-wars-2-in-linux-mint/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/post/linux-putty-serial-com/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/tags/linux/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/publication_types/1/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/authors/prof.-kevin-pintong-alexander-hogen/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/publication_types/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/publication/custom-hardware-in-education/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/tags/cpp/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/tags/dsp/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/project/fft-ip-core-generator/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/tags/ip-core/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/tags/system-verilog/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/tags/arduino/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/tags/library/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/project/megamotolib/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/project/alps-laser-projector/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/tags/ci/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/project/cppcheck-codequality/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/tags/microcontroller/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/tags/python/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/post/tutorial-picaxe-parallax-lcd-display/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/tags/uc-picaxe/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/project/greenhouse-control/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/post/tutorial-android-market-coby-kyros-mid7012/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ahogen.github.io/authors/alex/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ahogen.github.io/post/tool-list/</loc>
-    <lastmod>2020-12-23T13:16:07-08:00</lastmod>
+    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://ahogen.github.io/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
+    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ahogen.github.io/categories/</loc>
+    <loc>https://ahogen.github.io/authors/</loc>
+    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/tags/blog/</loc>
+    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://ahogen.github.io/post/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
+    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ahogen.github.io/project/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
+    <loc>https://ahogen.github.io/post/remote-debug-arm-cortex-with-segger/</loc>
+    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/tags/</loc>
+    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/tags/tutorial/</loc>
+    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/post/building-hpm-bough-wooly-multiplier-generator/</loc>
+    <lastmod>2019-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/post/latex-nested-table-layout/</loc>
+    <lastmod>2019-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/tags/latex/</loc>
+    <lastmod>2019-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/post/tutorial-fix-google-pixel-now-playing/</loc>
+    <lastmod>2018-12-01T00:00:00-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/tags/android/</loc>
+    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/post/pixel-3-personal-concerns/</loc>
+    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/post/guild-wars-2-in-linux-mint/</loc>
+    <lastmod>2018-04-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/post/linux-putty-serial-com/</loc>
+    <lastmod>2017-12-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/tags/linux/</loc>
+    <lastmod>2017-12-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/publication_types/1/</loc>
+    <lastmod>2017-06-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/authors/prof.-kevin-pintong-alexander-hogen/</loc>
+    <lastmod>2017-06-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/publication_types/</loc>
+    <lastmod>2017-06-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://ahogen.github.io/publication/</loc>
-    <lastmod>2020-12-23T13:08:59-08:00</lastmod>
+    <lastmod>2017-06-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/publication/custom-hardware-in-education/</loc>
+    <lastmod>2017-06-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/tags/cpp/</loc>
+    <lastmod>2017-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/tags/dsp/</loc>
+    <lastmod>2017-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/project/fft-ip-core-generator/</loc>
+    <lastmod>2017-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/tags/ip-core/</loc>
+    <lastmod>2017-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/project/</loc>
+    <lastmod>2017-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/tags/system-verilog/</loc>
+    <lastmod>2017-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/tags/arduino/</loc>
+    <lastmod>2016-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/tags/library/</loc>
+    <lastmod>2016-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/project/megamotolib/</loc>
+    <lastmod>2016-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/project/alps-laser-projector/</loc>
+    <lastmod>2016-06-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/tags/ci/</loc>
+    <lastmod>2016-06-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/project/cppcheck-codequality/</loc>
+    <lastmod>2016-06-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/tags/microcontroller/</loc>
+    <lastmod>2016-06-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/tags/python/</loc>
+    <lastmod>2016-06-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/post/tutorial-picaxe-parallax-lcd-display/</loc>
+    <lastmod>2013-09-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/tags/uc-picaxe/</loc>
+    <lastmod>2013-09-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/project/greenhouse-control/</loc>
+    <lastmod>2012-12-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/post/tutorial-android-market-coby-kyros-mid7012/</loc>
+    <lastmod>2012-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/post/tool-list/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ahogen.github.io/categories/</loc>
   </url>
   
 </urlset>

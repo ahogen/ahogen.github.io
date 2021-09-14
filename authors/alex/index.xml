@@ -5,7 +5,7 @@
     <link>https://ahogen.github.io/authors/alex/</link>
       <atom:link href="https://ahogen.github.io/authors/alex/index.xml" rel="self" type="application/rss+xml" />
     <description>Alex Hogen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 Alexander Hogen</copyright>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2021 Alexander Hogen</copyright><lastBuildDate>Thu, 13 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://ahogen.github.io/images/icon_hu41297bf952fcc5965d442cd00908f20d_1356_512x512_fill_lanczos_center_2.png</url>
       <title>Alex Hogen</title>
@@ -17,10 +17,59 @@
       <link>https://ahogen.github.io/post/remote-debug-arm-cortex-with-segger/</link>
       <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
       <guid>https://ahogen.github.io/post/remote-debug-arm-cortex-with-segger/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;JLink v682b&lt;/p&gt;
-&lt;/li&gt;
+      <description>&lt;p&gt;I recently discovered that SEGGER&amp;rsquo;s debugging tools can be used remotely!
+Refer to the official &lt;a href=&#34;https://www.segger.com/products/debug-probes/j-link/tools/j-link-remote-server/&#34;&gt;documentation&lt;/a&gt; for more details, but here my quick-start notes&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
+&lt;p&gt;My &amp;ldquo;server&amp;rdquo; machine is an Ubuntu 18.04 desktop across the room in the closet where I have my little electronics bench set up.
+I&amp;rsquo;ll need the JLink package installed on that system.
+The &lt;a href=&#34;https://www.segger.com/downloads/jlink/&#34;&gt;latest&lt;/a&gt; JLink version is v7.54a as of writing, but if you didn&amp;rsquo;t know, SEGGER updates their software quite frequently so be sure to check their website for any updates &amp;amp; bug fixes.&lt;/p&gt;
+&lt;p&gt;I use a curl request, instead of a simpler &lt;code&gt;wget&lt;/code&gt;, in order to auto-accept the Terms of Use.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell-session&#34;&gt;user@server:~$ curl -X POST -F &#39;submit=Download+software&#39; -F &#39;accept_license_agreement=accepted&#39; https://www.segger.com/downloads/jlink/JLink_Linux_V754a_x86_64.deb --output JLink_Linux_V754a_x86_64.deb
+
+user@server:~$ sudo apt install ./JLink_Linux_&amp;lt;version&amp;gt;.deb
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Note, selecting &#39;jlink&#39; instead of &#39;./JLink_Linux_V754a_x86_64.deb&#39;
+The following NEW packages will be installed:
+  jlink
+[ ... ]
+Preparing to unpack .../JLink_Linux_V754a_x86_64.deb ...
+Removing /opt/SEGGER/JLink ...
+/opt/SEGGER/JLink not found (OK)
+Unpacking jlink (7.541) ...
+Setting up jlink (7.541) ...
+
+user@server:~$ command -v JLinkRemoteServerCLExe
+/usr/bin/JLinkRemoteServerCLExe
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Cool, the remote server executable is avaliable.
+Now I need to poke a hole in my firewall to allow incoming connections.
+Don&amp;rsquo;t have a firewall setup yet?
+Well you should, and it&amp;rsquo;s not hard on Ubuntu 18.
+In fact, I&amp;rsquo;m on a fresh install of Ubuntu so mine isn&amp;rsquo;t enabled yet either.
+Let&amp;rsquo;s do that first.&lt;/p&gt;
+&lt;p&gt;A related tutorial: &lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-18-04&#34;&gt;https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-18-04&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell-session&#34;&gt;user@server:~$ sudo ufw status verbose
+Status: inactive
+
+user@server:~$ sudo ufw default deny incoming
+user@server:~$ sudo ufw default allow outgoing
+user@server:~$ sudo ufw logging on
+user@server:~$ sudo ufw allow OpenSSH
+user@server:~$ sudo ufw allow 19020/tcp comment &#39;JLinkRemoteServer&#39;
+user@server:~$ sudo ufw show added
+Added user rules (see &#39;ufw status&#39; for running firewall):
+ufw allow OpenSSH
+ufw allow 19020/tcp comment &#39;JLinkRemoteServer&#39;
+
+user@server:~$ sudo ufw enable
+Command may disrupt existing ssh connections. Proceed with operation (y|n)? y
+Firewall is active and enabled on system startup
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Alrighty, now to try it out!&lt;/p&gt;
+&lt;h2 id=&#34;use&#34;&gt;Use&lt;/h2&gt;
+&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Connect your JLink debugger to the target microcontroller.&lt;/p&gt;
 &lt;/li&gt;
@@ -28,13 +77,19 @@
 &lt;p&gt;Connect your JLink debugger to the server computer, via USB.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Open port 19020/tcp on you server&amp;rsquo;s firewall.&lt;/p&gt;
+&lt;p&gt;Start &lt;code&gt;JLinkRemoteServer&lt;/code&gt; on the server&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;SEGGER J-Link Remote Server V7.54a
+Compiled Sep  7 2021 14:27:16
+
+&#39;q&#39; to quit &#39;?&#39; for help
+
+Connected to J-Link with S/N {{my-jlink-serial-number}}
+
+Waiting for client connections...
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Start &lt;code&gt;JLinkRemoteServer&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Open Ozone&lt;/p&gt;
+&lt;p&gt;Open Ozone (on the &lt;em&gt;client&lt;/em&gt; machine)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Choose chip model and core type&lt;/p&gt;
@@ -51,6 +106,8 @@ I just set up, so I&amp;rsquo;m going to use that server&amp;rsquo;s IP address.
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;segger-swo-viewer-with-remote-debugger&#34;&gt;SEGGER SWO Viewer with Remote Debugger&lt;/h3&gt;
+&lt;p&gt;The SWO Viewer should work remotely too!
+This is a short example showing how I&amp;rsquo;d invoke this on the (Windows CMD) command line:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;JLinkSWOViewer.exe -ip 192.168.1.123 -device MIMXRT1021DAG5A -swofreq 921600
 &lt;/code&gt;&lt;/pre&gt;
 </description>

@@ -512,14 +512,8 @@
     <h2><a href="/post/remote-debug-arm-cortex-with-segger/">Remotely Debug ARM Cortex with Segger Tools</a></h2>
     <div class="article-style">
       
-      JLink v682b
-  Connect your JLink debugger to the target microcontroller.
-  Connect your JLink debugger to the server computer, via USB.
-  Open port 19020/tcp on you server&rsquo;s firewall.
-  Start JLinkRemoteServer
-  Open Ozone
-  Choose chip model and core type
-  Choose connection settings. In this example, I&rsquo;m connecting to the server I just set up, so I&rsquo;m going to use that server&rsquo;s IP address.
+      I recently discovered that SEGGER&rsquo;s debugging tools can be used remotely! Refer to the official documentation for more details, but here my quick-start notes&hellip;
+Install My &ldquo;server&rdquo; machine is an Ubuntu 18.04 desktop across the room in the closet where I have my little electronics bench set up. I&rsquo;ll need the JLink package installed on that system. The latest JLink version is v7.54a as of writing, but if you didn&rsquo;t know, SEGGER updates their software quite frequently so be sure to check their website for any updates &amp; bug fixes.
       
     </div>
   </div>
@@ -713,7 +707,7 @@ Testing if Now Playing is broken I wanted to quickly verify that the reason Now 
   
 
   <p class="powered-by">
-    © 2020 Alexander Hogen &middot; 
+    © 2021 Alexander Hogen &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
